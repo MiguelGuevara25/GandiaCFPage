@@ -1,12 +1,12 @@
 import demoBg from "@/images/background/footer-bg-2.jpg";
-import logo from "@/images/footer-logo.png";
+import logo from "@/images/logoGandia.png";
 import logo3 from "@/images/logo-3.png";
 import logo6 from "@/images/update-01-10-2021/logo-6-light.png";
 import logo7 from "@/images/update-01-10-2021/logo-7-light.png";
 import logo8 from "@/images/update-01-10-2021/logo-8-light.png";
 import logo5 from "@/images/update-09-06-2021/logo-5-light.png";
 
-export const footer = { year: new Date().getFullYear(), author: "Linoor" };
+export const footer = { year: new Date().getFullYear(), author: "CF Gandia" };
 
 export const mainFooterDemo = {
   ...footer,
@@ -31,13 +31,13 @@ export const mainFooter = {
   about3:
     "We’ve grown our business on a set of \n three building blocks. Enjoy the \n people you work.",
   text: "Welcome to our web design agency. Lorem ipsum simply free text dolor sited amet cons cing elit.",
-  address: "66 Broklyn Street, New York \n United States of America",
+  address: "Av. dels Esports, 46701 \n Gandia, Valencia",
   address3: "66 Mark Street, New Town DC 5752, Lo New York",
   address2:
     "214 Gold Street Round Road. 66 \n Code New York, United States \n of America",
   phone: "666 888 000",
   phone2: "+92 3333 222 000",
-  email: "needhelp@linoor.com",
+  email: "cfgandia@cfgandia.es",
   textBottom:
     "Sign up for our latest news & articles. We won’t give you spam mails.",
   subscribeText:

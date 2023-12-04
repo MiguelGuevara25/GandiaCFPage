@@ -18,8 +18,7 @@ const History = () => {
       <SearchPopup />
       <PageBanner title="Our History" page="History" />
       <HistoryTimeline />
-      <CallToSection />
-      <MainFooter normalPadding={false} />
+      <MainFooter />
     </Layout>
   );
 };

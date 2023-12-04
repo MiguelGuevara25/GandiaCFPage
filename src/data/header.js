@@ -14,13 +14,6 @@ const home = {
   id: 1,
   name: "Inicio",
   href: "/",
-  subNavItems: [
-    {
-      id: 1,
-      name: "Home Style 01",
-      href: "/index",
-    },
-  ],
 };
 
 const navItemsTwo = [

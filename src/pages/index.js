@@ -2,14 +2,11 @@ import FunFactSeven from "@/components/FunFacts/FunFactSeven";
 import HeaderOne from "@/components/Header/HeaderOne";
 import MobileMenu from "@/components/Header/MobileMenu";
 import Layout from "@/components/Layout/Layout";
+import MainFooter from "@/components/MainFooter/MainFooter";
 import PortfolioDetailsVideo from "@/components/PortfolioDetails/PortfolioDetailsVideo";
 import SearchPopup from "@/components/SearchPopup/SearchPopup";
 import SliderEight from "@/components/SliderSection/SliderEight";
 import SponsorsSection from "@/components/SponsorsSection/SponsorsSection";
-import VideoModal from "@/components/VideoModal/VideoModal";
-import VideoOne from "@/components/VideoSection/VideoOne";
-import VideoSeven from "@/components/VideoSection/VideoSeven";
-import VideoSix from "@/components/VideoSection/VideoSix";
 import LogoArsenal from "@/images/logoArsenal.png";
 import LogoGandia from "@/images/logoGandia.png";
 import Image from "next/image";
@@ -144,6 +141,7 @@ const PagePrueba = () => {
       <SponsorsSection />
 
       <PortfolioDetailsVideo />
+      <MainFooter />
     </Layout>
   );
 };

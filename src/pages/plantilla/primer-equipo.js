@@ -2,6 +2,7 @@ import PageBanner from "@/components/BannerSection/PageBanner";
 import HeaderOne from "@/components/Header/HeaderOne";
 import MobileMenu from "@/components/Header/MobileMenu";
 import Layout from "@/components/Layout/Layout";
+import MainFooter from "@/components/MainFooter/MainFooter";
 import SearchPopup from "@/components/SearchPopup/SearchPopup";
 import TeamThree from "@/components/TeamSection/TeamThree";
 import DefenseTeam from "@/components/componentsGandia/DefenseTeam";
@@ -19,6 +20,7 @@ const PagePlantilla = () => {
       <DefenseTeam items={5} />
       <MidfielderTeam />
       <StrikerTeam items={6} />
+      <MainFooter />
     </Layout>
   );
 };

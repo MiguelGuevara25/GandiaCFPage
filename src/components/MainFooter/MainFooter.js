@@ -3,6 +3,8 @@ import Link from "next/link";
 import React from "react";
 import { Col, Image, Row } from "react-bootstrap";
 import TextSplit from "../Reuseable/TextSplit";
+import LogoGandiaLargo from "@/images/logoGandiaLargo.png";
+import LogoFrase from "@/images/logoFrase.png";
 
 const {
   year,
@@ -18,67 +20,11 @@ const {
 } = mainFooter;
 
 const MainFooter = ({ normalPadding = true }) => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    console.log(formData.get("email"));
-  };
-
   return (
     <footer className={`main-footer${normalPadding ? " normal-padding" : ""}`}>
       <div className="auto-container">
         <div className="widgets-section">
           <Row className="clearfix">
-            <Col xl={3} lg={6} md={6} sm={12} className="column">
-              <div className="footer-widget logo-widget">
-                <div className="widget-content">
-                  <div className="logo">
-                    <Link href="/">
-                      <a>
-                        <Image id="fLogo" src={logo.src} alt="" />
-                      </a>
-                    </Link>
-                  </div>
-                  <div className="text">{text}</div>
-                  <ul className="social-links clearfix">
-                    {socials.map(({ id, icon, href }) => (
-                      <li key={id}>
-                        <a href={href}>
-                          <span className={icon}></span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </Col>
-            <Col xl={3} lg={6} md={6} sm={12} className="column">
-              <div className="footer-widget links-widget">
-                <div className="widget-content">
-                  <h6>Explore</h6>
-                  <Row className="clearfix">
-                    <Col md={6} sm={12}>
-                      <ul>
-                        {links.slice(0, 5).map(({ id, href, title }) => (
-                          <li key={id}>
-                            <Link href={href}>{title}</Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </Col>
-                    <Col md={6} sm={12}>
-                      <ul>
-                        {links.slice(5).map(({ id, href, title }) => (
-                          <li key={id}>
-                            <Link href={href}>{title}</Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </Col>
-                  </Row>
-                </div>
-              </div>
-            </Col>
             <Col xl={3} lg={6} md={6} sm={12} className="column">
               <div className="footer-widget info-widget">
                 <div className="widget-content">
@@ -100,28 +46,45 @@ const MainFooter = ({ normalPadding = true }) => {
                 </div>
               </div>
             </Col>
+
             <Col xl={3} lg={6} md={6} sm={12} className="column">
-              <div className="footer-widget newsletter-widget">
+              <div className="footer-widget logo-widget">
                 <div className="widget-content">
-                  <h6>Newsletter</h6>
-                  <div className="newsletter-form">
-                    <form onSubmit={handleSubmit}>
-                      <div className="form-group clearfix">
-                        <input
-                          type="email"
-                          name="email"
-                          placeholder="Email Address"
-                          required
-                        />
-                        <button type="submit" className="theme-btn">
-                          <span className="fa fa-envelope"></span>
-                        </button>
-                      </div>
-                    </form>
+                  <div className="logo">
+                    <Link href="/">
+                      <a>
+                        <Image id="fLogo" src={LogoGandiaLargo.src} alt="" />
+                      </a>
+                    </Link>
                   </div>
-                  <div className="text">{textBottom}</div>
                 </div>
               </div>
+            </Col>
+
+            <Col xl={3} lg={6} md={6} sm={12} className="column">
+              <div className="footer-widget logo-widget">
+                <div className="widget-content">
+                  <div className="logo">
+                    <Link href="/">
+                      <a>
+                        <Image id="fLogo" src={LogoFrase.src} alt="" width={200} />
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </Col>
+
+            <Col xl={3} lg={6} md={6} sm={12} className="column">
+              <ul className="social-links clearfix">
+                {socials.map(({ id, icon, href }) => (
+                  <li key={id}>
+                    <a href={href}>
+                      <span className={icon}></span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </Col>
           </Row>
         </div>
@@ -130,7 +93,8 @@ const MainFooter = ({ normalPadding = true }) => {
         <div className="auto-container">
           <div className="inner clearfix">
             <div className="copyright">
-              &copy; copyright {year} by {author}
+              &copy; {author} {year} All Rights Reserved Terms of Use Privacy
+              Policy
             </div>
           </div>
         </div>
