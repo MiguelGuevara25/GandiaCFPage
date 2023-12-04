@@ -28,7 +28,7 @@ const MainFooter = ({ normalPadding = true }) => {
             <Col xl={3} lg={6} md={6} sm={12} className="column">
               <div className="footer-widget info-widget">
                 <div className="widget-content">
-                  <h6>Contact</h6>
+                  <h6>Contacto</h6>
                   <ul className="contact-info">
                     <li className="address">
                       <span className="icon flaticon-pin-1"></span>{" "}
@@ -67,7 +67,12 @@ const MainFooter = ({ normalPadding = true }) => {
                   <div className="logo">
                     <Link href="/">
                       <a>
-                        <Image id="fLogo" src={LogoFrase.src} alt="" width={200} />
+                        <Image
+                          id="fLogo"
+                          src={LogoFrase.src}
+                          alt=""
+                          width={200}
+                        />
                       </a>
                     </Link>
                   </div>

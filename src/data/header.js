@@ -81,8 +81,7 @@ const navItems = [
   {
     id: 5,
     name: "Historia",
-    href: "/portfolio",
-    subNavItems: [{ id: 1, name: "Portfolio", href: "/portfolio" }],
+    href: "/historia",
   },
   {
     id: 6,
