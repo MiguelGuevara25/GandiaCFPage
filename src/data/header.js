@@ -13,12 +13,12 @@ import logo9 from "@/images/update-26-02-2021/logo-horizontal-portfolio.png";
 const home = {
   id: 1,
   name: "Inicio",
-  href: "/pruebagandia",
+  href: "/",
   subNavItems: [
     {
       id: 1,
       name: "Home Style 01",
-      href: "/index-main",
+      href: "/index",
     },
   ],
 };
@@ -67,8 +67,11 @@ const navItems = [
   {
     id: 2,
     name: "Plantilla",
-    href: "/plantilla",
-    subNavItems: [{ id: 1, name: "About Two", href: "/about-2" }],
+    href: "/plantilla/primer-equipo",
+    subNavItems: [
+      { id: 1, name: "Primer Equipo", href: "/plantilla/primer-equipo" },
+      { id: 2, name: "Equipo Técnico", href: "/plantilla/equipo-tecnico" },
+    ],
   },
   {
     id: 3,
