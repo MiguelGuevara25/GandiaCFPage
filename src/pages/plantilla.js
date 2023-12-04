@@ -18,7 +18,7 @@ const PagePlantilla = () => {
       <TeamThree items={2} />
       <DefenseTeam items={5} />
       <MidfielderTeam />
-      <StrikerTeam />
+      <StrikerTeam items={6} />
     </Layout>
   );
 };

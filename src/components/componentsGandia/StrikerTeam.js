@@ -1,8 +1,8 @@
-import { defenseTeam } from "@/data/teamSection";
+import { strikerTeam } from "@/data/teamSection";
 import React from "react";
 import { Col, Row, Image } from "react-bootstrap";
 
-const { title, teams } = defenseTeam;
+const { title, teams } = strikerTeam;
 
 const StrikerTeam = ({ className = "", showTitle = true, items = 4 }) => {
   return (

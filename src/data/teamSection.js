@@ -258,6 +258,54 @@ export const midfielderTeam = {
   ],
 };
 
+export const strikerTeam = {
+  title: "Delanteros",
+  teams: [
+    {
+      id: 1,
+      image: "ximo.png",
+      name: "Ximo",
+      designation: "Delantero",
+      socials,
+    },
+    {
+      id: 2,
+      image: "salvaMarti.png",
+      name: "Salva Martí",
+      designation: "Extremo",
+      socials,
+    },
+    {
+      id: 3,
+      image: "mauroMelo.png",
+      name: "Mauro Melo",
+      designation: "Extremo",
+      socials,
+    },
+    {
+      id: 4,
+      image: "alvarito.png",
+      name: "Alvarito",
+      designation: "Extremo",
+      socials,
+    },
+    {
+      id: 5,
+      image: "guerrero.png",
+      name: "Guerrero",
+      designation: "Delantero",
+      socials,
+    },
+    {
+      id: 6,
+      image: "francescVidal.png",
+      name: "Francesc Vidal",
+      designation: "Delantero",
+      socials,
+    },
+  ],
+};
+
 export const teamPage = [
   {
     id: 1,
