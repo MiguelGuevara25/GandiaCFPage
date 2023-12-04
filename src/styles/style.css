@@ -605,7 +605,7 @@ img {
 .main-header .header-upper .logo-box {
   position: relative;
   float: left;
-  padding: 40px 0px;
+  padding: 10px 0px;
   margin-right: 50px;
   z-index: 7;
 }
@@ -619,7 +619,7 @@ img {
   position: relative;
   display: inline-block;
   max-width: 100%;
-  max-height: 34px;
+  /* max-height: 34px; */
   z-index: 1;
 }
 

@@ -88,53 +88,51 @@ const PagePrueba = () => {
           className="w-50 text-black px-5"
           style={{ backgroundColor: "#0F3B7C", borderRadius: "15px" }}
         >
-          <div>
-            <p className="text-center fs-3" style={{ margin: "0" }}>
-              La Liga 2025-2026
-            </p>
+          <p className="text-center fs-3" style={{ margin: "0" }}>
+            La Liga 2025-2026
+          </p>
 
-            <Table borderless className="text-white">
-              <thead>
-                <tr style={{ fontSize: "13px", fontWeight: "400" }}>
-                  <th>Posición</th>
-                  <th>Equipo</th>
-                  <th>Puntos</th>
-                </tr>
-              </thead>
+          <Table borderless className="text-white">
+            <thead>
+              <tr style={{ fontSize: "13px", fontWeight: "400" }}>
+                <th>Posición</th>
+                <th>Equipo</th>
+                <th>Puntos</th>
+              </tr>
+            </thead>
 
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>CF Gandia</td>
-                  <td>34</td>
-                </tr>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>CF Gandia</td>
+                <td>34</td>
+              </tr>
 
-                <tr>
-                  <td>2</td>
-                  <td>FC Barcelona</td>
-                  <td>30</td>
-                </tr>
+              <tr>
+                <td>2</td>
+                <td>FC Barcelona</td>
+                <td>30</td>
+              </tr>
 
-                <tr>
-                  <td>3</td>
-                  <td>Real Madrid</td>
-                  <td>28</td>
-                </tr>
+              <tr>
+                <td>3</td>
+                <td>Real Madrid</td>
+                <td>28</td>
+              </tr>
 
-                <tr>
-                  <td>4</td>
-                  <td>Atletico Madrid</td>
-                  <td>26</td>
-                </tr>
+              <tr>
+                <td>4</td>
+                <td>Atletico Madrid</td>
+                <td>26</td>
+              </tr>
 
-                <tr>
-                  <td>5</td>
-                  <td>Sevilla</td>
-                  <td>20</td>
-                </tr>
-              </tbody>
-            </Table>
-          </div>
+              <tr>
+                <td>5</td>
+                <td>Sevilla</td>
+                <td>20</td>
+              </tr>
+            </tbody>
+          </Table>
         </div>
       </div>
 
