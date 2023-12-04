@@ -1,0 +1,20 @@
+{
+  "..\\components\\SponsorsSection\\SponsorsSection.js -> @/components/TinySlider/TinySlider": {
+    "id": "..\\components\\SponsorsSection\\SponsorsSection.js -> @/components/TinySlider/TinySlider",
+    "files": [
+      "static/chunks/src_components_TinySlider_TinySlider_js.js"
+    ]
+  },
+  "..\\components\\VideoSection\\VideoSeven.js -> ../Jarallax/Jarallax": {
+    "id": "..\\components\\VideoSection\\VideoSeven.js -> ../Jarallax/Jarallax",
+    "files": [
+      "static/chunks/src_components_Jarallax_Jarallax_js.js"
+    ]
+  },
+  "..\\components\\VideoSection\\VideoSix.js -> ../Jarallax/Jarallax": {
+    "id": "..\\components\\VideoSection\\VideoSix.js -> ../Jarallax/Jarallax",
+    "files": [
+      "static/chunks/src_components_Jarallax_Jarallax_js.js"
+    ]
+  }
+}
