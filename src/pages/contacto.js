@@ -1,23 +1,27 @@
 import PageBanner from "@/components/BannerSection/PageBanner";
+import ContactInfoTwo from "@/components/ContactSection/ContactInfoTwo";
+import ContactSectionTwo from "@/components/ContactSection/ContactSectionTwo";
 import HeaderOne from "@/components/Header/HeaderOne";
 import MobileMenu from "@/components/Header/MobileMenu";
-import HistoryTimeline from "@/components/HistorySection/HistoryTimeline";
 import Layout from "@/components/Layout/Layout";
 import MainFooter from "@/components/MainFooter/MainFooter";
+import MapBox from "@/components/MapSection/MapBox";
 import SearchPopup from "@/components/SearchPopup/SearchPopup";
 import React from "react";
 
-const PageHistoria = () => {
+const PageContacto = () => {
   return (
     <Layout>
       <HeaderOne />
       <MobileMenu />
       <SearchPopup />
-      <PageBanner title="Historia" />
-      <HistoryTimeline />
+      <PageBanner title="Contacto" />
+      <ContactSectionTwo />
+      <ContactInfoTwo />
+      <MapBox />
       <MainFooter />
     </Layout>
   );
 };
 
-export default PageHistoria;
+export default PageContacto;

@@ -48,6 +48,7 @@ const ShopPage = () => {
                   </button>
                 </form>
               </div>
+
               <div className="shop-range shop-sidebar__single">
                 <h3 className="shop-sidebar__title">Price</h3>
                 <div className="product-sidebar__price-range">
@@ -83,10 +84,11 @@ const ShopPage = () => {
                   </div>
                 </div>
               </div>
+
               <div className="shop-category shop-sidebar__single">
                 <h3 className="shop-sidebar__title">Categories</h3>
                 <ul className="list-unstyled">
-                  {categories.map((category, i) => (
+                  {categories?.map((category, i) => (
                     <li key={i}>
                       <a href="#">{category}</a>
                     </li>
@@ -95,6 +97,7 @@ const ShopPage = () => {
               </div>
             </div>
           </Col>
+          
           <Col lg={9}>
             <div className="product-sorting default-form">
               <p>Showing 1–9 of 12 results</p>

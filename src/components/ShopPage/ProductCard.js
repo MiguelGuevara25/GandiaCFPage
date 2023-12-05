@@ -19,13 +19,13 @@ const ProductCard = ({ product = {} }) => {
             <Link href="/cart">
               <a className="theme-btn btn-style-one">
                 <i className="btn-curve"></i>
-                <span className="btn-title">Add To Cart</span>
+                <span className="btn-title">Añadir al Carrito</span>
               </a>
             </Link>
             <Link href="/product-details">
               <a className="theme-btn btn-style-two">
                 <i className="btn-curve"></i>
-                <span className="btn-title">Save</span>
+                <span className="btn-title">Ver Detalles</span>
               </a>
             </Link>
           </div>
@@ -34,7 +34,7 @@ const ProductCard = ({ product = {} }) => {
           <h3 className="product-card__title">
             <Link href="/product-details">{title}</Link>
           </h3>
-          <p className="product-card__price">${price}</p>
+          <p className="product-card__price">€{price}</p>
           <div className="product-card__stars">
             {Array.from(Array(stars)).map((_, i) => (
               <i key={i} className="fa fa-star"></i>

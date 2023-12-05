@@ -78,12 +78,12 @@ export const contactInfoTwo = [
   {
     id: 1,
     icon: "fa fa-map-marker-alt",
-    text: "66 Broklyn Street, USA",
+    text: "Av. dels Esports, 46701",
   },
   {
     id: 2,
     icon: "fa fa-envelope",
-    text: "needhelp@linoor.com",
+    text: "cfgandia@cfgandia.es",
     email: true,
   },
   {

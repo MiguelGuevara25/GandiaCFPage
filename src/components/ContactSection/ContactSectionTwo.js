@@ -20,11 +20,9 @@ const ContactSectionTwo = () => {
           <Col lg={4}>
             <div className="contact-two__content">
               <div className="sec-title">
-                <h2>
-                  {title} <span className="dot">.</span>
-                </h2>
+                <h2>Contáctanos</h2>
               </div>
-              <p className="contact-two__text">{text}</p>
+              <p className="contact-two__text">Escribir algo...</p>
               <div className="contact-two__social">
                 {socials.map((icon, i) => (
                   <a key={i} href="#" className={icon}></a>
@@ -42,26 +40,39 @@ const ContactSectionTwo = () => {
                         <input
                           type="text"
                           name="username"
-                          placeholder="Your Name"
+                          placeholder="Nombre"
                           required
                         />
                       </div>
                     </Col>
+
                     <Col lg={6} md={6} sm={12} className="form-group">
                       <div className="field-inner">
                         <input
                           type="email"
                           name="email"
-                          placeholder="Email Address"
+                          placeholder="Email"
                           required
                         />
                       </div>
                     </Col>
+
+                    <Col lg={12} md={12} sm={12} className="form-group">
+                      <div className="field-inner">
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Cargo"
+                          required
+                        />
+                      </div>
+                    </Col>
+
                     <Col lg={12} md={12} sm={12} className="form-group">
                       <div className="field-inner">
                         <textarea
                           name="message"
-                          placeholder="Write Message"
+                          placeholder="Escribe tu mensaje..."
                           required
                         ></textarea>
                       </div>

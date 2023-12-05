@@ -9,7 +9,7 @@ const HistoryTimeline = () => {
         {historyTimeline.map(({ id, year, items }) => (
           <div key={id} className="history-timeline__card">
             <span className="history-timeline__year">{year}</span>
-            {items.map(({ id, date, title, text, image }) => (
+            {items?.map(({ id, date, title, text, image }) => (
               <Row key={id}>
                 <Col md={12} lg={6}>
                   <div className="history-timeline__info">
@@ -19,6 +19,7 @@ const HistoryTimeline = () => {
                     <p className="history-timeline__text">{text}</p>
                   </div>
                 </Col>
+
                 <Col md={12} lg={6}>
                   {image && (
                     <div className="history-timeline__image">

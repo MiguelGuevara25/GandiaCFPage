@@ -69,14 +69,12 @@ const navItems = [
   {
     id: 3,
     name: "Noticias",
-    href: "",
-    subNavItems: [{ id: 1, name: "Our Pricing", href: "/pricing" }],
+    href: "/noticias",
   },
   {
     id: 4,
     name: "Tienda",
-    href: "/services",
-    subNavItems: [{ id: 1, name: "All Services", href: "/services" }],
+    href: "/tienda",
   },
   {
     id: 5,
@@ -86,7 +84,7 @@ const navItems = [
   {
     id: 6,
     name: "Contacto",
-    href: "/shop",
+    href: "/contacto",
   },
 ];
 
