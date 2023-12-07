@@ -134,8 +134,10 @@ const HeaderOne = ({
             {links && (
               <div className="other-links clearfix">
                 <div className="link-box">
-                  <div className="call-us">
-                    <Image src={LogoPrueba.src} width={50} />
+                  <div className="call-us" style={{ cursor: "pointer" }}>
+                    <Link href="/login">
+                      <Image src={LogoPrueba.src} width={50} />
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -6649,8 +6649,9 @@ img.lazy-image.loaded {
 .main-footer {
   position: relative;
   color: #999b9f;
-  background: var(--thm-black) url(../assets/images/background/footer-bg.png)
-    center top no-repeat;
+  background: var(--thm-black) 
+    /* url(../assets/images/background/footer-bg.png)
+    center top no-repeat; */
 }
 
 .main-footer .widgets-section {

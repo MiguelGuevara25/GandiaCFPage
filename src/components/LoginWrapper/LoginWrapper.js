@@ -57,7 +57,7 @@ const LoginWrapper = ({ register = false, forgot = false }) => {
                 </Col>
               ))}
             </Row>
-            {!register && (
+            {/* {!register && (
               <p className="text-right">
                 {forgot ? (
                   <TextSplit text={forgotText} />
@@ -65,7 +65,7 @@ const LoginWrapper = ({ register = false, forgot = false }) => {
                   <Link href="/forgot-password">Forgot your password?</Link>
                 )}
               </p>
-            )}
+            )} */}
             <button type="submit" className="theme-btn btn-style-one">
               <i className="btn-curve"></i>
               <span className="btn-title">
@@ -77,15 +77,15 @@ const LoginWrapper = ({ register = false, forgot = false }) => {
               </span>
             </button>
           </form>
-          <p className="signup-link">
+          {/* <p className="signup-link">
             {register ? "Already have an Account?" : "New to linoor?"}{" "}
             <Link href={register ? "/login" : "/register"}>
               {register ? "Login Here" : "Signup"}
             </Link>
-          </p>
-          <p className="copyright-text">
+          </p> */}
+          {/* <p className="copyright-text">
             © copyright {year} by {author}
-          </p>
+          </p> */}
         </div>
       </div>
     </section>

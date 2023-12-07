@@ -1,4 +1,4 @@
-import logo from "@/images/logo-dark.png";
+import logo from "@/images/logoGandia.png";
 import bg from "@/images/update-1-12-2020/background/login-bg.jpg";
 
 export const loginWrapper = {
