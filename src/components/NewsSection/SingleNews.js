@@ -27,14 +27,15 @@ const SingleNews = ({ news = {} }) => {
               <li>
                 <span className="far fa-user-circle"></span> {admin}
               </li>
-              <li>
+              {/* <li>
                 <span className="far fa-comments"></span> {comments} Comments
-              </li>
+              </li> */}
             </ul>
           </div>
           <h5>
             <Link href="/blog-single">{title}</Link>
           </h5>
+          
           <div className="text">{text}</div>
           <div className="link-box">
             <Link href="/blog-single">

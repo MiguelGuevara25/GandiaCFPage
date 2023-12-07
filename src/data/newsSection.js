@@ -3,12 +3,12 @@ const newsSection = {
   newsData: [
     {
       id: 1,
-      image: "news-1.jpg",
-      date: "20 Mar",
+      image: "blog1.png",
+      date: "Hace días",
       admin: "Admin",
       comments: 2,
-      title: "basic rules of running web agency business",
-      text: "Lorem ipsum is simply free text used by copytyping refreshing.",
+      title: "El CF Gandía remonta en Torrellano (1-2)",
+      // text: "Lorem ipsum is simply free text used by copytyping refreshing.",
     },
     {
       id: 2,
@@ -16,8 +16,8 @@ const newsSection = {
       date: "20 Mar",
       admin: "Admin",
       comments: 2,
-      title: "Delivering the best digital marketing",
-      text: "Lorem ipsum is simply free text used by copytyping refreshing.",
+      title: "Una reacción brillante para superar al Castellonense (3-1)",
+      // text: "Lorem ipsum is simply free text used by copytyping refreshing.",
     },
     {
       id: 3,
@@ -25,8 +25,8 @@ const newsSection = {
       date: "20 Mar",
       admin: "Admin",
       comments: 2,
-      title: "Introducing the latest linoor features",
-      text: "Lorem ipsum is simply free text used by copytyping refreshing.",
+      title: "Derrota en el Campo Municipal de la Patacona (2-0)",
+      // text: "Lorem ipsum is simply free text used by copytyping refreshing.",
     },
     {
       id: 4,
@@ -34,8 +34,8 @@ const newsSection = {
       date: "20 Mar",
       admin: "Admin",
       comments: 2,
-      title: "EXPERIENCES THAT CONNECT WITH PEOPLE",
-      text: "Lorem ipsum is simply free text used by copytyping refreshing.",
+      title: "El CF Gandia no suma en una tarde llena de altibajos (1-3)",
+      // text: "Lorem ipsum is simply free text used by copytyping refreshing.",
     },
     {
       id: 5,
@@ -43,8 +43,8 @@ const newsSection = {
       date: "20 Mar",
       admin: "Admin",
       comments: 2,
-      title: "A DEEP UNDERSTANDING OF OUR AUDIENCE",
-      text: "Lorem ipsum is simply free text used by copytyping refreshing.",
+      title: "El CF Gandia sigue sumando ante el Villarreal C (1-1)",
+      // text: "Lorem ipsum is simply free text used by copytyping refreshing.",
     },
     {
       id: 6,
@@ -52,8 +52,8 @@ const newsSection = {
       date: "20 Mar",
       admin: "Admin",
       comments: 2,
-      title: "WE BUILD AND ACTIVATE BRANDS INSIGHT",
-      text: "Lorem ipsum is simply free text used by copytyping refreshing.",
+      title: "Tercera victoria seguida en Soneja (0-1)",
+      // text: "Lorem ipsum is simply free text used by copytyping refreshing.",
     },
   ],
 };

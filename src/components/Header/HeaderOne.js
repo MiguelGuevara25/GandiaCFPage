@@ -133,9 +133,14 @@ const HeaderOne = ({
 
             {links && (
               <div className="other-links clearfix">
-                <Image src={LogoPrueba.src} width={100} />
+                <div className="link-box">
+                  <div className="call-us">
+                    <Image src={LogoPrueba.src} width={50} />
+                  </div>
+                </div>
               </div>
             )}
+
             {rightMenu && (
               <div className="right-menu">
                 <div className="search-btn">

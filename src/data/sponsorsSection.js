@@ -8,7 +8,7 @@ const sponsors = [
   "logoNike.png",
   "logoCorteIngles.png",
   "logoQatar.png",
-  "5.png",
+  "logoJoma.png",
   "1.png",
   "2.png",
   "3.png",
