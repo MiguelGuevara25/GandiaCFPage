@@ -8,7 +8,7 @@ import React from "react";
 
 const PageTecnicos = () => {
   return (
-    <Layout>
+    <Layout pageTitle="Equipo Técnico">
       <HeaderOne />
       <MobileMenu />
       <SearchPopup />

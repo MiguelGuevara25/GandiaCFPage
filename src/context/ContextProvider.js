@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import context from "./context";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "src/firebase";
 
 const ContextProvider = ({ children }) => {
   const [menuStatus, setMenuStatus] = useState(false);
@@ -8,6 +10,9 @@ const ContextProvider = ({ children }) => {
   const [currentActive, setCurrentActive] = useState("#home");
 
   const prueba = "Hola mundo desde el context";
+
+  const login = (email, password) =>
+    signInWithEmailAndPassword(auth, email, password);
 
   const { pathname } = useRouter();
 
@@ -33,6 +38,7 @@ const ContextProvider = ({ children }) => {
     currentActive,
     setCurrentActive,
     prueba,
+    login,
   };
   return <context.Provider value={value}>{children}</context.Provider>;
 };

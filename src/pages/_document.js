@@ -4,18 +4,13 @@ class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const originalRenderPage = ctx.renderPage;
 
-    // Run the React rendering logic synchronously
     ctx.renderPage = () =>
       originalRenderPage({
-        // Useful for wrapping the whole react tree
         enhanceApp: (App) => App,
-        // Useful for wrapping in a per-page basis
         enhanceComponent: (Component) => Component,
       });
 
-    // Run the parent `getInitialProps`, it now includes the custom `renderPage`
     const initialProps = await Document.getInitialProps(ctx);
-
     return initialProps;
   }
 
@@ -38,7 +33,7 @@ class MyDocument extends Document {
           <link rel="icon" href="favicon.ico" />
           <meta
             name="description"
-            content="Linoor is a multipurpose and powerful Digital Services Agency NextJS Template. The template is highly suitable template for companies that offer web design, web development, internet services, digital marketing, SEO services and all other internet marketing and services related agencies and businesses."
+            content="Página Oficial del Club de Fútbol Gandía de España"
           />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 

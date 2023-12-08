@@ -9,7 +9,7 @@ import React from "react";
 
 const PageHistoria = () => {
   return (
-    <Layout>
+    <Layout pageTitle="Historia">
       <HeaderOne />
       <MobileMenu />
       <SearchPopup />

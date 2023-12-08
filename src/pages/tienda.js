@@ -9,7 +9,7 @@ import React from "react";
 
 const PageTienda = () => {
   return (
-    <Layout>
+    <Layout pageTitle="Tienda">
       <HeaderOne />
       <MobileMenu />
       <SearchPopup />

@@ -11,7 +11,7 @@ import React from "react";
 
 const PageContacto = () => {
   return (
-    <Layout>
+    <Layout pageTitle="Contacto">
       <HeaderOne />
       <MobileMenu />
       <SearchPopup />

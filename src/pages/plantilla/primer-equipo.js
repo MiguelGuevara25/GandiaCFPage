@@ -11,7 +11,7 @@ import StrikerTeam from "@/components/componentsGandia/StrikerTeam";
 
 const PagePlantilla = () => {
   return (
-    <Layout>
+    <Layout pageTitle="Plantilla">
       <HeaderOne />
       <MobileMenu />
       <SearchPopup />

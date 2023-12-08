@@ -1,23 +1,33 @@
+import context from "@/context/context";
 import { loginWrapper } from "@/data/loginWrapper";
 import Link from "next/link";
-import React from "react";
+import Router from "next/router";
+import { useContext, useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
-import TextSplit from "../Reuseable/TextSplit";
 
-const { bg, logo, logoTitle, year, author, inputs, forgotText } = loginWrapper;
+const { bg, logo, logoTitle, year, author, forgotText } = loginWrapper;
 
-const LoginWrapper = ({ register = false, forgot = false }) => {
-  const newInputs = inputs.slice(
-    register ? 0 : 1,
-    register ? undefined : forgot ? 2 : 3
-  );
+const LoginWrapper = () => {
+  const { login } = useContext(context);
 
-  const handleSubmit = (e) => {
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = ({ target: { name, value } }) => {
+    setUser({ ...user, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const data = {};
-    newInputs.forEach(({ name }) => (data[name] = formData.get(name)));
-    console.log(data);
+
+    try {
+      await login(user.email, user.password);
+      Router.push("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -44,48 +54,35 @@ const LoginWrapper = ({ register = false, forgot = false }) => {
               </Link>
             </div>
           </div>
+
           <form onSubmit={handleSubmit}>
             <Row>
-              {newInputs.map(({ name, type, placeholder, required }) => (
-                <Col key={name} md={12}>
-                  <input
-                    type={type}
-                    name={name}
-                    placeholder={placeholder}
-                    required={required}
-                  />
-                </Col>
-              ))}
+              <Col md={12}>
+                <input
+                  name="email"
+                  type="text"
+                  placeholder="Correo Electrónico *"
+                  required
+                  onChange={handleChange}
+                />
+              </Col>
+
+              <Col md={12}>
+                <input
+                  name="password"
+                  type="password"
+                  placeholder="Contraseña *"
+                  required
+                  onChange={handleChange}
+                />
+              </Col>
             </Row>
-            {/* {!register && (
-              <p className="text-right">
-                {forgot ? (
-                  <TextSplit text={forgotText} />
-                ) : (
-                  <Link href="/forgot-password">Forgot your password?</Link>
-                )}
-              </p>
-            )} */}
+
             <button type="submit" className="theme-btn btn-style-one">
               <i className="btn-curve"></i>
-              <span className="btn-title">
-                {register
-                  ? "Register Now"
-                  : forgot
-                  ? "Reset Password"
-                  : "Ingresar"}
-              </span>
+              <span className="btn-title">Ingresar</span>
             </button>
           </form>
-          {/* <p className="signup-link">
-            {register ? "Already have an Account?" : "New to linoor?"}{" "}
-            <Link href={register ? "/login" : "/register"}>
-              {register ? "Login Here" : "Signup"}
-            </Link>
-          </p> */}
-          {/* <p className="copyright-text">
-            © copyright {year} by {author}
-          </p> */}
         </div>
       </div>
     </section>

@@ -8,7 +8,7 @@ import Layout from "@/components/Layout/Layout";
 
 const PageNoticias = () => {
   return (
-    <Layout>
+    <Layout pageTitle="Noticias">
       <HeaderOne />
       <MobileMenu />
       <SearchPopup />
