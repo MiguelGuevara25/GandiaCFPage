@@ -9,7 +9,7 @@ const BlogDetails = () => {
     <div className="blog-details">
       <div className="post-details">
         <div className="inner-box">
-          <span>Imagen de 770x444</span>
+          {/* <span>Imagen de 770x444</span> */}
           <div
             className="image-box"
             // style={{ width: "770px", height: "400px" }}
