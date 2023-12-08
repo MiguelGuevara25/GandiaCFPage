@@ -15,7 +15,7 @@ import { Table } from "react-bootstrap";
 
 const PagePrueba = () => {
   return (
-    <Layout>
+    <Layout pageTitle="CF Gandía">
       <HeaderOne />
       <MobileMenu />
       <SearchPopup />

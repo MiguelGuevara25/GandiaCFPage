@@ -1,6 +1,7 @@
 import NavItem from "@/components/Header/NavItem";
 import { useRootContext } from "@/context/context";
 import headerData from "@/data/header";
+import Link from "next/link";
 import React from "react";
 import { Image } from "react-bootstrap";
 
@@ -39,15 +40,18 @@ const MobileMenu = ({ onePage = false }) => {
               {newNavItems.map((navItem) => (
                 <NavItem navItem={navItem} key={navItem.id} mobile />
               ))}
+              <li className="dropdown">
+                <Link href="/login">Iniciar Sesión</Link>
+              </li>
             </ul>
           </div>
         </nav>
         <div className="side-menu__sep"></div>
         <div className="side-menu__content">
-          <p>{text}</p>
+          {/* <p>{text}</p> */}
           <p>
             <a href={`mailto:${email}`}>{email}</a> <br />{" "}
-            <a href={`tel:${phone.split(" ").join("")}`}>{phone}</a>
+            {/* <a href={`tel:${phone.split(" ").join("")}`}>{phone}</a> */}
           </p>
           <div className="side-menu__social">
             {socials.map(({ id, icon, href }) => (

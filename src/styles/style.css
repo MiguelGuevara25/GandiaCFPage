@@ -12753,7 +12753,7 @@ img.lazy-image.loaded {
 }
 
 .side-menu__social a:hover {
-  background-color: #ffaa16;
+  background-color: #009bff;
   color: var(--thm-black);
 }
 
@@ -12779,7 +12779,7 @@ img.lazy-image.loaded {
 }
 
 .side-menu__content p a:hover {
-  color: #ffaa16;
+  color: #009bff;
   text-decoration: underline;
 }
 

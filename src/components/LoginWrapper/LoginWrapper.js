@@ -73,7 +73,7 @@ const LoginWrapper = ({ register = false, forgot = false }) => {
                   ? "Register Now"
                   : forgot
                   ? "Reset Password"
-                  : "Sign in"}
+                  : "Ingresar"}
               </span>
             </button>
           </form>

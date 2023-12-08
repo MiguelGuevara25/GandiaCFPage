@@ -7,6 +7,8 @@ const ContextProvider = ({ children }) => {
   const [openSearch, setOpenSearch] = useState(false);
   const [currentActive, setCurrentActive] = useState("#home");
 
+  const prueba = "Hola mundo desde el context";
+
   const { pathname } = useRouter();
 
   const toggleMenu = (value) => {
@@ -30,6 +32,7 @@ const ContextProvider = ({ children }) => {
     toggleSearch,
     currentActive,
     setCurrentActive,
+    prueba,
   };
   return <context.Provider value={value}>{children}</context.Provider>;
 };

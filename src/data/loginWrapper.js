@@ -4,9 +4,9 @@ import bg from "@/images/update-1-12-2020/background/login-bg.jpg";
 export const loginWrapper = {
   bg,
   logo,
-  logoTitle: "Linoor - DIgital Agency NextJS Template",
+  logoTitle: "Login",
   year: new Date().getFullYear(),
-  author: "Linoor",
+  author: "CF Gandía",
   forgotText: "Please enter your email \n address to get password reset link.",
   inputs: [
     {
@@ -18,13 +18,13 @@ export const loginWrapper = {
     {
       name: "email",
       type: "email",
-      placeholder: "Enter Email Address *",
+      placeholder: "Correo electrónico *",
       required: true,
     },
     {
       name: "password",
       type: "password",
-      placeholder: "Your Password *",
+      placeholder: "Contraseña *",
       required: true,
     },
     {
