@@ -567,7 +567,7 @@ img {
   top: 0;
   width: 100%;
   background: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
   z-index: 1;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
@@ -6649,8 +6649,8 @@ img.lazy-image.loaded {
 .main-footer {
   position: relative;
   color: #999b9f;
-  background: var(--thm-black) 
-    /* url(../assets/images/background/footer-bg.png)
+  background: var(--thm-black);
+  /* url(../assets/images/background/footer-bg.png)
     center top no-repeat; */
 }
 
