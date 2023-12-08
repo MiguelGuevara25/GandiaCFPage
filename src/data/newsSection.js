@@ -12,7 +12,7 @@ const newsSection = {
     },
     {
       id: 2,
-      image: "news-2.jpg",
+      image: "blog2.jpg",
       date: "20 Mar",
       admin: "Admin",
       comments: 2,
@@ -21,7 +21,7 @@ const newsSection = {
     },
     {
       id: 3,
-      image: "news-3.jpg",
+      image: "blog3.jpg",
       date: "20 Mar",
       admin: "Admin",
       comments: 2,
@@ -30,7 +30,7 @@ const newsSection = {
     },
     {
       id: 4,
-      image: "news-4.jpg",
+      image: "blog4.jpg",
       date: "20 Mar",
       admin: "Admin",
       comments: 2,
@@ -39,7 +39,7 @@ const newsSection = {
     },
     {
       id: 5,
-      image: "news-5.jpg",
+      image: "blog5.jpg",
       date: "20 Mar",
       admin: "Admin",
       comments: 2,
@@ -48,7 +48,7 @@ const newsSection = {
     },
     {
       id: 6,
-      image: "news-6.jpg",
+      image: "blog6.jpg",
       date: "20 Mar",
       admin: "Admin",
       comments: 2,
