@@ -33,12 +33,12 @@ const SingleNews = ({ news = {} }) => {
             </ul>
           </div>
           <h5>
-            <Link href="/blog-single">{title}</Link>
+            <Link href="/postSingle">{title}</Link>
           </h5>
-          
+
           <div className="text">{text}</div>
           <div className="link-box">
-            <Link href="/blog-single">
+            <Link href="/postSingle">
               <a className="theme-btn">
                 <span className="flaticon-next-1"></span>
               </a>

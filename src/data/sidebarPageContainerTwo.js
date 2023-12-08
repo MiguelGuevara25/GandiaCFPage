@@ -1,4 +1,5 @@
 import image from "@/images/resource/news-7.jpg";
+import imagePrueba from "@/images/main-slider/pruebafotoGania.jpg";
 
 export const blogPage = {
   title: "Delivering the best digital marketing",
@@ -144,65 +145,17 @@ export const sidebar = {
 };
 
 export const blogDetails = {
-  image,
+  imagePrueba,
   date: "20 Mar",
   admin: "Admin",
-  title: "basic rules of running web agency business",
+  title: "El CF Gandia remonta en Torrellano (1-2)",
+
   text1:
-    "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
+    "Si la semana pasada se ganó en casa ante el Castellonense, la salida a Torrellano, la última del 2023, era la ocasión perfecta de dar continuidad al buen momento del equipo y así fue. Aunque las dudas rodeaban a jugadores clave como Marcos Blasco, Alberto Escudero y Rafa Mella, los tres salieron de inicio y mostraron un buen rendimiento.",
+
   text2:
-    "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like.",
-  tags: ["Business", "Agency", "Technology"],
-  category: ["Business", "Agency"],
-  posts: [
-    "A DEEP UNDERSTANDING OF OUR AUDIENCE",
-    "EXPERIENCES THAT CONNECT WITH PEOPLE",
-  ],
-  comments: [
-    {
-      id: 1,
-      image: "author-7.jpg",
-      name: "Jessica Brown",
-      date: "20 May, 2020 . 4:00 pm",
-      text: "Lorem Ipsum is simply dummy free text of the available printing and typesetting been the industry standard dummy text ever sincer condimentum purus.",
-    },
-    {
-      id: 2,
-      image: "author-8.jpg",
-      name: "David Martin",
-      date: "20 May, 2020 . 4:00 pm",
-      text: "Lorem Ipsum is simply dummy free text of the available printing and typesetting been the industry standard dummy text ever sincer condimentum purus.",
-    },
-  ],
-  inputs: [
-    {
-      name: "username",
-      placeholder: "Your Name",
-      type: "text",
-      required: true,
-    },
-    {
-      name: "email",
-      placeholder: "Email Address",
-      type: "email",
-      required: true,
-    },
-    {
-      name: "phone",
-      placeholder: "Phone Number",
-      type: "text",
-      required: true,
-    },
-    {
-      name: "subject",
-      placeholder: "Subject",
-      type: "text",
-      required: true,
-    },
-    {
-      name: "message",
-      placeholder: "Your Comments",
-      required: true,
-    },
-  ],
+    "Sin embargo, tras otro notable inicio de partido, el equipo volvió a conceder facilidades al rival en un contraataque que el CF Gandia no supo detener y, en la primera ocasión del Athletic Club Torrellano, se adelantaron los de casa. Tocaba remar otra vez.",
+
+  text3:
+    "Ese gol sentó mal a los blanquiazules, ayer vestidos de rojo, que no encontraban la manera de crear peligro hasta que, en el 40′, el árbitro señaló unas manos dentro del área. Ya estuvo cerca de señalar otras anteriormente. Alberto Escudero transformó la pena máxima y suma ya su cuarto tanto en liga.",
 };
