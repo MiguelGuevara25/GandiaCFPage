@@ -35,12 +35,12 @@ export const sliderEight = [
     id: 1,
     bg: "pruebafotoGania.jpg",
     text: "",
-    title: "Reach the Limits with Consulting Agency.",
+    title: "#elclubdelaciutat",
   },
   {
     id: 2,
     bg: "secondPhotoSlider.jpg",
     text: "",
-    title: "Reach the Limits with Consulting Agency.",
+    title: "#elclubdelaciutat",
   },
 ];

@@ -10,10 +10,29 @@ import SponsorsSection from "@/components/SponsorsSection/SponsorsSection";
 import LogoArsenal from "@/images/logoArsenal.png";
 import LogoGandia from "@/images/logoGandia.png";
 import Image from "next/image";
-import React from "react";
+import { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 
 const PagePrueba = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+
+    // Ejecutar al inicio para establecer el estado inicial
+    handleResize();
+
+    // Agregar un event listener para manejar cambios de tamaño de ventana
+    window.addEventListener("resize", handleResize);
+
+    // Limpiar el event listener al desmontar el componente
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <Layout pageTitle="CF Gandía">
       <HeaderOne />
@@ -22,9 +41,9 @@ const PagePrueba = () => {
       <SliderEight />
       <FunFactSeven />
 
-      <div className="d-flex gap-5">
+      <div className={`d-flex gap-5 ${isMobile ? "flex-column" : ""}`}>
         <div
-          className="w-50 text-black px-5 pb-5"
+          className={`${isMobile ? "w-100" : "w-50"} text-black px-5 pb-5`}
           style={{ backgroundColor: "#016FC4", borderRadius: "15px" }}
         >
           <div>
@@ -35,7 +54,7 @@ const PagePrueba = () => {
               <div className="d-flex flex-column align-items-center">
                 <span>La Liga</span>
                 <div className="d-flex align-items-center gap-4">
-                  <div style={{ width: "50px" }}>
+                  <div style={{ width: "40px" }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
                   <span className="fs-2">3-1</span>
@@ -48,11 +67,11 @@ const PagePrueba = () => {
               <div className="d-flex flex-column align-items-center">
                 <span>Champions League</span>
                 <div className="d-flex align-items-center gap-4">
-                  <div style={{ width: "50px" }}>
+                  <div style={{ width: "40px" }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
                   <span className="fs-2">3-1</span>
-                  <div style={{ width: "50px" }}>
+                  <div style={{ width: "40px" }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
                 </div>
@@ -68,14 +87,14 @@ const PagePrueba = () => {
               <div className="d-flex flex-column align-items-center">
                 <span>La Liga</span>
                 <div className="d-flex align-items-center gap-4">
-                  <div style={{ width: "50px" }}>
+                  <div style={{ width: "40px" }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
                   <div className="d-flex flex-column align-items-center">
                     <span className="fs-5">Nov 14</span>
                     <span className="fs-5">16:00</span>
                   </div>
-                  <div style={{ width: "50px" }}>
+                  <div style={{ width: "40px" }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
                 </div>
@@ -85,7 +104,7 @@ const PagePrueba = () => {
         </div>
 
         <div
-          className="w-50 text-black px-5"
+          className={`${isMobile ? "w-100" : "w-50"} text-black px-5 pb-5`}
           style={{ backgroundColor: "#0F3B7C", borderRadius: "15px" }}
         >
           <p className="text-center fs-3" style={{ margin: "0" }}>

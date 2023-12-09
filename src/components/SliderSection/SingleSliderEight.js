@@ -15,7 +15,7 @@ const SingleSliderEight = ({ slide = {} }) => {
       ></div>
       <div className="auto-container">
         <div className="slider-eight__content">
-          <h2 className="slider-eight__title">{title}</h2>
+          <h2 className="slider-eight__title text-uppercase">{title}</h2>
         </div>
       </div>
     </div>
