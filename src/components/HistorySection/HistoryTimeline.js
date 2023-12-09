@@ -25,7 +25,7 @@ const HistoryTimeline = () => {
                     <div className="history-timeline__image">
                       <Image
                         src={
-                          require(`@/images/update-26-02-2021/resources/${image}`)
+                          require(`@/images/resource/${image}`)
                             .default.src
                         }
                         alt=""

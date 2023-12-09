@@ -16697,7 +16697,7 @@ img.lazy-image.loaded {
 }
 
 .history-timeline__image {
-  background-color: #222429;
+  /* background-color: #222429; */
   border-radius: 8px;
   display: inline-block;
   margin-top: 30px;
