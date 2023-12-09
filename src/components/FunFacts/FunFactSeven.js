@@ -19,16 +19,18 @@ const FunFactSeven = () => {
             <Image src={LogoArsenal} alt="Logo Arsenal" />
           </div>
 
-          {funFactSeven.map(({ id, count, text }) => {
-            return (
-              <div key={id} className="d-flex">
-                <div className="funfact-seven__item">
-                  <h4 style={{ margin: "0" }}>{count}</h4>
-                  <p className="funfact-seven__text">{text}</p>
-                </div>
-              </div>
-            );
-          })}
+          <Row className="d-flex gap-5">
+            {funFactSeven.map(({ id, count, text }) => {
+              return (
+                <Col key={id} className="d-flex">
+                  <div className="funfact-seven__item">
+                    <h4 style={{ margin: "0" }}>{count}</h4>
+                    <p className="funfact-seven__text">{text}</p>
+                  </div>
+                </Col>
+              );
+            })}
+          </Row>
 
           <div style={{ width: "100px" }}>
             <Image src={LogoGandia} alt="Logo Gandia " />

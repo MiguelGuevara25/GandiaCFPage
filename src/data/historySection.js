@@ -11,7 +11,7 @@ export const historyTimeline = [
 
       {
         id: 2,
-        // image: "history-1-1.jpg",
+        image: "history2.png",
         text: "Fruto de las conversaciones y diligencias de un grupo de emprendedores, por fin el 20 de diciembre de 1946 quedaba constituido el Club de Fútbol Gandía, figurando como presidente Andrés Merí Puig mientras los colores elegidos fueron los antiguos del Gandía FC, camiseta blanquiazul con pantalón azul. En cuanto a la plantilla de jugadores, la mayor parte fueron reclutados de la A.D. Gandía, reforzándose el total con algunos procedentes del Club Atómico y noveles valores que surgieron del fútbol local, adecentándose paralelamente unos nuevos terrenos que dieron como resultado el Campo del Bulevar, recinto que se empleó mediante usufructo.",
       },
     ],
@@ -23,13 +23,13 @@ export const historyTimeline = [
     items: [
       {
         id: 1,
-        // image: "history-1-2.jpg",
+        // image: "history2.png",
         text: "A lo largo de los años 60’s, los hitos del club resultarían notable aunque falte coronarla con un ascenso a Segunda División, sueño inalcanzable para un club al cual en el último suspiro siempre adolece de algo.",
       },
 
       {
         id: 2,
-        // image: "history-1-2.jpg",
+        image: "history2.png",
         text: "Tras las presidencias de Miguel Vercher y Enrique Peralta en el puesto de presidente durante una sola temporada finalizándose la 60/61 con el quinto puesto, en la campaña 61/62 bajo el mandato de José Olivares Molla y la dirección técnica de José Luis Salinas el primer equipo blanquiazul se proclamará Campeón del Grupo IX con tan sólo cuatro derrotas y una holgura considerable sobre su inmediato perseguidor, el C.D. Alcoyano, levantándose la ilusión entre sus aficionados por lo que pueda ocurrir. En la Promoción, sin embargo, no obtiene demasiada fortuna y es eliminado de buenas a primeras por el Algeciras CF.",
       },
     ],
@@ -47,7 +47,7 @@ export const historyTimeline = [
 
       {
         id: 2,
-        // image: "history-1-2.jpg",
+        image: "history3.png",
         text: "Octavo clasificado, la campaña 71/72 siguiendo en el mismo grupo es un desastre y los blanquiazules sólo se imponen en ocho ocasiones ocupando la vigésima y última posición perdiendo la categoría. Bajo la presidencia de Vicente Ribes Castelló, la campaña 73/74 en el Grupo III es irregular y se concluye decimoséptimo regresando a Regional Preferente, categoría en la cual a lo largo de la edición 74/75 se realiza un gran torneo obteniéndose el primer puesto y, con ello, el regreso directo sin Promoción mediante a Tercera División.",
       },
     ],
@@ -65,7 +65,7 @@ export const historyTimeline = [
 
       {
         id: 2,
-        // image: "history-1-2.jpg",
+        image: "history4.png",
         text: "Con José Avaria al frente, los blanquiazules compiten con el ánimo de acercarse a los primeros puestos pero la existencia de clubs con mayor potencial les hace ser sextos de forma consecutiva en las ediciones 80/81 y 81/82, cerrando el máximo mandatario gandiense su proyecto con un notable cuarto puesto en la edición 82/83.",
       },
     ],
@@ -83,7 +83,7 @@ export const historyTimeline = [
 
       {
         id: 2,
-        // image: "history-1-2.jpg",
+        image: "history5.png",
         text: "En la faceta competitiva, el C.F. Gandía experimentará agudos e intensos altibajos que confundirán a la afición, saboreándose al principio y final de la década las mieles de la Segunda División B con un instante apoteósico en el último campeonato mientras en el ciclo intermedio cunde el desasosiego y la apatía.",
       },
     ],
@@ -101,7 +101,7 @@ export const historyTimeline = [
 
       {
         id: 2,
-        // image: "history-1-2.jpg",
+        image: "history6.png",
         text: "El descenso a Tercera División supone un jarro de agua fría para la afición, sucediéndose a las siguientes campañas una serie de torneos donde los blanquiazules distan mucho de ser el equipo de apenas cinco años antes. Así pues en la edición 01/02 son decimosegundos, en la sesión 02/03 décimos y en la temporada 03/04 decimosextos con grandísimos apuros para eludir el descenso a Regional Preferente.",
       },
     ],
@@ -132,13 +132,19 @@ export const historyTimeline = [
       {
         id: 1,
         // image: "history-1-2.jpg",
-        text: "Falta texto 1",
+        text: "En la edición 11/12 el club de La Safor pasa por numerosos problemas económicos y la situación financiera se revela casi insostenible con alrededor de quinientos mil euros de déficit que propician la dimisión de su presidente y el relevo en la directiva entrando Benjamín Sanz, además de sembrarse una gran incertidumbre sobre su continuidad en el Grupo III. La marcha deportiva va a la par de la financiera y no se consiguen abandonar los últimos puestos además de presentarse quejas por parte de la plantilla, consiguiéndose no sin gran esfuerzo terminar la competición pese a que todo está perdido desde el punto de vista futbolístico al concluir decimoctavo, descendiendo a Tercera División con la soga al cuello.",
       },
 
       {
         id: 2,
         // image: "history-1-2.jpg",
-        text: "Falta texto 2",
+        text: "En la temporada 12/13 Jesús Sendra Boix toma el testigo de un club económicamente casi inviable, con problemas de todo tipo y una plantilla a reconstruir, regresando a un Grupo VI de la Tercera División donde, con Vicente Medina, se ocupa el decimoctavo puesto encadenando un segundo descenso consecutivo, en esta ocasión a Regional Preferente. La amarga situación blanquiazul no se consigue enmendar y en la campaña 13/14 se concluye decimoséptimo descendiendo a Primera Regional, una categoría donde no se milita desde hace décadas.",
+      },
+
+      {
+        id: 3,
+        // image: "history-1-2.jpg",
+        text: "En cuanto al C.F. Gandía, con la impagable labor de Jesús Sendra por mantener la entidad a flote, en la temporada 14/15 se ocupa la decimotercera posición debiendo jugar una Promoción para no descender donde evita el caos, paso que no puede eludir en la campaña 15/16 cuando es decimosexto viéndose condenado a jugar en Segunda Regional, la categoría donde empezó su carrera y última de las que organiza la Federación Valenciana. El CF Gandía consiguió su vuelta a Primera Regional y en esa misma categoría siendo invictos conseguimos el Ascenso a Preferente. En nuestra vuelta a Preferente juntos volveremos con trabajo e ilusión a luchar por el ascenso.",
       },
     ],
   },

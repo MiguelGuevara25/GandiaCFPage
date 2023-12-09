@@ -1,6 +1,7 @@
 import { historyTimeline } from "@/data/historySection";
 import React from "react";
 import { Col, Image, Row } from "react-bootstrap";
+import image12 from "@/images/resource/history1.png";
 
 const HistoryTimeline = () => {
   return (
@@ -9,32 +10,34 @@ const HistoryTimeline = () => {
         {historyTimeline.map(({ id, year, items }) => (
           <div key={id} className="history-timeline__card">
             <span className="history-timeline__year">{year}</span>
-            {items?.map(({ id, date, title, text, image }) => (
-              <Row key={id}>
-                <Col md={12} lg={6}>
-                  <div className="history-timeline__info">
-                    <span className="history-timeline__date">{date}</span>
-                    <h3 className="history-timeline__title">{title}</h3>
+            {items?.map(({ id, date, title, text, image }) => {
+              console.log(image12);
+              return (
+                <Row key={id}>
+                  <Col md={12} lg={6}>
+                    <div className="history-timeline__info">
+                      <span className="history-timeline__date">{date}</span>
+                      <h3 className="history-timeline__title">{title}</h3>
 
-                    <p className="history-timeline__text">{text}</p>
-                  </div>
-                </Col>
-
-                <Col md={12} lg={6}>
-                  {image && (
-                    <div className="history-timeline__image">
-                      <Image
-                        src={
-                          require(`@/images/resource/${image}`)
-                            .default.src
-                        }
-                        alt=""
-                      />
+                      <p className="history-timeline__text">{text}</p>
                     </div>
-                  )}
-                </Col>
-              </Row>
-            ))}
+                  </Col>
+
+                  <Col md={12} lg={6}>
+                    {image && (
+                      <div className="history-timeline__image">
+                        <Image
+                          src={
+                            require(`@/images/resource/${image}`).default.src
+                          }
+                          alt=""
+                        />
+                      </div>
+                    )}
+                  </Col>
+                </Row>
+              );
+            })}
           </div>
         ))}
       </div>

@@ -17,7 +17,7 @@ const TechnicalTeam = ({ className = "", showTitle = true, items = 4 }) => {
             .slice(0, items)
             .map(({ image, name, designation, socials }) => {
               return (
-                <Col md={6} lg={6}>
+                <Col md={6} lg={4}>
                   <div className="team-card-three">
                     <div className="team-card-three__inner">
                       <div className="team-card-three__image">

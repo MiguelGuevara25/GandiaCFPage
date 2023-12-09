@@ -20,14 +20,9 @@ const PagePrueba = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1024);
     };
-
-    // Ejecutar al inicio para establecer el estado inicial
     handleResize();
-
-    // Agregar un event listener para manejar cambios de tamaño de ventana
     window.addEventListener("resize", handleResize);
 
-    // Limpiar el event listener al desmontar el componente
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -50,16 +45,18 @@ const PagePrueba = () => {
             <p className="text-center fs-3" style={{ margin: "0" }}>
               Partidos Previos
             </p>
+            
+            {/* Cambio de Tamaño de fondo y separación de escudos */}
             <div style={{ backgroundColor: "#4E99D0", borderRadius: "15px" }}>
               <div className="d-flex flex-column align-items-center">
                 <span>La Liga</span>
-                <div className="d-flex align-items-center gap-4">
+                <div className="d-flex align-items-center" style={{gap: "50px"}}>
                   <div style={{ width: "40px" }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
                   <span className="fs-2">3-1</span>
                   <div style={{ width: "50px" }}>
-                    <Image src={LogoGandia} alt="Logo Arsenal" />
+                    <Image src={LogoGandia} alt="Logo Gandia" />
                   </div>
                 </div>
               </div>

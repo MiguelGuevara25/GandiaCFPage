@@ -22,7 +22,7 @@ const ContactSectionTwo = () => {
               <div className="sec-title">
                 <h2>Contáctanos</h2>
               </div>
-              <p className="contact-two__text">Escribir algo...</p>
+              {/* <p className="contact-two__text">Escribir algo...</p> */}
               <div className="contact-two__social">
                 {socials.map((icon, i) => (
                   <a key={i} href="#" className={icon}></a>
