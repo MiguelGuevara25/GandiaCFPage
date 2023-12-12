@@ -19,10 +19,10 @@ const FunFactSeven = () => {
             <Image src={LogoArsenal} alt="Logo Arsenal" />
           </div>
 
-          <Row className="d-flex gap-5">
+          <Row className="">
             {funFactSeven.map(({ id, count, text }) => {
               return (
-                <Col key={id} className="d-flex">
+                <Col key={id} lg={3} md={6}>
                   <div className="funfact-seven__item">
                     <h4 style={{ margin: "0" }}>{count}</h4>
                     <p className="funfact-seven__text">{text}</p>

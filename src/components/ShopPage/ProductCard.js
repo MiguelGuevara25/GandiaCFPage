@@ -13,7 +13,7 @@ const ProductCard = ({ product = {} }) => {
             src={
               require(`@/images/update-26-01-2021/shops/${image}`).default.src
             }
-            alt=""
+            alt="Product"
           />
           <div className="product-card__buttons">
             <Link href="/cart">

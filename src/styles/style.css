@@ -20211,7 +20211,7 @@ img.lazy-image.loaded {
 
 .funfact-seven__text {
   margin: 0;
-  color: #579eee;
+  color: #009bff;
   letter-spacing: 0.2em;
   font-weight: 500;
   font-size: 12px;
@@ -20244,11 +20244,11 @@ img.lazy-image.loaded {
 }
 
 .funfact-seven [class*="col-"]:nth-child(2) .funfact-seven__text {
-  color: #ff9a61;
+  color: #009bff;
 }
 
 .funfact-seven [class*="col-"]:nth-child(3) .funfact-seven__text {
-  color: #54d6ad;
+  color: #009bff;
 }
 
 @media (min-width: 992px) {
@@ -20259,7 +20259,7 @@ img.lazy-image.loaded {
 }
 
 .funfact-seven [class*="col-"]:nth-child(4) .funfact-seven__text {
-  color: #f15d8a;
+  color: #009bff;
 }
 
 /* Pricing two */
