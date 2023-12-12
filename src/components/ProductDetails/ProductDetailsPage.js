@@ -25,13 +25,13 @@ const ProductDetailsPage = () => {
               <h3 className="product-details__title">{title}</h3>
               <p className="product-details__price">${price}</p>
             </div>
-            <div className="product-details__reveiw">
+            {/* <div className="product-details__reveiw">
               {Array.from(Array(stars)).map((_, i) => (
                 <i key={i} className="fa fa-star"></i>
               ))}
 
               <span>{customerReviews} Customer Reviews</span>
-            </div>
+            </div> */}
             <div className="product-details__content">
               <p>{text}</p>
               <p>
@@ -39,9 +39,7 @@ const ProductDetailsPage = () => {
               </p>
             </div>
             <div className="product-details__quantity">
-              <h3 className="product-details__quantity-title">
-                Choose quantity
-              </h3>
+              <h3 className="product-details__quantity-title">Cantidad</h3>
               <div className="quantity-box">
                 <button
                   onClick={() =>
@@ -70,25 +68,25 @@ const ProductDetailsPage = () => {
               </div>
             </div>
             <div className="product-details__buttons">
-              <Link href="/cart">
+              {/* <Link href="/cart">
                 <a className="theme-btn btn-style-two">
                   <i className="btn-curve"></i>
                   <span className="btn-title">Add to wishlist</span>
                 </a>
-              </Link>
-              <Link href="/cart">
+              </Link> */}
+              <Link href="/carrito-compras">
                 <a className="theme-btn btn-style-one">
                   <i className="btn-curve"></i>
-                  <span className="btn-title">Add to cart</span>
+                  <span className="btn-title">Añadir al carrito</span>
                 </a>
               </Link>
             </div>
-            <div className="product-details__social">
+            {/* <div className="product-details__social">
               <span>Share with friends</span>
               {socials.map(({ id, icon, href }) => (
                 <a key={id} href={href} className={icon}></a>
               ))}
-            </div>
+            </div> */}
           </Col>
         </Row>
       </div>

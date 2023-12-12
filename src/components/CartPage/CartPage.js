@@ -76,7 +76,7 @@ const CartPage = () => {
           </table>
         </div>
         <Row>
-          <Col lg={8}>
+          {/* <Col lg={8}>
             <form
               onSubmit={handleSubmit}
               className="default-form cart-cupon__form"
@@ -92,33 +92,33 @@ const CartPage = () => {
                 <span className="btn-title">Apply coupon</span>
               </button>
             </form>
-          </Col>
-          <Col lg={4}>
+          </Col> */}
+          <Col lg={12}>
             <ul className="cart-total list-unstyled">
               <li>
                 <span>Subtotal</span>
-                <span>${subtotal.toFixed(2)} </span>
+                <span>€{subtotal.toFixed(2)} </span>
               </li>
-              <li>
+              {/* <li>
                 <span>Shipping Cost</span>
-                <span>${shipping} </span>
-              </li>
+                <span>{shipping} </span>
+              </li> */}
               <li>
                 <span>Total</span>
-                <span className="cart-total__total">${total.toFixed(2)}</span>
+                <span className="cart-total__total">€{total.toFixed(2)}</span>
               </li>
             </ul>
             <div className="cart-page__buttons">
-              <Link href="/cart">
+              {/* <Link href="/cart">
                 <a className="theme-btn btn-style-two">
                   <i className="btn-curve"></i>
                   <span className="btn-title">update</span>
                 </a>
-              </Link>
+              </Link> */}
               <Link href="/checkout">
                 <a className="theme-btn btn-style-one">
                   <i className="btn-curve"></i>
-                  <span className="btn-title">Checkout</span>
+                  <span className="btn-title">Pagar</span>
                 </a>
               </Link>
             </div>

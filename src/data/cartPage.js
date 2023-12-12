@@ -1,16 +1,16 @@
 export const cartPage = {
-  items: ["Item", "Price", "Quantity", "Total", "Remove"],
+  items: ["Producto", "Precio", "Cantidad", "Total", ""],
   products: [
     {
       id: 1,
-      image: "cart-1-1.jpg",
-      title: "comfy chair",
+      image: "polo1.png",
+      title: "Camiseta Oficial",
       price: 9.99,
       quantity: 1,
     },
     {
       id: 2,
-      image: "cart-1-2.jpg",
+      image: "polo1.png",
       title: "classic chair",
       price: 9.99,
       quantity: 1,

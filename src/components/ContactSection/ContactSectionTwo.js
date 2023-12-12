@@ -23,11 +23,11 @@ const ContactSectionTwo = () => {
                 <h2>Contáctanos</h2>
               </div>
               {/* <p className="contact-two__text">Escribir algo...</p> */}
-              <div className="contact-two__social">
+              {/* <div className="contact-two__social">
                 {socials.map((icon, i) => (
                   <a key={i} href="#" className={icon}></a>
                 ))}
-              </div>
+              </div> */}
             </div>
           </Col>
           <Col lg={8}>
@@ -80,7 +80,7 @@ const ContactSectionTwo = () => {
                     <Col lg={12} md={12} sm={12} className="form-group">
                       <button className="theme-btn btn-style-one">
                         <i className="btn-curve"></i>
-                        <span className="btn-title">Send message</span>
+                        <span className="btn-title">Enviar Mensaje</span>
                       </button>
                     </Col>
                   </Row>

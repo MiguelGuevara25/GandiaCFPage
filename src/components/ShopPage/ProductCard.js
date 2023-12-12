@@ -16,13 +16,13 @@ const ProductCard = ({ product = {} }) => {
             alt="Product"
           />
           <div className="product-card__buttons">
-            <Link href="/cart">
+            <Link href="/carrito-compras">
               <a className="theme-btn btn-style-one">
                 <i className="btn-curve"></i>
                 <span className="btn-title">Añadir al Carrito</span>
               </a>
             </Link>
-            <Link href="/product-details">
+            <Link href="/detalle-producto">
               <a className="theme-btn btn-style-two">
                 <i className="btn-curve"></i>
                 <span className="btn-title">Ver Detalles</span>
@@ -32,7 +32,7 @@ const ProductCard = ({ product = {} }) => {
         </div>
         <div className="product-card__content">
           <h3 className="product-card__title">
-            <Link href="/product-details">{title}</Link>
+            <Link href="/detalle-producto">{title}</Link>
           </h3>
           <p className="product-card__price">€{price}</p>
           <div className="product-card__stars">

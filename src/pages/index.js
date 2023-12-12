@@ -36,21 +36,27 @@ const PagePrueba = () => {
       <SliderEight />
       <FunFactSeven />
 
-      <div className={`d-flex gap-5 ${isMobile ? "flex-column" : ""}`}>
+      <div
+        className={`d-flex gap-5 ${isMobile ? "flex-column" : ""}`}
+        style={{ width: "85%", margin: "0 auto" }}
+      >
         <div
-          className={`${isMobile ? "w-100" : "w-50"} text-black px-5 pb-5`}
+          className={`${isMobile ? "w-100" : "w-50"} text-white px-5 pb-5`}
           style={{ backgroundColor: "#016FC4", borderRadius: "15px" }}
         >
           <div>
             <p className="text-center fs-3" style={{ margin: "0" }}>
               Partidos Previos
             </p>
-            
+
             {/* Cambio de Tamaño de fondo y separación de escudos */}
             <div style={{ backgroundColor: "#4E99D0", borderRadius: "15px" }}>
               <div className="d-flex flex-column align-items-center">
                 <span>La Liga</span>
-                <div className="d-flex align-items-center" style={{gap: "50px"}}>
+                <div
+                  className="d-flex align-items-center"
+                  style={{ gap: "50px" }}
+                >
                   <div style={{ width: "40px" }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
@@ -63,7 +69,10 @@ const PagePrueba = () => {
 
               <div className="d-flex flex-column align-items-center">
                 <span>Champions League</span>
-                <div className="d-flex align-items-center gap-4">
+                <div
+                  className="d-flex align-items-center"
+                  style={{ gap: "50px" }}
+                >
                   <div style={{ width: "40px" }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
@@ -83,7 +92,10 @@ const PagePrueba = () => {
             <div style={{ backgroundColor: "#4E99D0", borderRadius: "15px" }}>
               <div className="d-flex flex-column align-items-center">
                 <span>La Liga</span>
-                <div className="d-flex align-items-center gap-4">
+                <div
+                  className="d-flex align-items-center"
+                  style={{ gap: "50px" }}
+                >
                   <div style={{ width: "40px" }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
@@ -101,7 +113,7 @@ const PagePrueba = () => {
         </div>
 
         <div
-          className={`${isMobile ? "w-100" : "w-50"} text-black px-5 pb-5`}
+          className={`${isMobile ? "w-100" : "w-50"} text-white px-5 pb-5`}
           style={{ backgroundColor: "#0F3B7C", borderRadius: "15px" }}
         >
           <p className="text-center fs-3" style={{ margin: "0" }}>
