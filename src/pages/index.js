@@ -38,7 +38,7 @@ const PagePrueba = () => {
 
       <div
         className={`d-flex gap-5 ${isMobile ? "flex-column" : ""}`}
-        style={{ width: "85%", margin: "0 auto" }}
+        style={{ width: "90%", margin: "0 auto" }}
       >
         <div
           className={`${isMobile ? "w-100" : "w-50"} text-white px-5 pb-5`}
@@ -120,7 +120,7 @@ const PagePrueba = () => {
             La Liga 2025-2026
           </p>
 
-          <Table borderless className="text-white">
+          <Table borderless>
             <thead>
               <tr style={{ fontSize: "13px", fontWeight: "400" }}>
                 <th>Posición</th>

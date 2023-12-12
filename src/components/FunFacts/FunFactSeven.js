@@ -1,12 +1,26 @@
 import { funFactSeven } from "@/data/funFacts";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import VisibilityCountUp from "../VisibilityCountUp/VisibilityCountUp";
 import LogoArsenal from "@/images/logoArsenal.png";
 import LogoGandia from "@/images/logoGandia.png";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const FunFactSeven = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <section className="funfact-seven">
       <div className="auto-container">
@@ -14,7 +28,11 @@ const FunFactSeven = () => {
           <h2 className="sec-title-seven__title">Estadio Santiago Bernabéu</h2>
         </div>
 
-        <div className="d-flex justify-content-between align-items-center">
+        <div
+          className={`d-flex justify-content-between align-items-center ${
+            isMobile ? "flex-column" : "flex-row"
+          }`}
+        >
           <div style={{ width: "100px" }}>
             <Image src={LogoArsenal} alt="Logo Arsenal" />
           </div>
