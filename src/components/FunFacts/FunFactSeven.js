@@ -40,10 +40,30 @@ const FunFactSeven = () => {
           <Row className="">
             {funFactSeven.map(({ id, count, text }) => {
               return (
-                <Col key={id} lg={3} md={6}>
-                  <div className="funfact-seven__item">
-                    <h4 style={{ margin: "0" }}>{count}</h4>
-                    <p className="funfact-seven__text">{text}</p>
+                <Col key={id}>
+                  <div
+                    className="funfact-seven__item"
+                    style={{
+                      width: `${isMobile ? "67px" : "150px"}`,
+                      height: `${isMobile ? "67px" : "150px"}`,
+                    }}
+                  >
+                    <h4
+                      style={{
+                        margin: "0",
+                        fontSize: `${isMobile ? "20px" : "40px"}`,
+                      }}
+                    >
+                      {count}
+                    </h4>
+                    <p
+                      className="funfact-seven__text"
+                      style={{
+                        letterSpacing: `${isMobile ? "0px" : "0.2em"}`,
+                      }}
+                    >
+                      {text}
+                    </p>
                   </div>
                 </Col>
               );

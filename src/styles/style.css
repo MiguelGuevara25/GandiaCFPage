@@ -20222,7 +20222,7 @@ img.lazy-image.loaded {
 .funfact-seven__text::before {
   content: "";
   border-radius: 50%;
-  border: 8px solid currentColor;
+  /* border: 8px solid currentColor; */
   position: absolute;
   top: 15px;
   left: 15px;

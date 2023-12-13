@@ -178,7 +178,11 @@ const PagePrueba = () => {
           </Table> */}
           <table
             className="table table-borderless"
-            style={{ backgroundColor: "red" }}
+            // style={{
+            //   borderCollapse: "collapse",
+            //   width: "100%",
+            //   verticalAlign: "top",
+            // }}
           >
             <thead>
               <tr style={{ fontSize: "13px", fontWeight: "400" }}>
