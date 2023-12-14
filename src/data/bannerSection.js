@@ -16,8 +16,8 @@ export const bannerTwo = [
   {
     id: 3,
     bg: "secondPhotoSlider.jpg",
-    subtitle: "welcome to Linoor agency",
-    title: "Smart Web\nDesign Agency",
+    subtitle: "CF Gandía",
+    title: "El club de la ciutat",
   },
 ];
 

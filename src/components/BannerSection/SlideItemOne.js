@@ -27,10 +27,10 @@ const SlideItemOne = ({ slide = {} }, ref) => {
                 <TextSplit text={title} />
               </h1>
               <div className="link-box">
-                <Link href="/about">
+                <Link href="/tienda">
                   <a className="theme-btn btn-style-one">
                     <i className="btn-curve"></i>
-                    <span className="btn-title">Discover More</span>
+                    <span className="btn-title">Compra tus entradas</span>
                   </a>
                 </Link>
               </div>

@@ -5,10 +5,15 @@ import Router from "next/router";
 import { useContext, useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
 
-const { bg, logo, logoTitle, year, author, forgotText } = loginWrapper;
+const { bg, logo, logoTitle, year, author, inputs, forgotText } = loginWrapper;
 
-const LoginWrapper = () => {
+const LoginWrapper = ({ register = false, forgot = false }) => {
   const { login } = useContext(context);
+
+  const newInputs = inputs.slice(
+    register ? 0 : 1,
+    register ? undefined : forgot ? 2 : 3
+  );
 
   const [user, setUser] = useState({
     email: "",
@@ -54,35 +59,49 @@ const LoginWrapper = () => {
               </Link>
             </div>
           </div>
-
           <form onSubmit={handleSubmit}>
             <Row>
-              <Col md={12}>
-                <input
-                  name="email"
-                  type="text"
-                  placeholder="Correo Electrónico *"
-                  required
-                  onChange={handleChange}
-                />
-              </Col>
-
-              <Col md={12}>
-                <input
-                  name="password"
-                  type="password"
-                  placeholder="Contraseña *"
-                  required
-                  onChange={handleChange}
-                />
-              </Col>
+              {newInputs.map(({ name, type, placeholder, required }) => (
+                <Col key={name} md={12}>
+                  <input
+                    type={type}
+                    name={name}
+                    placeholder={placeholder}
+                    required={required}
+                    onChange={handleChange}
+                  />
+                </Col>
+              ))}
             </Row>
-
+            {/* {!register && (
+              <p className="text-right">
+                {forgot ? (
+                  <TextSplit text={forgotText} />
+                ) : (
+                  <Link href="/forgot-password">Forgot your password?</Link>
+                )}
+              </p>
+            )} */}
             <button type="submit" className="theme-btn btn-style-one">
               <i className="btn-curve"></i>
-              <span className="btn-title">Ingresar</span>
+              <span className="btn-title">
+                {register
+                  ? "Regístrate Ahora"
+                  : forgot
+                  ? "Reset Password"
+                  : "Ingresar"}
+              </span>
             </button>
           </form>
+          <p className="signup-link">
+            {register ? "¿Ya eres socio?" : "¿Quieres ser socio?"}{" "}
+            <Link href={register ? "/login" : "/register"}>
+              {register ? "Ingresa" : "Registrate"}
+            </Link>
+          </p>
+          <p className="copyright-text">
+            © copyright {year} by {author}
+          </p>
         </div>
       </div>
     </section>
