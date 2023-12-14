@@ -25,7 +25,11 @@ const FunFactSeven = () => {
     <section className="funfact-seven">
       <div className="auto-container">
         <div className="sec-title-seven text-center">
-          <h2 className="sec-title-seven__title">Estadio Santiago Bernabéu</h2>
+          <h2 className="sec-title-seven__title">
+            Estadio
+            <br />
+            <span>Santiago Bernabéu</span>
+          </h2>
         </div>
 
         <div

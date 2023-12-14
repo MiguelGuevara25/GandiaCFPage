@@ -97,7 +97,7 @@ const HeaderOne = ({
                       src={Logo.src}
                       alt={title}
                       title={title}
-                      width="100"
+                      width="80"
                     />
                   </a>
                 </Link>

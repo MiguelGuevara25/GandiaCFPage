@@ -30,14 +30,15 @@ const AboutSection = () => {
               <div className="sec-title">
                 <h2>
                   <TextSplit text={title} />
-                  <span className="dot">.</span>
                 </h2>
+
                 <div className="lower-text">{text1}</div>
               </div>
               <div className="text">
                 <p>{text2}</p>
               </div>
-              <div className="text clearfix">
+
+              {/* <div className="text clearfix">
                 <ul>
                   {textList.map((text, i) => (
                     <li key={i}>{text}</li>
@@ -50,6 +51,7 @@ const AboutSection = () => {
                   </span>
                 </div>
               </div>
+
               <div className="link-box">
                 <Link href="/about">
                   <a className="theme-btn btn-style-one">
@@ -57,7 +59,7 @@ const AboutSection = () => {
                     <span className="btn-title">Discover More</span>
                   </a>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </Col>
         </Row>

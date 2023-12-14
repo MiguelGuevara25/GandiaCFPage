@@ -6,7 +6,7 @@ import React from "react";
 import { Image } from "react-bootstrap";
 import NavItem from "./NavItem";
 
-const { navItems, title, logo7 } = headerData;
+const { navItems, title, logo1 } = headerData;
 
 const HeaderTwo = ({ headerStyle = "mainmenu-six", header = 6 }) => {
   const { scrollTop } = useScroll(120);
@@ -24,7 +24,7 @@ const HeaderTwo = ({ headerStyle = "mainmenu-six", header = 6 }) => {
             <div className="mainmenu-seven__left">
               <Link href="/index-main">
                 <a>
-                  <Image src={logo7.src} width={134} alt={title} />
+                  <Image src={logo1.src} width={100} alt={title} />
                 </a>
               </Link>
             </div>

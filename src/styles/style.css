@@ -589,7 +589,8 @@ img {
 }
 
 .header-style-two.fixed-header .header-upper {
-  background: var(--thm-black);
+  /* background: var(--thm-black); */
+  background: #004176;
   -ms-box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.08);
   -o-box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.08);
   -webkit-box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.08);
@@ -816,10 +817,10 @@ img {
   color: #ffffff;
 }
 
-.header-style-two .main-menu .navigation > li > a,
+/* .header-style-two .main-menu .navigation > li > a,
 .header-style-two .main-menu .navigation > li:hover > a {
   color: var(--thm-black);
-}
+} */
 
 .header-style-two .main-menu .navigation > li.current > a,
 .header-style-two.fixed-header .main-menu .navigation > li > a,
@@ -827,9 +828,9 @@ img {
   color: #fff;
 }
 
-.header-style-two.fixed-header .main-menu .navigation > li.current > a {
+/* .header-style-two.fixed-header .main-menu .navigation > li.current > a {
   color: var(--thm-base);
-}
+} */
 
 .main-menu .navigation > li > a:before {
   content: "";
@@ -844,9 +845,9 @@ img {
   transition: all 500ms ease;
 }
 
-.header-style-two .main-menu .navigation > li > a:before {
+/* .header-style-two .main-menu .navigation > li > a:before {
   border-bottom-color: #fff;
-}
+} */
 
 .header-style-two.fixed-header .main-menu .navigation > li > a:before {
   border-bottom-color: var(--thm-base);
@@ -3920,10 +3921,10 @@ img.lazy-image.loaded {
 .about-section .image-column .image-block img {
   display: block;
   width: 100%;
-  -webkit-filter: grayscale(100%);
+  /* -webkit-filter: grayscale(100%);
   -ms-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
-  filter: grayscale(100%);
+  filter: grayscale(100%); */
   border-radius: 7px;
 }
 
@@ -3953,7 +3954,7 @@ img.lazy-image.loaded {
 
 .about-section .text-column .sec-title .lower-text {
   text-transform: uppercase;
-  font-size: 26px;
+  font-size: 35px;
   font-weight: 300;
   letter-spacing: 0;
   font-family: var(--thm-font);
@@ -16648,7 +16649,7 @@ img.lazy-image.loaded {
   .history-timeline__year {
     width: 107px;
     height: 107px;
-    font-size: 40px;
+    font-size: 28px;
   }
 }
 
@@ -17270,7 +17271,7 @@ img.lazy-image.loaded {
 }
 
 .sec-title-seven__title span {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .sec-title-eight {
@@ -20222,7 +20223,7 @@ img.lazy-image.loaded {
 .funfact-seven__text::before {
   content: "";
   border-radius: 50%;
-  /* border: 8px solid currentColor; */
+  border: 8px solid currentColor;
   position: absolute;
   top: 15px;
   left: 15px;

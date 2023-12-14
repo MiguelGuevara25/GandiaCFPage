@@ -14,7 +14,6 @@ const DiscoverSection = ({ ShowTitle = true }) => {
           <div className="sec-title centered">
             <h2>
               <TextSplit text={title} />
-              <span className="dot">.</span>
             </h2>
           </div>
         )}
@@ -32,7 +31,7 @@ const DiscoverSection = ({ ShowTitle = true }) => {
                   <div className="cap-inner">
                     <h5>{title}</h5>
                     <div className="more-link">
-                      <Link href="/about">
+                      <Link href="/postSingle">
                         <a>
                           <span className="fa fa-angle-right"></span>
                         </a>

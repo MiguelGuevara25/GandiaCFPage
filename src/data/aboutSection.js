@@ -1,6 +1,6 @@
-import image1 from "@/images/resource/featured-image-1.jpg";
+import image1 from "@/images/resource/photoBienvenida2.png";
 import image3 from "@/images/resource/featured-image-15.jpg";
-import image2 from "@/images/resource/featured-image-2.jpg";
+import image2 from "@/images/resource/photoBienvenida.png";
 import image12 from "@/images/update-01-10-2021/resources/about-10-1-1.jpg";
 import image11 from "@/images/update-01-10-2021/resources/about-11-1-3.jpg";
 import image10 from "@/images/update-01-10-2021/resources/about-eight-1-1.png";
@@ -15,11 +15,13 @@ import image13 from "@/images/update-26-02-2021/resources/about-me-1.jpg";
 export const aboutSectionOne = {
   image1,
   image2,
-  title: "We’re the best agency\nin downtown",
-  text1:
-    "We are committed to providing our customers with exceptional service while offering our employees the best training.",
+  // title: "We’re the best agency\nin downtown",
+  title: "Bienvenida",
+  text1: "Familia blanquiazul",
+  // text1:
+  //   "We are committed to providing our customers with exceptional service while offering our employees the best training.",
   text2:
-    "Lorem Ipsum is simply dummy text of free available in market the printing and typesetting industry has been the industry's standard dummy text ever.",
+    "Es para nosotros un placer daros la bienvenida la nueva página web oficial del CF Gandia, un espacio donde conocer toda la actualidad del club en un espacio renovado. Resultados, clasificaciones, noticias de última hora todo ello en un lugar adaptado en interactividad y modernidad para que nuestros aficionados puedan acceder desde cualquier lugar a la información. Adaptada a todo tipo de tecnología desde smartphones hasta tablets. No dejéis de visitar la web, para no perder ningún tipo de detalle. El CF Gandia es más que unos colores es un sentimiento, una pasión.",
   textList: [
     "Suspe ndisse suscipit sagittis leo.",
     "Entum estibulum dignissim posuere.",

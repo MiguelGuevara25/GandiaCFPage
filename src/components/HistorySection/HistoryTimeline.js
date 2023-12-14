@@ -1,7 +1,6 @@
 import { historyTimeline } from "@/data/historySection";
 import React from "react";
 import { Col, Image, Row } from "react-bootstrap";
-import image12 from "@/images/resource/history1.png";
 
 const HistoryTimeline = () => {
   return (
@@ -11,7 +10,6 @@ const HistoryTimeline = () => {
           <div key={id} className="history-timeline__card">
             <span className="history-timeline__year">{year}</span>
             {items?.map(({ id, date, title, text, image }) => {
-              console.log(image12);
               return (
                 <Row key={id}>
                   <Col md={12} lg={6}>

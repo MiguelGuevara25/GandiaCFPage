@@ -8,7 +8,7 @@ const {
   about,
   year,
   author,
-  logo3,
+  logo,
   socials,
   links,
   address,
@@ -22,7 +22,7 @@ const MainFooterTwo = () => {
     <footer className="main-footer__three">
       <div className="auto-container">
         <Row>
-          <Col md={6} lg={3}>
+          <Col md={6} lg={4}>
             <div className="footer-widget">
               <h3>About</h3>
               <p>{about}</p>
@@ -31,9 +31,9 @@ const MainFooterTwo = () => {
               </Link>
             </div>
           </Col>
-          <Col md={6} lg={3}>
+          <Col md={6} lg={4}>
             <div className="footer-widget">
-              <h3>Explore</h3>
+              <h3>Explorar</h3>
               <ul className="list-unstyled footer-widget__links">
                 {links.map(({ id, href, title }) => (
                   <li key={id}>
@@ -43,7 +43,7 @@ const MainFooterTwo = () => {
               </ul>
             </div>
           </Col>
-          <Col md={6} lg={3}>
+          {/* <Col md={6} lg={3}>
             <div className="footer-widget">
               <h3>News</h3>
               <ul className="post-list">
@@ -68,21 +68,23 @@ const MainFooterTwo = () => {
                 ))}
               </ul>
             </div>
-          </Col>
-          <Col md={6} lg={3}>
+          </Col> */}
+          <Col md={6} lg={4}>
             <div className="footer-widget">
-              <h3>Contact</h3>
+              <h3>Contacto</h3>
               <ul className="list-unstyled contact-list">
                 <li>
                   <span className="icon flaticon-call"></span>
                   <a href={`tel:${phone.split(" ").join("")}`}>{phone}</a>
                 </li>
+
                 <li>
                   <span className="icon flaticon-email-2"></span>
                   <a href={`mailto:${email}`}>{email}</a>
                 </li>
+
                 <li className="address">
-                  <span className="icon flaticon-pin-1"></span> 66 Broklyn
+                  <span className="icon flaticon-pin-1"></span>
                   <TextSplit text={address} />
                 </li>
               </ul>
@@ -95,7 +97,7 @@ const MainFooterTwo = () => {
           <div className="left-content">
             <Link href="/index-main">
               <a>
-                <Image src={logo3.src} width={134} height={34} alt="" />
+                <Image src={logo.src} width={70} height={34} alt="" />
               </a>
             </Link>
             <p>

@@ -9,13 +9,13 @@ export const bannerTwo = [
   },
   {
     id: 2,
-    bg: "1.jpg",
+    bg: "thirdSlider.png",
     subtitle: "welcome to Linoor agency",
     title: "Smart Web\nDesign Agency",
   },
   {
     id: 3,
-    bg: "2.jpg",
+    bg: "secondPhotoSlider.jpg",
     subtitle: "welcome to Linoor agency",
     title: "Smart Web\nDesign Agency",
   },
@@ -23,8 +23,8 @@ export const bannerTwo = [
 
 export const bannerOne = {
   bg,
-  dayRange: "mon - fri",
-  timeRange: "9am - 7pm",
+  dayRange: "lun - vie",
+  timeRange: "17:30 - 20:30",
   socials: [
     {
       id: 1,

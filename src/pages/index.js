@@ -1,8 +1,12 @@
+import AboutSection from "@/components/AboutSection/AboutSection";
+import BannerOne from "@/components/BannerSection/BannerOne";
 import FunFactSeven from "@/components/FunFacts/FunFactSeven";
+import HeaderEight from "@/components/Header/HeaderEight";
 import HeaderOne from "@/components/Header/HeaderOne";
+import HeaderTwo from "@/components/Header/HeaderTwo";
 import MobileMenu from "@/components/Header/MobileMenu";
 import Layout from "@/components/Layout/Layout";
-import MainFooter from "@/components/MainFooter/MainFooter";
+import MainFooterTwo from "@/components/MainFooter/MainFooterTwo";
 import PortfolioDetailsVideo from "@/components/PortfolioDetails/PortfolioDetailsVideo";
 import SearchPopup from "@/components/SearchPopup/SearchPopup";
 import SliderEight from "@/components/SliderSection/SliderEight";
@@ -30,13 +34,17 @@ const PagePrueba = () => {
 
   return (
     <Layout pageTitle="CF Gandía">
-      <HeaderOne />
+      <HeaderOne headerStyle="header-style-two" />
+      {/* <HeaderEight /> */}
+      {/* <HeaderTwo headerStyle="mainmenu-seven" header={7} /> */}
       <MobileMenu />
       <SearchPopup />
-      <SliderEight />
+      <BannerOne />
+      <AboutSection />
+      {/* <SliderEight /> */}
       <FunFactSeven />
 
-      <div
+      {/* <div
         className={`d-flex gap-5 ${isMobile ? "flex-column" : ""}`}
         style={{ width: "90%", margin: "0 auto" }}
       >
@@ -53,7 +61,6 @@ const PagePrueba = () => {
               Partidos Previos
             </p>
 
-            {/* Cambio de Tamaño de fondo y separación de escudos */}
             <div
               style={{
                 backgroundColor: "#4E99D0",
@@ -135,47 +142,6 @@ const PagePrueba = () => {
             La Liga 2025-2026
           </p>
 
-          {/* <Table borderless>
-            <thead>
-              <tr style={{ fontSize: "13px", fontWeight: "400" }}>
-                <th>Posición</th>
-                <th>Equipo</th>
-                <th>Puntos</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>CF Gandia</td>
-                <td>34</td>
-              </tr>
-
-              <tr>
-                <td>2</td>
-                <td>FC Barcelona</td>
-                <td>30</td>
-              </tr>
-
-              <tr>
-                <td>3</td>
-                <td>Real Madrid</td>
-                <td>28</td>
-              </tr>
-
-              <tr>
-                <td>4</td>
-                <td>Atletico Madrid</td>
-                <td>26</td>
-              </tr>
-
-              <tr>
-                <td>5</td>
-                <td>Sevilla</td>
-                <td>20</td>
-              </tr>
-            </tbody>
-          </Table> */}
           <table
             className="table table-borderless"
             // style={{
@@ -225,12 +191,13 @@ const PagePrueba = () => {
             </tbody>
           </table>
         </div>
-      </div>
+      </div> */}
 
       <SponsorsSection />
 
       <PortfolioDetailsVideo />
-      <MainFooter />
+      {/* <MainFooter /> */}
+      <MainFooterTwo />
     </Layout>
   );
 };

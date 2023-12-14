@@ -76,7 +76,8 @@ const HeaderEight = () => {
                   type="button"
                   className="theme-btn search-toggler"
                 >
-                  <span className="flaticon-magnifying-glass"></span>
+                  {/* <span className="flaticon-magnifying-glass"></span> */}
+                  <span className="flaticon-shopping-cart"></span>
                 </button>
               </div>
 
