@@ -13,6 +13,7 @@ import SliderEight from "@/components/SliderSection/SliderEight";
 import SponsorsSection from "@/components/SponsorsSection/SponsorsSection";
 import LogoArsenal from "@/images/logoArsenal.png";
 import LogoGandia from "@/images/logoGandia.png";
+import LogoGandia2 from "@/images/logoGandia2.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
@@ -132,7 +133,7 @@ const PagePrueba = () => {
         </div>
 
         <div
-          className={`text-white px-5 pb-5`}
+          className={`text-white px-5 pb-5 position-relative`}
           style={{
             backgroundColor: "#0F3B7C",
             borderRadius: "15px",
@@ -143,6 +144,13 @@ const PagePrueba = () => {
             La Liga 2025-2026
           </p>
 
+          <div
+            className="w-25 position-absolute"
+            style={{ right: "20px", bottom: "10px" }}
+          >
+            <Image src={LogoGandia2} style={{ opacity: "0.5" }} />
+          </div>
+
           <table
             // className="table table-borderless"
             style={{
@@ -151,6 +159,8 @@ const PagePrueba = () => {
               width: "100%",
               fontSize: "25px",
               textAlign: "center",
+              position: "relative",
+              zIndex: "0",
             }}
           >
             <thead>
