@@ -10,7 +10,7 @@ import React from "react";
 const PageTecnicos = () => {
   return (
     <Layout pageTitle="Equipo Técnico">
-      <HeaderOne />
+      <HeaderOne headerStyle="header-style-two" />
       <MobileMenu />
       <SearchPopup />
       <BannerTecnicos title="Equipo Técnico" />

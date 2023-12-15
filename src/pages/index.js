@@ -44,28 +44,29 @@ const PagePrueba = () => {
       {/* <SliderEight /> */}
       <FunFactSeven />
 
-      {/* <div
-        className={`d-flex gap-5 ${isMobile ? "flex-column" : ""}`}
+      <div
+        className={`d-flex justify-content-center gap-5 ${
+          isMobile ? "flex-column" : ""
+        }`}
         style={{ width: "90%", margin: "0 auto" }}
       >
         <div
-          className={`text-white px-5 pb-5`}
+          className={`text-black px-5 pb-5`}
           style={{
-            backgroundColor: "#016FC4",
+            backgroundColor: "#0F3B7C",
             borderRadius: "15px",
             width: `${isMobile ? "100%" : "30%"}`,
           }}
         >
           <div>
-            <p className="text-center fs-3" style={{ margin: "0" }}>
+            <p className="text-center fs-3 text-white" style={{ margin: "0" }}>
               Partidos Previos
             </p>
 
             <div
               style={{
-                backgroundColor: "#4E99D0",
+                backgroundColor: "white",
                 borderRadius: "15px",
-                // height: "250px",
               }}
               className="py-4"
             >
@@ -104,10 +105,10 @@ const PagePrueba = () => {
           </div>
 
           <div>
-            <p className="text-center fs-3" style={{ margin: "0" }}>
+            <p className="text-center fs-3 text-white" style={{ margin: "0" }}>
               Próximo partido
             </p>
-            <div style={{ backgroundColor: "#4E99D0", borderRadius: "15px" }}>
+            <div style={{ backgroundColor: "white", borderRadius: "15px" }}>
               <div className="d-flex flex-column align-items-center">
                 <span>La Liga</span>
                 <div
@@ -135,7 +136,7 @@ const PagePrueba = () => {
           style={{
             backgroundColor: "#0F3B7C",
             borderRadius: "15px",
-            width: `${isMobile ? "100%" : "70%"}`,
+            width: `${isMobile ? "100%" : "50%"}`,
           }}
         >
           <p className="text-center fs-3" style={{ margin: "0" }}>
@@ -143,17 +144,21 @@ const PagePrueba = () => {
           </p>
 
           <table
-            className="table table-borderless"
-            // style={{
-            //   borderCollapse: "collapse",
-            //   width: "100%",
-            //   verticalAlign: "top",
-            // }}
+            // className="table table-borderless"
+            style={{
+              borderCollapse: "separate",
+              borderSpacing: "28px",
+              width: "100%",
+              fontSize: "25px",
+              textAlign: "center",
+            }}
           >
             <thead>
-              <tr style={{ fontSize: "13px", fontWeight: "400" }}>
+              <tr style={{ fontSize: "25px", fontWeight: "400" }}>
                 <th>Posición</th>
                 <th>Equipo</th>
+                <th>J</th>
+                <th>G</th>
                 <th>Puntos</th>
               </tr>
             </thead>
@@ -162,36 +167,46 @@ const PagePrueba = () => {
               <tr>
                 <td>1</td>
                 <td>CF Gandia</td>
+                <td>12</td>
+                <td>8</td>
                 <td>34</td>
               </tr>
 
               <tr>
                 <td>2</td>
                 <td>FC Barcelona</td>
+                <td>12</td>
+                <td>8</td>
                 <td>30</td>
               </tr>
 
               <tr>
                 <td>3</td>
                 <td>Real Madrid</td>
+                <td>12</td>
+                <td>8</td>
                 <td>28</td>
               </tr>
 
               <tr>
                 <td>4</td>
                 <td>Atletico Madrid</td>
+                <td>12</td>
+                <td>8</td>
                 <td>26</td>
               </tr>
 
               <tr>
                 <td>5</td>
                 <td>Sevilla</td>
+                <td>12</td>
+                <td>8</td>
                 <td>20</td>
               </tr>
             </tbody>
           </table>
         </div>
-      </div> */}
+      </div>
 
       <SponsorsSection />
 

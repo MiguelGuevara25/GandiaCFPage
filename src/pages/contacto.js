@@ -12,7 +12,7 @@ import React from "react";
 const PageContacto = () => {
   return (
     <Layout pageTitle="Contacto">
-      <HeaderOne />
+      <HeaderOne headerStyle="header-style-two" />
       <MobileMenu />
       <SearchPopup />
       <PageBanner title="Contacto" />

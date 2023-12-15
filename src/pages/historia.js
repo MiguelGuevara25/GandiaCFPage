@@ -10,7 +10,7 @@ import React from "react";
 const PageHistoria = () => {
   return (
     <Layout pageTitle="Historia">
-      <HeaderOne />
+      <HeaderOne headerStyle="header-style-two" />
       <MobileMenu />
       <SearchPopup />
       <PageBanner title="Historia" />

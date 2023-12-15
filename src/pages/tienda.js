@@ -10,7 +10,7 @@ import React from "react";
 const PageTienda = () => {
   return (
     <Layout pageTitle="Tienda">
-      <HeaderOne />
+      <HeaderOne headerStyle="header-style-two" />
       <MobileMenu />
       <SearchPopup />
       <PageBanner title="Tienda" />

@@ -10,7 +10,7 @@ import DiscoverSection from "@/components/DiscoverSection/DiscoverSection";
 const PageNoticias = () => {
   return (
     <Layout pageTitle="Noticias">
-      <HeaderOne />
+      <HeaderOne headerStyle="header-style-two" />
       <MobileMenu />
       <SearchPopup />
       <PageBanner title="Noticias" />

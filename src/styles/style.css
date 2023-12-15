@@ -822,12 +822,12 @@ img {
   color: var(--thm-black);
 } */
 
-.header-style-two .main-menu .navigation > li.current > a,
-.header-style-two.fixed-header .main-menu .navigation > li > a:hover {
+.header-style-two .main-menu .navigation > li.current > a {
   color: white;
 }
 
-.header-style-two.fixed-header .main-menu .navigation > li > a {
+.header-style-two.fixed-header .main-menu .navigation > li > a,
+.header-style-two.fixed-header .main-menu .navigation > li > a:hover {
   color: black;
 }
 

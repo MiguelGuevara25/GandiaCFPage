@@ -10,7 +10,7 @@ import React from "react";
 const PageCarritoCompras = () => {
   return (
     <Layout pageTitle="Carrito de compras">
-      <HeaderOne />
+      <HeaderOne headerStyle="header-style-two" />
       <MobileMenu />
       <SearchPopup />
       <PageBanner title="Carrito de compras" />
