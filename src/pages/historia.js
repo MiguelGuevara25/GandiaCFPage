@@ -4,6 +4,7 @@ import MobileMenu from "@/components/Header/MobileMenu";
 import HistoryTimeline from "@/components/HistorySection/HistoryTimeline";
 import Layout from "@/components/Layout/Layout";
 import MainFooter from "@/components/MainFooter/MainFooter";
+import MainFooterTwo from "@/components/MainFooter/MainFooterTwo";
 import SearchPopup from "@/components/SearchPopup/SearchPopup";
 import React from "react";
 
@@ -15,7 +16,7 @@ const PageHistoria = () => {
       <SearchPopup />
       <PageBanner title="Historia" />
       <HistoryTimeline />
-      <MainFooter />
+      <MainFooterTwo />
     </Layout>
   );
 };

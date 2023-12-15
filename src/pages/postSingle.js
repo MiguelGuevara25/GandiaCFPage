@@ -3,6 +3,7 @@ import HeaderOne from "@/components/Header/HeaderOne";
 import MobileMenu from "@/components/Header/MobileMenu";
 import Layout from "@/components/Layout/Layout";
 import MainFooter from "@/components/MainFooter/MainFooter";
+import MainFooterTwo from "@/components/MainFooter/MainFooterTwo";
 import SidebarPageContainerTwo from "@/components/SidebarPageContainerTwo/SidebarPageContainerTwo";
 import React from "react";
 
@@ -13,7 +14,7 @@ const PagePostSingle = () => {
       <MobileMenu />
       <PageBanner title="Noticia 1" />
       <SidebarPageContainerTwo isDetails />
-      <MainFooter />
+      <MainFooterTwo />
     </Layout>
   );
 };

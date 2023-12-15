@@ -6,6 +6,7 @@ import MobileMenu from "@/components/Header/MobileMenu";
 import HeaderOne from "@/components/Header/HeaderOne";
 import Layout from "@/components/Layout/Layout";
 import DiscoverSection from "@/components/DiscoverSection/DiscoverSection";
+import MainFooterTwo from "@/components/MainFooter/MainFooterTwo";
 
 const PageNoticias = () => {
   return (
@@ -16,7 +17,7 @@ const PageNoticias = () => {
       <PageBanner title="Noticias" />
       {/* <NewsSection showTitle={false} /> */}
       <DiscoverSection />
-      <MainFooter />
+      <MainFooterTwo />
     </Layout>
   );
 };

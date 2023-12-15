@@ -24,10 +24,10 @@ const MainFooterTwo = () => {
         <Row>
           <Col md={6} lg={4}>
             <div className="footer-widget">
-              <h3>About</h3>
-              <p>{about}</p>
+              <h3>CF Gandía</h3>
+              <p>#ElClubDeLaCiutat</p>
               <Link href="/contact">
-                <a className="theme-btn btn-style-three">Get Started</a>
+                <a className="theme-btn btn-style-three">Conviérte en socio</a>
               </Link>
             </div>
           </Col>
