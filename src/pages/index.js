@@ -36,13 +36,10 @@ const PagePrueba = () => {
   return (
     <Layout pageTitle="CF Gandía">
       <HeaderOne headerStyle="header-style-two" />
-      {/* <HeaderEight /> */}
-      {/* <HeaderTwo headerStyle="mainmenu-seven" header={7} /> */}
       <MobileMenu />
       <SearchPopup />
       <BannerOne />
       <AboutSection />
-      {/* <SliderEight /> */}
       <FunFactSeven />
 
       <div
@@ -69,35 +66,39 @@ const PagePrueba = () => {
                 backgroundColor: "white",
                 borderRadius: "15px",
               }}
-              className="py-4"
+              className="py-2"
             >
-              <div className="d-flex flex-column align-items-center">
-                <span>La Liga</span>
+              <div className="d-flex flex-column align-items-center mb-3">
+                <span style={{ fontSize: "25px", marginBottom: "10px" }}>
+                  La Liga
+                </span>
                 <div
                   className="d-flex align-items-center"
                   style={{ gap: "50px" }}
                 >
-                  <div style={{ width: "40px" }}>
+                  <div style={{ width: "60px" }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
                   <span className="fs-2">3-1</span>
-                  <div style={{ width: "50px" }}>
+                  <div style={{ width: "60px" }}>
                     <Image src={LogoGandia} alt="Logo Gandia" />
                   </div>
                 </div>
               </div>
 
               <div className="d-flex flex-column align-items-center">
-                <span>Champions League</span>
+                <span style={{ fontSize: "25px", marginBottom: "10px" }}>
+                  Champions League
+                </span>
                 <div
                   className="d-flex align-items-center"
                   style={{ gap: "50px" }}
                 >
-                  <div style={{ width: "40px" }}>
+                  <div style={{ width: "60px" }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
                   <span className="fs-2">3-1</span>
-                  <div style={{ width: "40px" }}>
+                  <div style={{ width: "60px" }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
                 </div>
@@ -111,19 +112,21 @@ const PagePrueba = () => {
             </p>
             <div style={{ backgroundColor: "white", borderRadius: "15px" }}>
               <div className="d-flex flex-column align-items-center">
-                <span>La Liga</span>
+                <span style={{ fontSize: "25px", margin: "10px 0px 10px 0px" }}>
+                  La Liga
+                </span>
                 <div
                   className="d-flex align-items-center"
                   style={{ gap: "50px" }}
                 >
-                  <div style={{ width: "40px" }}>
+                  <div style={{ width: "60px" }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
                   <div className="d-flex flex-column align-items-center">
                     <span className="fs-5">Nov 14</span>
                     <span className="fs-5">16:00</span>
                   </div>
-                  <div style={{ width: "40px" }}>
+                  <div style={{ width: "60px" }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
                 </div>
@@ -155,7 +158,7 @@ const PagePrueba = () => {
             // className="table table-borderless"
             style={{
               borderCollapse: "separate",
-              borderSpacing: "28px",
+              borderSpacing: "40px",
               width: "100%",
               fontSize: "25px",
               textAlign: "center",
