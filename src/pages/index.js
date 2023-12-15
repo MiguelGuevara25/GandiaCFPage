@@ -23,7 +23,7 @@ const PagePrueba = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024);
+      setIsMobile(window.innerWidth <= 1200);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -53,7 +53,6 @@ const PagePrueba = () => {
             backgroundColor: "#0F3B7C",
             borderRadius: "15px",
             width: `${isMobile ? "100%" : "30%"}`,
-            height: "max-content",
           }}
         >
           <div>
