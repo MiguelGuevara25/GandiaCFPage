@@ -5,6 +5,7 @@ import LogoArsenal from "@/images/logoArsenal.png";
 import LogoGandia from "@/images/logoGandia.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import VisibilityCountUp from "../VisibilityCountUp/VisibilityCountUp";
 
 const FunFactSeven = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -44,30 +45,40 @@ const FunFactSeven = () => {
           <Row className="">
             {funFactSeven.map(({ id, count, text }) => {
               return (
-                <Col key={id}>
-                  <div
-                    className="funfact-seven__item"
-                    style={{
-                      width: `${isMobile ? "67px" : "150px"}`,
-                      height: `${isMobile ? "67px" : "150px"}`,
-                    }}
-                  >
-                    <h4
-                      style={{
-                        margin: "0",
-                        fontSize: `${isMobile ? "20px" : "40px"}`,
-                      }}
-                    >
-                      {count}
-                    </h4>
-                    <p
-                      className="funfact-seven__text"
-                      style={{
-                        letterSpacing: `${isMobile ? "0px" : "0.2em"}`,
-                      }}
-                    >
-                      {text}
-                    </p>
+                // <Col key={id}>
+                //   <div
+                //     className="funfact-seven__item"
+                //     style={{
+                //       width: `${isMobile ? "67px" : "150px"}`,
+                //       height: `${isMobile ? "67px" : "150px"}`,
+                //     }}
+                //   >
+                //     <h4
+                //       style={{
+                //         margin: "0",
+                //         fontSize: `${isMobile ? "20px" : "40px"}`,
+                //       }}
+                //     >
+                //       {count}
+                //     </h4>
+                //     <p
+                //       className="funfact-seven__text"
+                //       style={{
+                //         letterSpacing: `${isMobile ? "0px" : "0.2em"}`,
+                //       }}
+                //     >
+                //       {text}
+                //     </p>
+                //   </div>
+                // </Col>
+                <Col key={id} xs={6} md={6} lg={3}>
+                  <div className="funfact-seven__item">
+                    <h3 className="funfact-seven__title count-box">
+                      <span className="count-text">
+                        <VisibilityCountUp count={count} />
+                      </span>
+                    </h3>
+                    <p className="funfact-seven__text">{text}</p>
                   </div>
                 </Col>
               );
