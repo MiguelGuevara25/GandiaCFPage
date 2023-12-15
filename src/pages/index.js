@@ -46,7 +46,6 @@ const PagePrueba = () => {
         className={`d-flex justify-content-center gap-5 ${
           isMobile ? "flex-column" : ""
         }`}
-        style={{ width: "90%", margin: "0 auto" }}
       >
         <div
           className={`text-black px-5 pb-5`}
@@ -143,7 +142,7 @@ const PagePrueba = () => {
         </div>
 
         <div
-          className={`text-white px-5 pb-5 position-relative`}
+          className={`text-white px-4 py-4 position-relative`}
           style={{
             backgroundColor: "#0F3B7C",
             borderRadius: "15px",
@@ -165,7 +164,7 @@ const PagePrueba = () => {
             className="scrollable-table-container"
             style={{
               borderCollapse: "separate",
-              borderSpacing: `${isMobile ? "11px" : "40px"}`,
+              borderSpacing: `${isMobile ? "32px" : "40px"}`,
               width: "100%",
               fontSize: `${isMobile ? "14px" : "25px"}`,
               position: "relative",
@@ -174,54 +173,66 @@ const PagePrueba = () => {
             }}
           >
             <thead>
-              <tr style={{ fontWeight: "400" }}>
-                <th className="">Posición</th>
+              <tr style={{ fontWeight: "400", fontSize: "20px" }}>
+                <th>Pos</th>
                 <th>Equipo</th>
-                {isMobile ? null : <th>J</th>}
-                {isMobile ? null : <th>G</th>}
+                {/* {isMobile ? null : <th>J</th>}
+                {isMobile ? null : <th>G</th>} */}
+                <th>J</th>
+                <th>G</th>
                 <th>Puntos</th>
               </tr>
             </thead>
 
             <tbody>
               <tr>
-                <td className="text-center">1</td>
+                <td>1</td>
                 <td>CF Gandia</td>
-                {isMobile ? null : <td>12</td>}
-                {isMobile ? null : <td>12</td>}
-                <td className="text-center">34</td>
+                {/* {isMobile ? null : <td>12</td>}
+                {isMobile ? null : <td>12</td>} */}
+                <td>34</td>
+                <td>34</td>
+                <td>34</td>
               </tr>
 
               <tr>
-                <td className="text-center">2</td>
+                <td>2</td>
                 <td>FC Barcelona</td>
-                {isMobile ? null : <td>12</td>}
-                {isMobile ? null : <td>12</td>}
-                <td className="text-center">30</td>
+                {/* {isMobile ? null : <td>12</td>}
+                {isMobile ? null : <td>12</td>} */}
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
               </tr>
 
               <tr>
-                <td className="text-center">3</td>
+                <td>3</td>
                 <td>Real Madrid</td>
-                {isMobile ? null : <td>12</td>}
-                {isMobile ? null : <td>12</td>}
-                <td className="text-center">28</td>
+                {/* {isMobile ? null : <td>12</td>}
+                {isMobile ? null : <td>12</td>} */}
+                <td>28</td>
+                <td>28</td>
+                <td>28</td>
               </tr>
 
               <tr>
-                <td className="text-center">4</td>
+                <td>4</td>
                 <td>Atletico Madrid</td>
-                {isMobile ? null : <td>12</td>}
-                {isMobile ? null : <td>12</td>}
-                <td className="text-center">26</td>
+                {/* {isMobile ? null : <td>12</td>}
+                {isMobile ? null : <td>12</td>} */}
+                <td>26</td>
+                <td>26</td>
+                <td>26</td>
               </tr>
 
               <tr>
-                <td className="text-center">5</td>
+                <td>5</td>
                 <td>Sevilla</td>
-                {isMobile ? null : <td>12</td>}
-                {isMobile ? null : <td>12</td>}
-                <td className="text-center">20</td>
+                {/* {isMobile ? null : <td>12</td>}
+                {isMobile ? null : <td>12</td>} */}
+                <td>20</td>
+                <td>20</td>
+                <td>20</td>
               </tr>
             </tbody>
           </table>
