@@ -4,14 +4,14 @@ export const bannerTwo = [
   {
     id: 1,
     bg: "pruebafotoGania.jpg",
-    subtitle: "",
-    title: "CF Gandia",
+    subtitle: "CF Gandía",
+    title: "El club de la ciutat",
   },
   {
     id: 2,
     bg: "thirdSlider.png",
-    subtitle: "welcome to Linoor agency",
-    title: "Smart Web\nDesign Agency",
+    subtitle: "CF Gandía",
+    title: "El club de la ciutat",
   },
   {
     id: 3,

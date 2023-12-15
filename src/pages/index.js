@@ -54,6 +54,7 @@ const PagePrueba = () => {
             backgroundColor: "#0F3B7C",
             borderRadius: "15px",
             width: `${isMobile ? "100%" : "30%"}`,
+            height: "max-content",
           }}
         >
           <div>
@@ -76,11 +77,11 @@ const PagePrueba = () => {
                   className="d-flex align-items-center"
                   style={{ gap: "50px" }}
                 >
-                  <div style={{ width: "60px" }}>
+                  <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
                   <span className="fs-2">3-1</span>
-                  <div style={{ width: "60px" }}>
+                  <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
                     <Image src={LogoGandia} alt="Logo Gandia" />
                   </div>
                 </div>
@@ -94,11 +95,11 @@ const PagePrueba = () => {
                   className="d-flex align-items-center"
                   style={{ gap: "50px" }}
                 >
-                  <div style={{ width: "60px" }}>
+                  <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
                   <span className="fs-2">3-1</span>
-                  <div style={{ width: "60px" }}>
+                  <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
                 </div>
@@ -110,23 +111,29 @@ const PagePrueba = () => {
             <p className="text-center fs-3 text-white" style={{ margin: "0" }}>
               Próximo partido
             </p>
-            <div style={{ backgroundColor: "white", borderRadius: "15px" }}>
+            <div
+              style={{
+                backgroundColor: "white",
+                borderRadius: "15px",
+                paddingBottom: "10px",
+              }}
+            >
               <div className="d-flex flex-column align-items-center">
-                <span style={{ fontSize: "25px", margin: "10px 0px 10px 0px" }}>
+                <span style={{ fontSize: "25px", margin: "10px" }}>
                   La Liga
                 </span>
                 <div
                   className="d-flex align-items-center"
-                  style={{ gap: "50px" }}
+                  style={{ gap: "38px" }}
                 >
-                  <div style={{ width: "60px" }}>
+                  <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
                   <div className="d-flex flex-column align-items-center">
                     <span className="fs-5">Nov 14</span>
                     <span className="fs-5">16:00</span>
                   </div>
-                  <div style={{ width: "60px" }}>
+                  <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
                     <Image src={LogoArsenal} alt="Logo Arsenal" />
                   </div>
                 </div>
@@ -155,66 +162,66 @@ const PagePrueba = () => {
           </div>
 
           <table
-            // className="table table-borderless"
+            className="scrollable-table-container"
             style={{
               borderCollapse: "separate",
-              borderSpacing: "40px",
+              borderSpacing: `${isMobile ? "11px" : "40px"}`,
               width: "100%",
-              fontSize: "25px",
-              textAlign: "center",
+              fontSize: `${isMobile ? "14px" : "25px"}`,
               position: "relative",
-              zIndex: "0",
+              display: `${isMobile ? "block" : "table"}`,
+              overflowX: "scroll",
             }}
           >
             <thead>
-              <tr style={{ fontSize: "25px", fontWeight: "400" }}>
-                <th>Posición</th>
+              <tr style={{ fontWeight: "400" }}>
+                <th className="">Posición</th>
                 <th>Equipo</th>
-                <th>J</th>
-                <th>G</th>
+                {isMobile ? null : <th>J</th>}
+                {isMobile ? null : <th>G</th>}
                 <th>Puntos</th>
               </tr>
             </thead>
 
             <tbody>
               <tr>
-                <td>1</td>
+                <td className="text-center">1</td>
                 <td>CF Gandia</td>
-                <td>12</td>
-                <td>8</td>
-                <td>34</td>
+                {isMobile ? null : <td>12</td>}
+                {isMobile ? null : <td>12</td>}
+                <td className="text-center">34</td>
               </tr>
 
               <tr>
-                <td>2</td>
+                <td className="text-center">2</td>
                 <td>FC Barcelona</td>
-                <td>12</td>
-                <td>8</td>
-                <td>30</td>
+                {isMobile ? null : <td>12</td>}
+                {isMobile ? null : <td>12</td>}
+                <td className="text-center">30</td>
               </tr>
 
               <tr>
-                <td>3</td>
+                <td className="text-center">3</td>
                 <td>Real Madrid</td>
-                <td>12</td>
-                <td>8</td>
-                <td>28</td>
+                {isMobile ? null : <td>12</td>}
+                {isMobile ? null : <td>12</td>}
+                <td className="text-center">28</td>
               </tr>
 
               <tr>
-                <td>4</td>
+                <td className="text-center">4</td>
                 <td>Atletico Madrid</td>
-                <td>12</td>
-                <td>8</td>
-                <td>26</td>
+                {isMobile ? null : <td>12</td>}
+                {isMobile ? null : <td>12</td>}
+                <td className="text-center">26</td>
               </tr>
 
               <tr>
-                <td>5</td>
+                <td className="text-center">5</td>
                 <td>Sevilla</td>
-                <td>12</td>
-                <td>8</td>
-                <td>20</td>
+                {isMobile ? null : <td>12</td>}
+                {isMobile ? null : <td>12</td>}
+                <td className="text-center">20</td>
               </tr>
             </tbody>
           </table>

@@ -3883,7 +3883,7 @@ img.lazy-image.loaded {
   background: #ffffff;
 }
 
-.about-section:before {
+/* .about-section:before {
   content: "";
   position: absolute;
   left: 0;
@@ -3892,7 +3892,7 @@ img.lazy-image.loaded {
   width: 50%;
   height: 100%;
   background: #f4f5f8;
-}
+} */
 
 .about-section .image-column {
   position: relative;
@@ -24128,3 +24128,15 @@ img.lazy-image.loaded {
   animation-duration: 1500ms;
 }
 /*# sourceMappingURL=style.css.map */
+.scrollable-table-container::-webkit-scrollbar {
+  height: 5px;
+}
+
+.scrollable-table-container::-webkit-scrollbar-thumb {
+  background-color: white; /* Color del thumb del scrollbar */
+  border-radius: 10px; /* Borde redondeado del thumb */
+}
+
+/* .scrollable-table-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1; Color del track del scrollbar
+} */
