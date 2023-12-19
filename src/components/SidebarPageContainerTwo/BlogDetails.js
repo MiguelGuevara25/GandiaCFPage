@@ -2,46 +2,46 @@ import { blogDetails } from "@/data/sidebarPageContainerTwo";
 import Link from "next/link";
 import { Col, Image, Row } from "react-bootstrap";
 
-const { imagePrueba, date, admin, title, text1, text2, text3 } = blogDetails;
+const BlogDetails = ({ datosBlog }) => {
+  const formatearFecha = (fecha) => {
+    const fechaNueva = new Date(fecha);
+    const opciones = {
+      year: "numeric",
+      month: "long",
+      day: "2-digit",
+    };
 
-const BlogDetails = () => {
+    return fechaNueva.toLocaleDateString("es-ES", opciones);
+  };
+
+  const { titulo, descripcion, createdAt, imagen } = datosBlog[0].attributes;
+  const urlIMG = `http://localhost:1337${imagen.data?.attributes.url}`;
+
   return (
     <div className="blog-details">
       <div className="post-details">
         <div className="inner-box">
-          {/* <span>Imagen de 770x444</span> */}
-          <div
-            className="image-box"
-            // style={{ width: "770px", height: "400px" }}
-          >
-            <Link href="/blog-single">
-              <a>
-                <Image src={imagePrueba.src} alt="" />
-              </a>
-            </Link>
+          <div className="image-box">
+            <Image src={urlIMG} />
           </div>
 
           <div className="lower-box">
             <div className="post-meta">
               <ul className="clearfix">
                 <li>
-                  <span className="far fa-clock"></span> {date}
+                  <span className="far fa-clock"></span>
+                  {formatearFecha(createdAt)}
                 </li>
 
                 <li>
-                  <span className="far fa-user-circle"></span> {admin}
+                  <span className="far fa-user-circle"></span>
                 </li>
-                {/* <li>
-                  <span className="far fa-comments"></span> {comments.length}{" "}
-                  Comments
-                </li> */}
               </ul>
             </div>
-            <h4>{title}</h4>
+
+            <h4>{titulo}</h4>
             <div className="text">
-              <p>{text1}</p>
-              <p>{text2}</p>
-              {text3 && <p>{text3}</p>}
+              <p>{descripcion}</p>
             </div>
           </div>
         </div>

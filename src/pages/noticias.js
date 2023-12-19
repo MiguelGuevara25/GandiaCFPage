@@ -15,7 +15,6 @@ const PageNoticias = () => {
       <MobileMenu />
       <SearchPopup />
       <PageBanner title="Noticias" />
-      {/* <NewsSection showTitle={false} /> */}
       <DiscoverSection />
       <MainFooterTwo />
     </Layout>
