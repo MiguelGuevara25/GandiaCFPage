@@ -42,7 +42,7 @@ const BannerOne = () => {
               </li>
             </ul>
           </div>
-          <div className="social-links">
+          {/* <div className="social-links">
             <ul className="clearfix">
               {socials.map(({ id, href, title }) => (
                 <li key={id}>
@@ -52,7 +52,7 @@ const BannerOne = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="banner-carousel">
