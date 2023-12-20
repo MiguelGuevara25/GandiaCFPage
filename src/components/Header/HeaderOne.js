@@ -131,10 +131,56 @@ const HeaderOne = ({
               </nav>
             </div>
 
-            {links && (
+            {/* {links && (
               <div className="other-links clearfix">
                 <div className="link-box">
                   <div className="call-us" style={{ cursor: "pointer" }}>
+                    <Link href="/login">
+                      <Image src={LogoPrueba.src} width={50} />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )} */}
+
+            {links && (
+              <div className="other-links clearfix">
+                <div className="cart-btn">
+                  <Link href="/cart">
+                    <a className="theme-btn cart-toggler">
+                      <span className="fab fa-facebook-square"></span>
+                    </a>
+                  </Link>
+                </div>
+
+                <div className="cart-btn">
+                  <Link href="/cart">
+                    <a className="theme-btn cart-toggler">
+                      <span className="fab fa-instagram"></span>
+                    </a>
+                  </Link>
+                </div>
+
+                {/* <div className="cart-btn">
+                  <Link href="/cart">
+                    <a className="theme-btn cart-toggler">
+                      <span className="fab fa-twitter"></span>
+                    </a>
+                  </Link>
+                </div> */}
+
+                <div className="search-btn">
+                  <button
+                    // onClick={toggleSearch}
+                    type="button"
+                    className="theme-btn search-toggler"
+                  >
+                    <span className="fab fa-twitter"></span>
+                  </button>
+                </div>
+
+                <div className="link-box">
+                  <div className="call-us">
                     <Link href="/login">
                       <Image src={LogoPrueba.src} width={50} />
                     </Link>
