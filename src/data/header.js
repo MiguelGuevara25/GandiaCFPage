@@ -70,6 +70,10 @@ const navItems = [
     id: 3,
     name: "Noticias",
     href: "/noticias",
+    subNavItems: [
+      { id: 1, name: "Academia", href: "/plantilla/primer-equipo" },
+      { id: 2, name: "Femenino", href: "/plantilla/equipo-tecnico" },
+    ],
   },
   {
     id: 4,
