@@ -1,3 +1,4 @@
+import AboutNine from "@/components/AboutSection/AboutNine";
 import AboutSection from "@/components/AboutSection/AboutSection";
 import BannerOne from "@/components/BannerSection/BannerOne";
 import FunFactSeven from "@/components/FunFacts/FunFactSeven";
@@ -39,6 +40,7 @@ const PagePrueba = () => {
       <MobileMenu />
       <SearchPopup />
       <BannerOne />
+      <AboutNine />
       <AboutSection />
       <FunFactSeven />
 

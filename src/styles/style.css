@@ -3879,7 +3879,7 @@ img.lazy-image.loaded {
 ***/
 .about-section {
   position: relative;
-  padding: 120px 0px 90px;
+  /* padding: 120px 0px 90px; */
   background: #ffffff;
 }
 
@@ -17347,15 +17347,14 @@ img.lazy-image.loaded {
     linear,
     left top,
     right top,
-    from(#ff9a61),
+    from(#0074D3),
     color-stop(51%, #ff4b82),
-    to(#ff9a61)
+    to(#0F3B7C)
   );
   background-image: linear-gradient(
     to right,
-    #ff9a61 0%,
-    #ff4b82 51%,
-    #ff9a61 100%
+    #0074D3 0%,
+    #0F3B7C 100%
   );
   background-size: 200% auto;
   -webkit-transition: 0.5s;

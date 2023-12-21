@@ -96,7 +96,7 @@ export const aboutSix = {
 export const aboutNine = {
   image: image9,
   icon: "flaticon-data",
-  title: "Powerful Tools for Your Customers",
+  title: "EL CF GANDIA REMONTA EN TORRELLANO (1-2)",
   titleHighlight: "Tools",
   text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
   lists: [
