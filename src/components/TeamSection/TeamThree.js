@@ -1,5 +1,3 @@
-import teamSection from "@/data/teamSection";
-import React from "react";
 import { Row } from "react-bootstrap";
 import SingleTeamThree from "./SingleTeamThree";
 
