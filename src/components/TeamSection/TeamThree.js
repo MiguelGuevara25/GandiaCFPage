@@ -5,7 +5,12 @@ import SingleTeamThree from "./SingleTeamThree";
 
 const { title, teams } = teamSection;
 
-const TeamThree = ({ className = "", showTitle = true, items = 4 }) => {
+const TeamThree = ({
+  className = "",
+  showTitle = true,
+  items = 4,
+  datosPorteros,
+}) => {
   return (
     <section className={`team-three ${className}`}>
       <div className="auto-container">
@@ -15,9 +20,11 @@ const TeamThree = ({ className = "", showTitle = true, items = 4 }) => {
           </div>
         )}
         <Row>
-          {teams.slice(0, items).map((team) => (
-            <SingleTeamThree key={team.id} team={team} />
-          ))}
+          {datosPorteros.attributes?.jugadores_primer_equipos.data.map(
+            (team) => {
+              return <SingleTeamThree key={team.id} team={team} />;
+            }
+          )}
         </Row>
       </div>
     </section>

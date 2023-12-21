@@ -24,7 +24,7 @@ const AboutNine = () => {
   return (
     <section className="about-nine">
       {datosNoticias.map((e) => {
-        console.log(e);
+        // console.log(e);
 
         return (
           <div className="auto-container">
