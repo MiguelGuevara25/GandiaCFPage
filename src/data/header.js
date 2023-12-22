@@ -71,8 +71,9 @@ const navItems = [
     name: "Noticias",
     href: "/noticias",
     subNavItems: [
-      { id: 1, name: "Academia", href: "/plantilla/primer-equipo" },
-      { id: 2, name: "Femenino", href: "/plantilla/equipo-tecnico" },
+      { id: 1, name: "Primer Equipo", href: "/plantilla/primer-equipo" },
+      { id: 2, name: "Academia", href: "/plantilla/equipo-tecnico" },
+      { id: 3, name: "Femenino", href: "/plantilla/equipo-tecnico" },
     ],
   },
   {

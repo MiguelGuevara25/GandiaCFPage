@@ -24,8 +24,6 @@ const AboutNine = () => {
   return (
     <section className="about-nine">
       {datosNoticias.map((e) => {
-        // console.log(e);
-
         return (
           <div className="auto-container">
             {e.attributes.destacada && (
@@ -34,11 +32,11 @@ const AboutNine = () => {
                   <div className="about-nine__image">
                     <Image
                       src={`http://localhost:1337${e.attributes.imagen.data.attributes.url}`}
-                      alt=""
-                      width="800"
+                      width={650}
                     />
                   </div>
                 </Col>
+
                 <Col lg={6}>
                   <div className="about-nine__content">
                     {/* <div className="about-nine__icon">
@@ -51,14 +49,17 @@ const AboutNine = () => {
                         </Fragment>
                       ))}
                     </h3>
-                    <p className="about-nine__summery">{text}</p>
+                    {/* <p className="about-nine__summery">{text}</p> */}
                     <ul className="list-unstyled about-nine__list">
-                      {lists.map((text, i) => (
+                      {/* {lists.map((text, i) => (
                         <li key={i}>
                           <i className="flaticon-check"></i>
                           {text}
                         </li>
-                      ))}
+                      ))} */}
+                      <li className="descriptionEmergencies">
+                        {e.attributes.descripcion}
+                      </li>
                     </ul>
 
                     <Link href={`/noticia/${e.attributes.url}`}>
