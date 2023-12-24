@@ -1,18 +1,25 @@
-import discoverSection from "@/data/discoverSection";
 import Link from "next/link";
 import React from "react";
 import { Col, Image, Row } from "react-bootstrap";
-import TextSplit from "../Reuseable/TextSplit";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-// const { title, discovers } = discoverSection;
+import { useRouter } from "next/router";
 
 const DiscoverSection = ({ ShowTitle = true }) => {
   const [datosNoticias, setDatosNoticias] = useState([]);
+  const { pathname } = useRouter();
 
   const getNoticias = async () => {
-    const url = "http://localhost:1337/api/noticias?populate=*";
+    let url;
+
+    if (pathname === "/noticias/femenino") {
+      url = "http://localhost:1337/api/noticias-femeninos?populate=*";
+    } else if (pathname === "/noticias/academia") {
+      url = "http://localhost:1337/api/noticias-academias?populate=*";
+    } else {
+      url = "http://localhost:1337/api/noticias?populate=*";
+    }
+
     const res = await axios.get(url);
     const data = await res.data;
     setDatosNoticias(data.data);
@@ -21,6 +28,8 @@ const DiscoverSection = ({ ShowTitle = true }) => {
   useEffect(() => {
     getNoticias();
   }, []);
+
+  const texto = "¡Hola, mundo!";
 
   return (
     <section className="discover-section">
@@ -35,7 +44,6 @@ const DiscoverSection = ({ ShowTitle = true }) => {
 
         <Row className="clearfix">
           {datosNoticias?.map((datos) => {
-            console.log(datos.attributes.url);
             const { titulo, imagen, url } = datos.attributes;
             const urlIMG = `http://localhost:1337${imagen.data?.attributes.url}`;
 
@@ -59,7 +67,7 @@ const DiscoverSection = ({ ShowTitle = true }) => {
                     <div className="cap-inner">
                       <h5>{titulo}</h5>
                       <div className="more-link">
-                        <Link href={`/noticia/${url}`}>
+                        <Link href={`/noticia/${url}?texto=${texto}`}>
                           <a>
                             <span className="fa fa-angle-right"></span>
                           </a>
@@ -72,33 +80,6 @@ const DiscoverSection = ({ ShowTitle = true }) => {
             );
           })}
         </Row>
-
-        {/* <Row className="clearfix">
-          {discovers.map(({ id, image, title }) => (
-            <Col key={id} lg={6} md={12} sm={12} className="discover-block">
-              <div className="inner-box">
-                <div className="image-box">
-                  <Image
-                    src={require(`@/images/resource/${image}`).default.src}
-                    alt=""
-                  />
-                </div>
-                <div className="cap-box animated fadeInUp">
-                  <div className="cap-inner">
-                    <h5>{title}</h5>
-                    <div className="more-link">
-                      <Link href="/postSingle">
-                        <a>
-                          <span className="fa fa-angle-right"></span>
-                        </a>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Col>
-          ))}
-        </Row> */}
       </div>
     </section>
   );

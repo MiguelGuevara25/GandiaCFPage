@@ -14,9 +14,11 @@ const Post = () => {
   const [datosBlog, setDatosBlog] = useState([]);
   const router = useRouter();
   const { id } = router.query;
+  console.log(router.query.texto);
 
   const getBlog = async (urlData) => {
     const url = `http://localhost:1337/api/noticias?filters[url]=${urlData}&populate=*`;
+
     const res = await axios.get(url);
     const data = await res.data;
     setDatosBlog(data.data);
