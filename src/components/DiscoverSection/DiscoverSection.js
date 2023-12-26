@@ -29,19 +29,19 @@ const DiscoverSection = ({ ShowTitle = true }) => {
     getNoticias();
   }, []);
 
-  const texto = "¡Hola, mundo!";
+  const linkNoticias = (url) => {
+    if (pathname === "/noticias/femenino") {
+      return `/noticia-femenino/${url}`;
+    } else if (pathname === "/noticias/academia") {
+      return `/noticia-academia/${url}`;
+    } else {
+      return `/noticia/${url}`;
+    }
+  };
 
   return (
     <section className="discover-section">
       <div className="auto-container">
-        {/* {ShowTitle && (
-          <div className="sec-title centered">
-            <h2>
-              <TextSplit text={title} />
-            </h2>
-          </div>
-        )} */}
-
         <Row className="clearfix">
           {datosNoticias?.map((datos) => {
             const { titulo, imagen, url } = datos.attributes;
@@ -67,7 +67,7 @@ const DiscoverSection = ({ ShowTitle = true }) => {
                     <div className="cap-inner">
                       <h5>{titulo}</h5>
                       <div className="more-link">
-                        <Link href={`/noticia/${url}?texto=${texto}`}>
+                        <Link href={linkNoticias(url)}>
                           <a>
                             <span className="fa fa-angle-right"></span>
                           </a>
