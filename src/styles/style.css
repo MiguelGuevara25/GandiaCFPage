@@ -20198,7 +20198,7 @@ img.lazy-image.loaded {
   -ms-flex-direction: column;
   flex-direction: column;
   position: relative;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   margin-left: auto;
   margin-right: auto;
 }

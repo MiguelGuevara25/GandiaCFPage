@@ -9,12 +9,6 @@ const { bg, logo, logoTitle, title, text, formTitle, formText } =
   comingSoonSection;
 
 const ComingSoonSection = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    console.log(formData.get("email"));
-  };
-
   return (
     <section
       className="coming-soon"

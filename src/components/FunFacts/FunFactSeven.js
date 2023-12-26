@@ -6,9 +6,15 @@ import LogoGandia from "@/images/logoGandia.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import VisibilityCountUp from "../VisibilityCountUp/VisibilityCountUp";
+import axios from "axios";
+import moment from "moment";
 
 const FunFactSeven = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [estadioProximo, setEstadioProximo] = useState("");
+  const [fechaPartido, setFechaPartido] = useState("");
+  const [logoLocal, setLogoLocal] = useState("");
+  const [logoVisita, setLogoVisita] = useState("");
 
   useEffect(() => {
     const handleResize = () => {
@@ -22,6 +28,57 @@ const FunFactSeven = () => {
     };
   }, []);
 
+  const getProximoPartido = async () => {
+    const url = "http://localhost:1337/api/proximo-partido?populate=*";
+    const res = await axios.get(url);
+    const { attributes } = await res.data.data;
+
+    setEstadioProximo(attributes.estadio);
+    setFechaPartido(attributes.fechaPartido);
+    setLogoLocal(
+      `http://localhost:1337${attributes.logoLocal.data.attributes.url}`
+    );
+    setLogoVisita(
+      `http://localhost:1337${attributes.logoVisita.data.attributes.url}`
+    );
+  };
+
+  useEffect(() => {
+    getProximoPartido();
+  }, []);
+
+  //Hasta aquí
+
+  const [timeRemaining, setTimeRemaining] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+  const targetDate = moment(fechaPartido); // Establece la fecha objetivo
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const now = moment();
+      const duration = moment.duration(targetDate.diff(now));
+
+      if (duration.asSeconds() <= 0) {
+        // Si la diferencia es negativa o cero, detener la cuenta regresiva
+        clearInterval(intervalId);
+        setTimeRemaining({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      } else {
+        setTimeRemaining({
+          days: duration.days(),
+          hours: duration.hours(),
+          minutes: duration.minutes(),
+          seconds: duration.seconds(),
+        });
+      }
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [targetDate]);
+
   return (
     <section className="funfact-seven">
       <div className="auto-container">
@@ -29,7 +86,7 @@ const FunFactSeven = () => {
           <h2 className="sec-title-seven__title">
             Estadio
             <br />
-            <span>Santiago Bernabéu</span>
+            <span>{estadioProximo}</span>
           </h2>
         </div>
 
@@ -38,55 +95,52 @@ const FunFactSeven = () => {
             isMobile ? "flex-column" : "flex-row"
           }`}
         >
-          <div style={{ width: "100px" }}>
-            <Image src={LogoArsenal} alt="Logo Arsenal" />
+          <div style={{ width: "120px" }}>
+            {/* <Image src={LogoArsenal} alt="Logo Arsenal" /> */}
+            <img src={logoLocal} />
           </div>
 
-          <Row className="">
-            {funFactSeven.map(({ id, count, text }) => {
-              return (
-                // <Col key={id}>
-                //   <div
-                //     className="funfact-seven__item"
-                //     style={{
-                //       width: `${isMobile ? "67px" : "150px"}`,
-                //       height: `${isMobile ? "67px" : "150px"}`,
-                //     }}
-                //   >
-                //     <h4
-                //       style={{
-                //         margin: "0",
-                //         fontSize: `${isMobile ? "20px" : "40px"}`,
-                //       }}
-                //     >
-                //       {count}
-                //     </h4>
-                //     <p
-                //       className="funfact-seven__text"
-                //       style={{
-                //         letterSpacing: `${isMobile ? "0px" : "0.2em"}`,
-                //       }}
-                //     >
-                //       {text}
-                //     </p>
-                //   </div>
-                // </Col>
-                <Col key={id} xs={6} md={6} lg={3}>
-                  <div className="funfact-seven__item">
-                    <h3 className="funfact-seven__title count-box">
-                      <span className="count-text">
-                        <VisibilityCountUp count={count} />
-                      </span>
-                    </h3>
-                    <p className="funfact-seven__text">{text}</p>
-                  </div>
-                </Col>
-              );
-            })}
+          <Row>
+            <Col xs={6} md={6} lg={3}>
+              <div className="funfact-seven__item">
+                <h3 className="funfact-seven__title count-box">
+                  {timeRemaining.days}
+                </h3>
+                <p className="funfact-seven__text">Días</p>
+              </div>
+            </Col>
+
+            <Col xs={6} md={6} lg={3}>
+              <div className="funfact-seven__item">
+                <h3 className="funfact-seven__title count-box">
+                  {timeRemaining.hours}
+                </h3>
+                <p className="funfact-seven__text">Horas</p>
+              </div>
+            </Col>
+
+            <Col xs={6} md={6} lg={3}>
+              <div className="funfact-seven__item">
+                <h3 className="funfact-seven__title count-box">
+                  {timeRemaining.minutes}
+                </h3>
+                <p className="funfact-seven__text">Minutos</p>
+              </div>
+            </Col>
+
+            <Col xs={6} md={6} lg={3}>
+              <div className="funfact-seven__item">
+                <h3 className="funfact-seven__title count-box">
+                  {timeRemaining.seconds}
+                </h3>
+                <p className="funfact-seven__text">Segundos</p>
+              </div>
+            </Col>
           </Row>
 
           <div style={{ width: "100px" }}>
-            <Image src={LogoGandia} alt="Logo Gandia " />
+            {/* <Image src={LogoGandia} alt="Logo Gandia " /> */}
+            <img src={logoVisita} />
           </div>
         </div>
       </div>
