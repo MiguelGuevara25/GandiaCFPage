@@ -1,4 +1,5 @@
 import PageBanner from "@/components/BannerSection/PageBanner";
+import ComingSoonSection from "@/components/ComingSoonSection/ComingSoonSection";
 import HeaderOne from "@/components/Header/HeaderOne";
 import MobileMenu from "@/components/Header/MobileMenu";
 import Layout from "@/components/Layout/Layout";
@@ -12,11 +13,13 @@ const PageTienda = () => {
   return (
     <Layout pageTitle="Tienda">
       <HeaderOne headerStyle="header-style-two" />
-      <MobileMenu />
+      {/* <MobileMenu />
       <SearchPopup />
       <PageBanner title="Tienda" />
       <ProductosTiendaGandia />
-      <MainFooterTwo />
+      <MainFooterTwo /> */}
+
+      <ComingSoonSection />
     </Layout>
   );
 };

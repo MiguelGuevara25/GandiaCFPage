@@ -23,7 +23,7 @@ const ComingSoonSection = () => {
       <div className="auto-container">
         <Row>
           <Col lg={7}>
-            <div className="logo-box">
+            {/* <div className="logo-box">
               <div className="logo">
                 <Link href="/">
                   <a title={logoTitle}>
@@ -38,9 +38,12 @@ const ComingSoonSection = () => {
                   </a>
                 </Link>
               </div>
-            </div>
-            <h3 className="coming-soon__title">{title}</h3>
-            <p className="coming-soon__text">{text}</p>
+            </div> */}
+            <h3 className="coming-soon__title">¡PRONTO DE VUELTA!</h3>
+            <p className="coming-soon__text">
+              Estamos trabajando con mucho esfuerzo para que podáis ver nuestra
+              información
+            </p>
             <ul
               className="countdown-one__list list-unstyled"
               data-leading-zeros="true"
@@ -52,7 +55,7 @@ const ComingSoonSection = () => {
               deadlineDate="dynamicDate"
               className="coming-soon__countdown"
             />
-            <h3 className="coming-soon__form-title">{formTitle}</h3>
+            {/* <h3 className="coming-soon__form-title">{formTitle}</h3>
             <p className="coming-soon__form-text">{formText}</p>
             <form onSubmit={handleSubmit} className="coming-soon__form">
               <input
@@ -64,7 +67,7 @@ const ComingSoonSection = () => {
               <button type="submit">
                 <span className="fa fa-envelope"></span>
               </button>
-            </form>
+            </form> */}
             <ul className="coming-soon__social list-unstyled">
               {socials.map(({ id, icon, href }) => (
                 <li key={id}>

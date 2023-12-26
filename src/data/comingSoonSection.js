@@ -1,5 +1,5 @@
 import logo from "@/images/logo.png";
-import bg from "@/images/update-26-01-2021/background/coming-soon-bg-1.jpg";
+import bg from "@/images/resource/fotoComingSoon.jpg";
 
 export const comingSoonSection = {
   bg,

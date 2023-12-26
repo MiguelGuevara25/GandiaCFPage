@@ -15,26 +15,26 @@ const Renderer = ({ days, hours, minutes, seconds, completed }) => {
           <li>
             <span className="days">
               {days}
-              <i> Days </i>
+              <i> Días </i>
             </span>
           </li>
         )}
         <li>
           <span className="hours">
             {hours}
-            <i> Hours </i>
+            <i> Horas </i>
           </span>
         </li>
         <li>
           <span className="minutes">
             {minutes}
-            <i> Minutes </i>
+            <i> Minutos </i>
           </span>
         </li>
         <li>
           <span className="seconds">
             {seconds}
-            <i> Seconds </i>
+            <i> Segundos </i>
           </span>
         </li>
       </>

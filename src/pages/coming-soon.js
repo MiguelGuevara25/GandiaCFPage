@@ -1,12 +1,12 @@
 import ComingSoonSection from "@/components/ComingSoonSection/ComingSoonSection";
+import HeaderOne from "@/components/Header/HeaderOne";
 import Layout from "@/components/Layout/Layout";
-import Style from "@/components/Reuseable/Style";
 import React from "react";
 
 const ComingSoon = () => {
   return (
     <Layout pageTitle="Coming Soon Page">
-      <Style />
+      <HeaderOne />
       <ComingSoonSection />
     </Layout>
   );
