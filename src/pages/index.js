@@ -30,7 +30,7 @@ const PagePrueba = () => {
     const res = await axios.get(url, {
       headers: {
         "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": "ff89fd22923c986952308b5e637eab2d",
+        "x-rapidapi-key": import.meta.API_KEY_TABLA_POS,
       },
     });
     const data = await res.data;
