@@ -18,9 +18,24 @@ import LogoGandia2 from "@/images/logoGandia2.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import axios from "axios";
 
 const PagePrueba = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [tablaPos, setTablaPos] = useState([]);
+
+  const apiPosicion = async () => {
+    const url =
+      "https://v3.football.api-sports.io/standings?league=444&season=2023";
+    const res = await axios.get(url, {
+      headers: {
+        "x-rapidapi-host": "v3.football.api-sports.io",
+        "x-rapidapi-key": "ff89fd22923c986952308b5e637eab2d",
+      },
+    });
+    const data = await res.data;
+    setTablaPos(data.response[0].league.standings[0]);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -33,6 +48,12 @@ const PagePrueba = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    apiPosicion();
+  }, []);
+
+  const tablaPosicion = tablaPos.slice(5, 10);
 
   return (
     <Layout pageTitle="CF Gandía">
@@ -177,8 +198,6 @@ const PagePrueba = () => {
               <tr style={{ fontWeight: "400", fontSize: "20px" }}>
                 <th>Pos</th>
                 <th>Equipo</th>
-                {/* {isMobile ? null : <th>J</th>}
-                {isMobile ? null : <th>G</th>} */}
                 <th>J</th>
                 <th>G</th>
                 <th>Puntos</th>
@@ -186,55 +205,19 @@ const PagePrueba = () => {
             </thead>
 
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>CF Gandia</td>
-                {/* {isMobile ? null : <td>12</td>}
-                {isMobile ? null : <td>12</td>} */}
-                <td>34</td>
-                <td>34</td>
-                <td>34</td>
-              </tr>
+              {tablaPosicion.map((datos) => {
+                console.log(datos);
 
-              <tr>
-                <td>2</td>
-                <td>FC Barcelona</td>
-                {/* {isMobile ? null : <td>12</td>}
-                {isMobile ? null : <td>12</td>} */}
-                <td>30</td>
-                <td>30</td>
-                <td>30</td>
-              </tr>
-
-              <tr>
-                <td>3</td>
-                <td>Real Madrid</td>
-                {/* {isMobile ? null : <td>12</td>}
-                {isMobile ? null : <td>12</td>} */}
-                <td>28</td>
-                <td>28</td>
-                <td>28</td>
-              </tr>
-
-              <tr>
-                <td>4</td>
-                <td>Atletico Madrid</td>
-                {/* {isMobile ? null : <td>12</td>}
-                {isMobile ? null : <td>12</td>} */}
-                <td>26</td>
-                <td>26</td>
-                <td>26</td>
-              </tr>
-
-              <tr>
-                <td>5</td>
-                <td>Sevilla</td>
-                {/* {isMobile ? null : <td>12</td>}
-                {isMobile ? null : <td>12</td>} */}
-                <td>20</td>
-                <td>20</td>
-                <td>20</td>
-              </tr>
+                return (
+                  <tr>
+                    <td>{datos.rank}</td>
+                    <td>{datos.team.name}</td>
+                    <td>{datos.all.played}</td>
+                    <td>{datos.all.win}</td>
+                    <td>{datos.points}</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

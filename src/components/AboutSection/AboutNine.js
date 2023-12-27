@@ -25,7 +25,7 @@ const AboutNine = () => {
     <section className="about-nine">
       {datosNoticias.map((e) => {
         return (
-          <div className="auto-container">
+          <div key={e.id} className="auto-container">
             {e.attributes.destacada && (
               <Row>
                 <Col lg={6} className="animated fadeInLeft">
