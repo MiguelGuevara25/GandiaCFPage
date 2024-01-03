@@ -10,6 +10,7 @@ const TeamThree = ({ className = "", showTitle = true, jugadores }) => {
             <h2>Porteros</h2>
           </div>
         )}
+
         <Row>
           {jugadores?.map((jugador) => {
             if (jugador.attributes.seccion === "Porteros") {

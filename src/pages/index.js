@@ -30,12 +30,27 @@ const PagePrueba = () => {
     const res = await axios.get(url, {
       headers: {
         "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": import.meta.API_KEY_TABLA_POS,
+        "x-rapidapi-key": "ff89fd22923c986952308b5e637eab2d",
       },
     });
     const data = await res.data;
-    setTablaPos(data.response[0].league.standings[0]);
+    setTablaPos(data.response[0]?.league.standings[0]);
   };
+
+  // const apiPruebaotravez = async () => {
+  //   const url =
+  //     "https://v3.football.api-sports.io/standings?league=444&season=2023";
+  //   const res = await axios.get(url, {
+  //     headers: {
+  //       "x-rapidapi-host": "v3.football.api-sports.io",
+  //       "x-rapidapi-key": "ff89fd22923c986952308b5e637eab2d",
+  //     },
+  //   });
+
+  //   const data = await res.data;
+
+  //   console.log(data);
+  // };
 
   useEffect(() => {
     const handleResize = () => {
@@ -51,9 +66,10 @@ const PagePrueba = () => {
 
   useEffect(() => {
     apiPosicion();
+    // apiPruebaotravez();
   }, []);
 
-  const tablaPosicion = tablaPos.slice(5, 10);
+  const tablaPosicion = tablaPos?.slice(5, 10);
 
   return (
     <Layout pageTitle="CF Gandía">
@@ -205,9 +221,7 @@ const PagePrueba = () => {
             </thead>
 
             <tbody>
-              {tablaPosicion.map((datos) => {
-                console.log(datos);
-
+              {tablaPosicion?.map((datos) => {
                 return (
                   <tr>
                     <td>{datos.rank}</td>
