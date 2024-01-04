@@ -1,37 +1,37 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { Image } from "react-bootstrap";
 import { SwiperSlide } from "swiper/react";
+import VideoModal from "../VideoModal/VideoModal";
 
 const SingleNewsTwo = ({ news = {} }) => {
   const { image, date, comments, title } = news;
+  const [isOpen, setOpen] = useState(false);
 
   return (
-    <SwiperSlide>
-      <div className="news-two__box">
-        <div className="news-two__image">
-          <Image
-            src={require(`@/images/update-1-12-2020/blog/${image}`).default.src}
-            alt={title}
-          />
+    <>
+      <section className="portfolio-details-video">
+        <div className="auto-container">
+          <div className="portfolio-details-video__thumbnail">
+            <Image
+              src={
+                require(`@/images/update-1-12-2020/blog/${image}`).default.src
+              }
+              alt=""
+            />
+            <div className="vid-link">
+              <a onClick={() => setOpen(true)} className="lightbox-image">
+                <div className="icon">
+                  <span className="flaticon-play-button-1"></span>
+                  <i className="ripple"></i>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
-        <div className="news-two__content">
-          <ul className="list-unstyled news-two__meta">
-            <li>
-              <Link href="/blog-single">{date}</Link>
-            </li>
-            <li>
-              <Link href="/blog-single">
-                <a>{comments} Comments</a>
-              </Link>
-            </li>
-          </ul>
-          <h3>
-            <Link href="/blog-single">{title}</Link>
-          </h3>
-        </div>
-      </div>
-    </SwiperSlide>
+      </section>
+      <VideoModal isOpen={isOpen} setOpen={setOpen} />
+    </>
   );
 };
 

@@ -60,51 +60,51 @@ const newsSection = {
 export default newsSection;
 
 export const newsSectionTwo = {
-  tagline: "Our News",
-  title: "News & Articles",
+  // tagline: "Our News",
+  // title: "News & Articles",
   newses: [
     {
       id: 1,
       image: "blog-1-1.jpg",
-      date: "06 Nov, 2020",
-      comments: 3,
-      title: "What is the Better Way of Running a Business?",
+      // date: "06 Nov, 2020",
+      // comments: 3,
+      // title: "What is the Better Way of Running a Business?",
     },
     {
-      id: 2,
+      id: 2,  
       image: "blog-1-2.jpg",
-      date: "06 Nov, 2020",
-      comments: 3,
-      title: "What is the Better Way of Running a Business?",
+      // date: "06 Nov, 2020",
+      // comments: 3,
+      // title: "What is the Better Way of Running a Business?",
     },
-    {
-      id: 3,
-      image: "blog-1-1.jpg",
-      date: "06 Nov, 2020",
-      comments: 3,
-      title: "What is the Better Way of Running a Business?",
-    },
-    {
-      id: 4,
-      image: "blog-1-2.jpg",
-      date: "06 Nov, 2020",
-      comments: 3,
-      title: "What is the Better Way of Running a Business?",
-    },
-    {
-      id: 5,
-      image: "blog-1-1.jpg",
-      date: "06 Nov, 2020",
-      comments: 3,
-      title: "What is the Better Way of Running a Business?",
-    },
-    {
-      id: 6,
-      image: "blog-1-2.jpg",
-      date: "06 Nov, 2020",
-      comments: 3,
-      title: "What is the Better Way of Running a Business?",
-    },
+    // {
+    //   id: 3,
+    //   image: "blog-1-1.jpg",
+    //   date: "06 Nov, 2020",
+    //   comments: 3,
+    //   title: "What is the Better Way of Running a Business?",
+    // },
+    // {
+    //   id: 4,
+    //   image: "blog-1-2.jpg",
+    //   date: "06 Nov, 2020",
+    //   comments: 3,
+    //   title: "What is the Better Way of Running a Business?",
+    // },
+    // {
+    //   id: 5,
+    //   image: "blog-1-1.jpg",
+    //   date: "06 Nov, 2020",
+    //   comments: 3,
+    //   title: "What is the Better Way of Running a Business?",
+    // },
+    // {
+    //   id: 6,
+    //   image: "blog-1-2.jpg",
+    //   date: "06 Nov, 2020",
+    //   comments: 3,
+    //   title: "What is the Better Way of Running a Business?",
+    // },
   ],
 };
 

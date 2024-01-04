@@ -19,6 +19,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import axios from "axios";
+import NewsSectionTwo from "@/components/NewsSection/NewsSectionTwo";
 
 const PagePrueba = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -239,7 +240,8 @@ const PagePrueba = () => {
 
       <SponsorsSection />
 
-      <PortfolioDetailsVideo />
+      {/* <PortfolioDetailsVideo /> */}
+      <NewsSectionTwo />
       {/* <MainFooter /> */}
       <MainFooterTwo />
     </Layout>
