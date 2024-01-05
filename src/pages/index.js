@@ -2,56 +2,89 @@ import AboutNine from "@/components/AboutSection/AboutNine";
 import AboutSection from "@/components/AboutSection/AboutSection";
 import BannerOne from "@/components/BannerSection/BannerOne";
 import FunFactSeven from "@/components/FunFacts/FunFactSeven";
-import HeaderEight from "@/components/Header/HeaderEight";
 import HeaderOne from "@/components/Header/HeaderOne";
-import HeaderTwo from "@/components/Header/HeaderTwo";
 import MobileMenu from "@/components/Header/MobileMenu";
 import Layout from "@/components/Layout/Layout";
 import MainFooterTwo from "@/components/MainFooter/MainFooterTwo";
-import PortfolioDetailsVideo from "@/components/PortfolioDetails/PortfolioDetailsVideo";
 import SearchPopup from "@/components/SearchPopup/SearchPopup";
-import SliderEight from "@/components/SliderSection/SliderEight";
 import SponsorsSection from "@/components/SponsorsSection/SponsorsSection";
-import LogoArsenal from "@/images/logoArsenal.png";
-import LogoGandia from "@/images/logoGandia.png";
 import LogoGandia2 from "@/images/logoGandia2.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Table } from "react-bootstrap";
 import axios from "axios";
 import NewsSectionTwo from "@/components/NewsSection/NewsSectionTwo";
+import moment from "moment";
+import "moment/locale/es";
 
 const PagePrueba = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [tablaPos, setTablaPos] = useState([]);
+  // const [tablaPos, setTablaPos] = useState([]);
+  const [partidosPrevios, setPartidosPrevios] = useState([]);
+  const [segundoProximoPartido, setSegundoProximoPartido] = useState([]);
+  const [otraPrueba, setOtraPrueba] = useState([]);
+
+  const getPartidosPrevios = async () => {
+    const url = "http://localhost:1337/api/partidos-previos?populate=*";
+    const res = await axios.get(url);
+    const { data } = res.data;
+    setPartidosPrevios(data);
+  };
+
+  const getSegundoProximoPartido = async () => {
+    const url = "http://localhost:1337/api/segundo-proximo-partidos?populate=*";
+    const res = await axios.get(url);
+    const { data } = res.data;
+    setSegundoProximoPartido(data);
+  };
+
+  useEffect(() => {
+    getPartidosPrevios();
+    getSegundoProximoPartido();
+  }, []);
+
+  const obtenerDatosDesdeCache = () => {
+    try {
+      const datosEnCache = localStorage.getItem("datos");
+      return datosEnCache ? JSON.parse(datosEnCache) : null;
+    } catch (error) {
+      console.error(
+        "Error al parsear datos desde el almacenamiento local",
+        error
+      );
+      return null;
+    }
+  };
 
   const apiPosicion = async () => {
     const url =
-      "https://v3.football.api-sports.io/standings?league=444&season=2023";
+      "https://v1.baseball.api-sports.io/standings?league=1&season=2020";
     const res = await axios.get(url, {
       headers: {
-        "x-rapidapi-host": "v3.football.api-sports.io",
+        "x-rapidapi-host": "v1.baseball.api-sports.io",
         "x-rapidapi-key": "ff89fd22923c986952308b5e637eab2d",
       },
     });
     const data = await res.data;
-    setTablaPos(data.response[0]?.league.standings[0]);
+    setOtraPrueba(data.response[0]);
+    localStorage.setItem("datos", JSON.stringify(data.response[0]));
+    // setTablaPos(data.response[0]?.league.standings[0]);
   };
 
-  // const apiPruebaotravez = async () => {
-  //   const url =
-  //     "https://v3.football.api-sports.io/standings?league=444&season=2023";
-  //   const res = await axios.get(url, {
-  //     headers: {
-  //       "x-rapidapi-host": "v3.football.api-sports.io",
-  //       "x-rapidapi-key": "ff89fd22923c986952308b5e637eab2d",
-  //     },
-  //   });
+  useEffect(() => {
+    const datosEnCache = obtenerDatosDesdeCache();
 
-  //   const data = await res.data;
+    if (datosEnCache) {
+      setOtraPrueba(datosEnCache);
+    } else {
+      apiPosicion();
+    }
 
-  //   console.log(data);
-  // };
+    const intervalo = setInterval(() => {
+      apiPosicion();
+    }, 900000); // 15 minutos
+
+    return () => clearInterval(intervalo);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -65,12 +98,11 @@ const PagePrueba = () => {
     };
   }, []);
 
-  useEffect(() => {
-    apiPosicion();
-    // apiPruebaotravez();
-  }, []);
+  // useEffect(() => {
+  //   apiPosicion();
+  // }, []);
 
-  const tablaPosicion = tablaPos?.slice(5, 10);
+  // const tablaPosicion = tablaPos?.slice(5, 10);
 
   return (
     <Layout pageTitle="CF Gandía">
@@ -107,41 +139,39 @@ const PagePrueba = () => {
               }}
               className="py-2"
             >
-              <div className="d-flex flex-column align-items-center mb-3">
-                <span style={{ fontSize: "25px", marginBottom: "10px" }}>
-                  La Liga
-                </span>
-                <div
-                  className="d-flex align-items-center"
-                  style={{ gap: "50px" }}
-                >
-                  <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                    <Image src={LogoArsenal} alt="Logo Arsenal" />
+              {partidosPrevios.map((datos) => {
+                return (
+                  <div
+                    key={datos.id}
+                    className="d-flex flex-column align-items-center mb-3"
+                  >
+                    <span style={{ fontSize: "25px", marginBottom: "10px" }}>
+                      {datos.attributes.torneo}
+                    </span>
+                    <div
+                      className="d-flex align-items-center"
+                      style={{ gap: "50px" }}
+                    >
+                      <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
+                        <img
+                          src={`http://localhost:1337${datos.attributes.logoLocal.data.attributes.url}`}
+                          alt="Logo Arsenal"
+                        />
+                      </div>
+                      <span className="fs-2">
+                        {datos.attributes.resultadoLocal}-
+                        {datos.attributes.resultadoVisita}
+                      </span>
+                      <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
+                        <img
+                          src={`http://localhost:1337${datos.attributes.logoVisita.data.attributes.url}`}
+                          alt="Logo Gandia"
+                        />
+                      </div>
+                    </div>
                   </div>
-                  <span className="fs-2">3-1</span>
-                  <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                    <Image src={LogoGandia} alt="Logo Gandia" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="d-flex flex-column align-items-center">
-                <span style={{ fontSize: "25px", marginBottom: "10px" }}>
-                  Champions League
-                </span>
-                <div
-                  className="d-flex align-items-center"
-                  style={{ gap: "50px" }}
-                >
-                  <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                    <Image src={LogoArsenal} alt="Logo Arsenal" />
-                  </div>
-                  <span className="fs-2">3-1</span>
-                  <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                    <Image src={LogoArsenal} alt="Logo Arsenal" />
-                  </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
 
@@ -156,26 +186,46 @@ const PagePrueba = () => {
                 paddingBottom: "10px",
               }}
             >
-              <div className="d-flex flex-column align-items-center">
-                <span style={{ fontSize: "25px", margin: "10px" }}>
-                  La Liga
-                </span>
-                <div
-                  className="d-flex align-items-center"
-                  style={{ gap: "38px" }}
-                >
-                  <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                    <Image src={LogoArsenal} alt="Logo Arsenal" />
+              {segundoProximoPartido.map((datos) => {
+                const fechaOriginal = datos.attributes.fechaPartido;
+                const horaOriginal = datos.attributes.fechaPartido;
+                const fechaFormateada = moment(fechaOriginal).format("MMM DD");
+                const horaFormateada = moment(horaOriginal).format("HH:mm");
+
+                return (
+                  <div
+                    key={datos.id}
+                    className="d-flex flex-column align-items-center"
+                  >
+                    <span style={{ fontSize: "25px", margin: "10px" }}>
+                      {datos.attributes.torneo}
+                    </span>
+                    <div
+                      className="d-flex align-items-center"
+                      style={{ gap: "38px" }}
+                    >
+                      <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
+                        <img
+                          src={`http://localhost:1337${datos.attributes.logoLocal.data.attributes.url}`}
+                          alt="Logo Arsenal"
+                        />
+                      </div>
+                      <div className="d-flex flex-column align-items-center">
+                        <span className="fs-5 text-capitalize">
+                          {fechaFormateada}
+                        </span>
+                        <span className="fs-5">{horaFormateada}</span>
+                      </div>
+                      <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
+                        <img
+                          src={`http://localhost:1337${datos.attributes.logoVisita.data.attributes.url}`}
+                          alt="Logo Arsenal"
+                        />
+                      </div>
+                    </div>
                   </div>
-                  <div className="d-flex flex-column align-items-center">
-                    <span className="fs-5">Nov 14</span>
-                    <span className="fs-5">16:00</span>
-                  </div>
-                  <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                    <Image src={LogoArsenal} alt="Logo Arsenal" />
-                  </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -222,7 +272,19 @@ const PagePrueba = () => {
             </thead>
 
             <tbody>
-              {tablaPosicion?.map((datos) => {
+              {otraPrueba?.slice(5, 10).map((e, id) => {
+                return (
+                  <tr key={id}>
+                    <td>{e.position}</td>
+                    <td>{e.team.name}</td>
+                    <td>{e.games.played}</td>
+                    <td>{e.games.win.total}</td>
+                    <td>{e.points.for}</td>
+                  </tr>
+                );
+              })}
+
+              {/* {tablaPosicion?.map((datos) => {
                 return (
                   <tr>
                     <td>{datos.rank}</td>
@@ -232,7 +294,7 @@ const PagePrueba = () => {
                     <td>{datos.points}</td>
                   </tr>
                 );
-              })}
+              })} */}
             </tbody>
           </table>
         </div>
