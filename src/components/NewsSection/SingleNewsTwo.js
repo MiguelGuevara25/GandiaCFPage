@@ -1,12 +1,7 @@
-import Link from "next/link";
-import React, { useState } from "react";
 import { Image } from "react-bootstrap";
-import { SwiperSlide } from "swiper/react";
-import VideoModal from "../VideoModal/VideoModal";
 
-const SingleNewsTwo = ({ news = {} }) => {
-  const { image, date, comments, title } = news;
-  const [isOpen, setOpen] = useState(false);
+const SingleNewsTwo = ({ video }) => {
+  const { enlace, imagen } = video.attributes;
 
   return (
     <>
@@ -14,13 +9,11 @@ const SingleNewsTwo = ({ news = {} }) => {
         <div className="auto-container">
           <div className="portfolio-details-video__thumbnail">
             <Image
-              src={
-                require(`@/images/update-1-12-2020/blog/${image}`).default.src
-              }
-              alt=""
+              src={`http://localhost:1337${imagen.data[0].attributes.url}`}
+              alt="video"
             />
             <div className="vid-link">
-              <a onClick={() => setOpen(true)} className="lightbox-image">
+              <a href={enlace} target="_blank" className="lightbox-image">
                 <div className="icon">
                   <span className="flaticon-play-button-1"></span>
                   <i className="ripple"></i>
@@ -30,7 +23,6 @@ const SingleNewsTwo = ({ news = {} }) => {
           </div>
         </div>
       </section>
-      <VideoModal isOpen={isOpen} setOpen={setOpen} />
     </>
   );
 };

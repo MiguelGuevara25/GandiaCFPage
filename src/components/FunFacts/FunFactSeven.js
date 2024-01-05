@@ -1,11 +1,6 @@
-import { funFactSeven } from "@/data/funFacts";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import LogoArsenal from "@/images/logoArsenal.png";
-import LogoGandia from "@/images/logoGandia.png";
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import VisibilityCountUp from "../VisibilityCountUp/VisibilityCountUp";
 import axios from "axios";
 import moment from "moment";
 
@@ -96,7 +91,6 @@ const FunFactSeven = () => {
           }`}
         >
           <div style={{ width: "120px" }}>
-            {/* <Image src={LogoArsenal} alt="Logo Arsenal" /> */}
             <img src={logoLocal} />
           </div>
 
@@ -139,7 +133,6 @@ const FunFactSeven = () => {
           </Row>
 
           <div style={{ width: "100px" }}>
-            {/* <Image src={LogoGandia} alt="Logo Gandia " /> */}
             <img src={logoVisita} />
           </div>
         </div>
