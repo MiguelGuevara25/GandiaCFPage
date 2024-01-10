@@ -5,7 +5,7 @@ import { Col, Row } from "react-bootstrap";
 const ContactInfoTwo = () => {
   return (
     <section className="contact-info-two">
-      <div className="auto-container">
+      <div style={{ maxWidth: "1400px", margin: "auto" }}>
         <Row>
           {contactInfoTwo.map(({ id, icon, text, email, phone }) => (
             <Col key={id} md={12} lg={4}>
