@@ -133,51 +133,43 @@ const PagePrueba = () => {
               }}
               className="py-2"
             >
-              {
-                tablaProxPrev
-                  ?.filter((e) => e.fixture.status.short === "FT") // Filtra los elementos que cumplen con la condición
-                  .slice(-2)
-                  .map((e) => {
-                    return (
+              {tablaProxPrev
+                ?.filter((e) => e.fixture.status.short === "FT")
+                .slice(-2)
+                .map((e) => {
+                  return (
+                    <div
+                      key={e.fixture.id}
+                      className="d-flex flex-column align-items-center mb-3"
+                    >
+                      <span style={{ fontSize: "25px", marginBottom: "10px" }}>
+                        {e.league.name}
+                      </span>
                       <div
-                        key={e.fixture.id}
-                        className="d-flex flex-column align-items-center mb-3"
+                        className="d-flex align-items-center"
+                        style={{ gap: "50px" }}
                       >
-                        <span
-                          style={{ fontSize: "25px", marginBottom: "10px" }}
-                        >
-                          {e.league.name}
+                        <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
+                          <img
+                            src={e.teams.home.logo}
+                            alt="Logo Arsenal"
+                            style={{ width: "100%" }}
+                          />
+                        </div>
+                        <span className="fs-2">
+                          {e.goals.home} - {e.goals.away}
                         </span>
-                        <div
-                          className="d-flex align-items-center"
-                          style={{ gap: "50px" }}
-                        >
-                          <div
-                            style={{ width: `${isMobile ? "40px" : "60px"}` }}
-                          >
-                            <img
-                              src={e.teams.home.logo}
-                              alt="Logo Arsenal"
-                              style={{ width: "100%" }}
-                            />
-                          </div>
-                          <span className="fs-2">
-                            {e.goals.home} - {e.goals.away}
-                          </span>
-                          <div
-                            style={{ width: `${isMobile ? "40px" : "60px"}` }}
-                          >
-                            <img
-                              src={e.teams.away.logo}
-                              alt="Logo Gandia"
-                              style={{ width: "100%" }}
-                            />
-                          </div>
+                        <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
+                          <img
+                            src={e.teams.away.logo}
+                            alt="Logo Gandia"
+                            style={{ width: "100%" }}
+                          />
                         </div>
                       </div>
-                    );
-                  }) // Obtiene los últimos dos elementos después de aplicar el filtro
-              }
+                    </div>
+                  );
+                })}
             </div>
           </div>
 

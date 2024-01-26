@@ -1,143 +1,136 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import moment from "moment";
+import "moment/locale/es";
+import axios from "axios";
 
 const FunFactSeven = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [estadioProximo, setEstadioProximo] = useState("");
-  const [fechaPartido, setFechaPartido] = useState("");
-  const [logoLocal, setLogoLocal] = useState("");
-  const [logoVisita, setLogoVisita] = useState("");
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const getProximoPartido = async () => {
-    const url = "http://localhost:1337/api/proximo-partido?populate=*";
-    const res = await axios.get(url);
-    const { attributes } = await res.data.data;
-
-    setEstadioProximo(attributes.estadio);
-    setFechaPartido(attributes.fechaPartido);
-    setLogoLocal(
-      `http://localhost:1337${attributes.logoLocal.data.attributes.url}`
-    );
-    setLogoVisita(
-      `http://localhost:1337${attributes.logoVisita.data.attributes.url}`
-    );
-  };
-
-  useEffect(() => {
-    getProximoPartido();
-  }, []);
-
-  //Hasta aquí
-
-  const [timeRemaining, setTimeRemaining] = useState({
+  const [proximoPartido, setProximoPartido] = useState([]);
+  const [tiempoRestante, setTiempoRestante] = useState({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0,
   });
-  const targetDate = moment(fechaPartido); // Establece la fecha objetivo
+
+  const apiPosicion3 = async () => {
+    const url =
+      "https://v3.football.api-sports.io/fixtures?team=20265&season=2023";
+    const res = await axios.get(url, {
+      headers: {
+        "x-rapidapi-host": "v3.football.api-sports.io",
+        "x-rapidapi-key": "07a555363c588371003efcd5428ab5ab",
+      },
+    });
+
+    const data = await res.data;
+    setProximoPartido(data.response);
+    console.log(data.response);
+    localStorage.setItem("tablaProximoPartido", JSON.stringify(data.response));
+  };
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      const now = moment();
-      const duration = moment.duration(targetDate.diff(now));
+    const datosProximoPartido = localStorage.getItem("tablaProximoPartido");
 
-      if (duration.asSeconds() <= 0) {
-        // Si la diferencia es negativa o cero, detener la cuenta regresiva
-        clearInterval(intervalId);
-        setTimeRemaining({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      } else {
-        setTimeRemaining({
-          days: duration.days(),
-          hours: duration.hours(),
-          minutes: duration.minutes(),
-          seconds: duration.seconds(),
-        });
-      }
-    }, 1000);
+    if (datosProximoPartido) {
+      setProximoPartido(JSON.parse(datosProximoPartido));
+    } else {
+      apiPosicion3();
+    }
+  }, []);
 
-    return () => clearInterval(intervalId);
-  }, [targetDate]);
+  useEffect(() => {
+    const intervalIds = proximoPartido
+      .filter((partido) => partido.fixture.status.short === "NS")
+      .slice(0, 1)
+      .map((partido) => {
+        return setInterval(() => {
+          const now = moment();
+          const targetDate = moment(partido.fixture.date);
+          const duration = moment.duration(targetDate.diff(now));
+
+          setTiempoRestante({
+            days: duration.days(),
+            hours: duration.hours(),
+            minutes: duration.minutes(),
+            seconds: duration.seconds(),
+          });
+        }, 1000);
+      });
+
+    return () => {
+      intervalIds.forEach((intervalId) => clearInterval(intervalId));
+    };
+  }, [proximoPartido]);
 
   return (
-    <section className="funfact-seven">
-      <div className="auto-container">
-        <div className="sec-title-seven text-center">
-          <h2 className="sec-title-seven__title">
-            Estadio
-            <br />
-            <span>{estadioProximo}</span>
-          </h2>
-        </div>
-
-        <div
-          className={`d-flex justify-content-between align-items-center ${
-            isMobile ? "flex-column" : "flex-row"
-          }`}
-        >
-          <div style={{ width: "120px" }}>
-            <img src={logoLocal} />
-          </div>
-
-          <Row>
-            <Col xs={6} md={6} lg={3}>
-              <div className="funfact-seven__item">
-                <h3 className="funfact-seven__title count-box">
-                  {timeRemaining.days}
-                </h3>
-                <p className="funfact-seven__text">Días</p>
+    <div>
+      {proximoPartido
+        .filter((e) => e.fixture.status.short === "NS")
+        .slice(0, 1)
+        .map((e, id) => {
+          return (
+            <section key={id} className="funfact-seven">
+              <div className="auto-container">
+                <div className="sec-title-seven text-center">
+                  <h2 className="sec-title-seven__title">
+                    Estadio
+                    <br />
+                    {/* <span>{estadioProximo}</span> */}
+                    <span>{e.fixture.venue.name}</span>
+                  </h2>
+                </div>
+                <div
+                  className={`d-flex justify-content-between align-items-
+        isMobile ? "flex-column" : "flex-row"
+      }`}
+                >
+                  <div>
+                    <img src={e.teams.home.logo} />
+                  </div>
+                  <Row>
+                    <Col xs={6} md={6} lg={3}>
+                      <div className="funfact-seven__item">
+                        <h3 className="funfact-seven__title count-box">
+                          {tiempoRestante.days}
+                        </h3>
+                        <p className="funfact-seven__text">Días</p>
+                      </div>
+                    </Col>
+                    <Col xs={6} md={6} lg={3}>
+                      <div className="funfact-seven__item">
+                        <h3 className="funfact-seven__title count-box">
+                          {tiempoRestante.hours}
+                        </h3>
+                        <p className="funfact-seven__text">Horas</p>
+                      </div>
+                    </Col>
+                    <Col xs={6} md={6} lg={3}>
+                      <div className="funfact-seven__item">
+                        <h3 className="funfact-seven__title count-box">
+                          {tiempoRestante.minutes}
+                        </h3>
+                        <p className="funfact-seven__text">Minutos</p>
+                      </div>
+                    </Col>
+                    <Col xs={6} md={6} lg={3}>
+                      <div className="funfact-seven__item">
+                        <h3 className="funfact-seven__title count-box">
+                          {tiempoRestante.seconds}
+                        </h3>
+                        <p className="funfact-seven__text">Segundos</p>
+                      </div>
+                    </Col>
+                  </Row>
+                  <div>
+                    <img src={e.teams.away.logo} />
+                  </div>
+                </div>
               </div>
-            </Col>
-
-            <Col xs={6} md={6} lg={3}>
-              <div className="funfact-seven__item">
-                <h3 className="funfact-seven__title count-box">
-                  {timeRemaining.hours}
-                </h3>
-                <p className="funfact-seven__text">Horas</p>
-              </div>
-            </Col>
-
-            <Col xs={6} md={6} lg={3}>
-              <div className="funfact-seven__item">
-                <h3 className="funfact-seven__title count-box">
-                  {timeRemaining.minutes}
-                </h3>
-                <p className="funfact-seven__text">Minutos</p>
-              </div>
-            </Col>
-
-            <Col xs={6} md={6} lg={3}>
-              <div className="funfact-seven__item">
-                <h3 className="funfact-seven__title count-box">
-                  {timeRemaining.seconds}
-                </h3>
-                <p className="funfact-seven__text">Segundos</p>
-              </div>
-            </Col>
-          </Row>
-
-          <div style={{ width: "100px" }}>
-            <img src={logoVisita} />
-          </div>
-        </div>
-      </div>
-    </section>
+            </section>
+          );
+        })}
+    </div>
   );
 };
 
