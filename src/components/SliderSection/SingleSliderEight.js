@@ -7,11 +7,11 @@ const SingleSliderEight = ({ slide = {} }) => {
     <div className="swiper-slide">
       <div
         className="image-layer"
-        style={{
-          backgroundImage: `url(${
-            require(`@/images/main-slider/${bg}`).default.src
-          })`,
-        }}
+        // style={{
+        //   backgroundImage: `url(${
+        //     require(`@/images/main-slider/${bg}`).default.src
+        //   })`,
+        // }}
       ></div>
       <div className="auto-container">
         <div className="slider-eight__content">

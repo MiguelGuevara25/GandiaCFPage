@@ -8,7 +8,7 @@ const SingleTeamThree = ({ jugador }) => {
           <div className="team-card-three__image">
             <Image
               src={`https://admin.clubdefutbolgandia.com${jugador.attributes.imagen.data?.attributes.url}`}
-              alt=""
+              alt="Imagen"
             />
           </div>
           <div className="team-card-three__content">
@@ -33,6 +33,7 @@ const SingleTeamThree = ({ jugador }) => {
                   <a
                     href={`https://www.instagram.com/${jugador.attributes.instagram}/`}
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <span className="fab fa-instagram"></span>
                   </a>
@@ -44,6 +45,7 @@ const SingleTeamThree = ({ jugador }) => {
                   <a
                     href={`https://twitter.com/${jugador.attributes.twitter}`}
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <span className="fab fa-twitter"></span>
                   </a>

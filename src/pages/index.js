@@ -21,6 +21,10 @@ const PagePrueba = () => {
   const [tablaProxPrev, setTablaProxPrev] = useState([]);
   const [tablaPosicion, setTablaPosicion] = useState([]);
 
+  const rankingGandia = tablaPosicion.filter((equipo) => {
+    return equipo.team.name === "CF Gandia";
+  });
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1200);
@@ -150,7 +154,7 @@ const PagePrueba = () => {
                         style={{ gap: "50px" }}
                       >
                         <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                          <img
+                          <Image
                             src={e.teams.home.logo}
                             alt="Logo Arsenal"
                             style={{ width: "100%" }}
@@ -160,7 +164,7 @@ const PagePrueba = () => {
                           {e.goals.home} - {e.goals.away}
                         </span>
                         <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                          <img
+                          <Image
                             src={e.teams.away.logo}
                             alt="Logo Gandia"
                             style={{ width: "100%" }}
@@ -197,7 +201,7 @@ const PagePrueba = () => {
                     style={{ gap: "38px" }}
                   >
                     <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                      <img
+                      <Image
                         src={segundoElementoConNSoTBD.teams.home.logo}
                         alt={`Logo ${segundoElementoConNSoTBD.teams.home.name}`}
                         style={{ width: "100%" }}
@@ -216,7 +220,7 @@ const PagePrueba = () => {
                       </span>
                     </div>
                     <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                      <img
+                      <Image
                         src={segundoElementoConNSoTBD.teams.away.logo}
                         alt={`Logo ${segundoElementoConNSoTBD.teams.away.name}`}
                         style={{ width: "100%" }}
@@ -245,7 +249,7 @@ const PagePrueba = () => {
             className="w-25 position-absolute"
             style={{ right: "20px", bottom: "10px" }}
           >
-            <Image src={LogoGandia2} style={{ opacity: "0.5" }} />
+            <Image src={LogoGandia2} alt="Logo" style={{ opacity: "0.5" }} />
           </div>
 
           <table

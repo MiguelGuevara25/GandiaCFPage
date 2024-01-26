@@ -11,11 +11,11 @@ const SlideItemThree = ({ slide = {} }, ref) => {
       <div className="round-image">
         <div
           className="image"
-          style={{
-            backgroundImage: `url(${
-              require(`@/images/main-slider/${bg}`).default.src
-            })`,
-          }}
+          // style={{
+          //   backgroundImage: `url(${
+          //     require(`@/images/main-slider/${bg}`).default.src
+          //   })`,
+          // }}
         ></div>
       </div>
       <div className="auto-container">

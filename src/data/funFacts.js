@@ -1,4 +1,4 @@
-import bg from "@/images/background/image-1.jpg";
+// import bg from "@/images/background/image-1.jpg";
 
 const uno = 1;
 const dos = 2;
@@ -29,7 +29,7 @@ const funFacts = [
 ];
 
 export const funFactsOne = {
-  bg,
+  // bg,
   funFacts,
 };
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
+import Image from "next/image";
 import moment from "moment";
 import "moment/locale/es";
 import axios from "axios";
@@ -86,7 +87,7 @@ const FunFactSeven = () => {
       }`}
                 >
                   <div>
-                    <img src={e.teams.home.logo} />
+                    <Image alt="Gandia Logo" src={e.teams.home.logo} />
                   </div>
                   <Row>
                     <Col xs={6} md={6} lg={3}>
@@ -123,7 +124,7 @@ const FunFactSeven = () => {
                     </Col>
                   </Row>
                   <div>
-                    <img src={e.teams.away.logo} />
+                    <Image alt="Logo local" src={e.teams.away.logo} />
                   </div>
                 </div>
               </div>

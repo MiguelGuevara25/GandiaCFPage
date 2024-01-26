@@ -13,7 +13,7 @@ const SingleNewsTwo = ({ video }) => {
               alt="video"
             />
             <div className="vid-link">
-              <a href={enlace} target="_blank" className="lightbox-image">
+              <a href={enlace} target="_blank" className="lightbox-image" rel="noreferrer">
                 <div className="icon">
                   <span className="flaticon-play-button-1"></span>
                   <i className="ripple"></i>

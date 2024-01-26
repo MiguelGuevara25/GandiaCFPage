@@ -22,7 +22,7 @@ const BlogDetails = ({ datosBlog }) => {
       <div className="post-details">
         <div className="inner-box">
           <div className="image-box">
-            <Image src={urlIMG} />
+            <Image src={urlIMG} alt="Imagen" />
           </div>
 
           <div className="lower-box">

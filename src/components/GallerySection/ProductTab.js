@@ -85,7 +85,7 @@ const ProductTab = ({ tab = {}, current, carousel = "" }) => {
               <div className="inner-box">
                 <figure className="image">
                   <Image
-                    src={require(`@/images/gallery/${image}`).default.src}
+                    // src={require(`@/images/gallery/${image}`).default.src}
                     alt=""
                   />
                 </figure>

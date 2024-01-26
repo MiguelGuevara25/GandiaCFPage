@@ -2,7 +2,7 @@ import { parallaxPage } from "@/data/parallaxSection";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import React from "react";
-import JarallaxImage from "../Jarallax/JarallaxImage";
+// import JarallaxImage from "../Jarallax/JarallaxImage";
 const Jarallax = dynamic(() => import("../Jarallax/Jarallax"), { ssr: false });
 
 const ParallaxPage = () => {
@@ -15,9 +15,9 @@ const ParallaxPage = () => {
           speed={0.3}
           imgPosition="50% 100%"
         >
-          <JarallaxImage
+          {/* <JarallaxImage
             src={require(`@/images/background/${bg}`).default.src}
-          />
+          /> */}
           <div className="auto-container">
             <div className="parallax-block__content">
               <h3>{title}</h3>

@@ -1,10 +1,10 @@
-import bg from "@/images/background/image-3.jpg";
+// import bg from "@/images/background/image-3.jpg";
 import image from "@/images/resource/featured-image-13.jpg";
 import image2 from "@/images/update-26-02-2021/resources/feature-2-1.jpg";
 import image3 from "@/images/update-26-02-2021/resources/feature-3-1.jpg";
 
 const featuresSection = {
-  bg,
+  // bg,
   title: "Grow With Community & Experience Endless Possibilities",
   features: [
     {

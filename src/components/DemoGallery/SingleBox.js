@@ -13,7 +13,7 @@ const SingleBox = ({ box = {} }) => {
           <Image
             width={370}
             height={426}
-            src={require(`@/images/demo/${image}`).default.src}
+            // src={require(`@/images/demo/${image}`).default.src}
             alt=""
           />
           <div className="portfolio-masonary__box-content">
