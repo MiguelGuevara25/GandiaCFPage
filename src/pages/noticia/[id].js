@@ -16,7 +16,7 @@ const Post = () => {
   const { id } = router.query;
 
   const getBlog = async (urlData) => {
-    const url = `http://localhost:1337/api/noticias?filters[url]=${urlData}&populate=*`;
+    const url = `https://admin.clubdefutbolgandia.com/api/noticias?filters[url]=${urlData}&populate=*`;
 
     const res = await axios.get(url);
     const data = await res.data;

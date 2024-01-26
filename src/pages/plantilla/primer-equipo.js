@@ -16,7 +16,7 @@ const PagePlantilla = () => {
   const [jugadores, setJugadores] = useState([]);
 
   const getPlantilla = async () => {
-    const url = "http://localhost:1337/api/jugadores?populate=*";
+    const url = "https://admin.clubdefutbolgandia.com/api/jugadores?populate=*";
     const res = await axios.get(url);
     const { data } = await res.data;
     setJugadores(data);

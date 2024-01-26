@@ -40,7 +40,7 @@ const NewsSectionTwo = () => {
   const [probandoVideo, setProbandoVideo] = useState([]);
 
   const getVideosInicio = async () => {
-    const url = "http://localhost:1337/api/videos-inicios?populate=*";
+    const url = "https://admin.clubdefutbolgandia.com/api/videos-inicios?populate=*";
     const res = await axios.get(url);
     const { data } = res.data;
     setProbandoVideo(data);
