@@ -13,7 +13,7 @@ const FunFactSeven = () => {
     seconds: 0,
   });
 
-  const apiPosicion3 = async () => {
+  const getProximoPartido = async () => {
     const url =
       "https://v3.football.api-sports.io/fixtures?team=20265&season=2023";
     const res = await axios.get(url, {
@@ -25,18 +25,33 @@ const FunFactSeven = () => {
 
     const data = await res.data;
     setProximoPartido(data.response);
-    console.log(data.response);
+
+    return data;
+  };
+
+  const apiPosicion3 = async () => {
+    const data = await getProximoPartido();
+    // TODO: Fijarse que hacer si no hay datos
+    console.log('apiPosicion3', data.response)
     localStorage.setItem("tablaProximoPartido", JSON.stringify(data.response));
   };
 
   useEffect(() => {
     const datosProximoPartido = localStorage.getItem("tablaProximoPartido");
 
-    if (datosProximoPartido) {
-      setProximoPartido(JSON.parse(datosProximoPartido));
-    } else {
+    console.log('getting datosProximoPartido', tiempoRestante)
+
+    if (!datosProximoPartido) {
       apiPosicion3();
     }
+
+    // if (tiempoRestante.days === 0 && tiempoRestante.hours === 0 && tiempoRestante.minutes === 0 && tiempoRestante.seconds === 0) {
+    //   apiPosicion3();
+    // }
+
+    if (datosProximoPartido) {
+      setProximoPartido(JSON.parse(datosProximoPartido));
+    } 
   }, []);
 
   useEffect(() => {
@@ -50,11 +65,12 @@ const FunFactSeven = () => {
           const duration = moment.duration(targetDate.diff(now));
 
           setTiempoRestante({
-            days: duration.days(),
-            hours: duration.hours(),
-            minutes: duration.minutes(),
-            seconds: duration.seconds(),
+            days: duration.days() < 0 ? 0 : duration.days(),
+            hours: duration.hours() < 0 ? 0 : duration.hours(),
+            minutes: duration.minutes() < 0 ? 0 : duration.minutes(),
+            seconds: duration.seconds() < 0 ? 0 : duration.seconds(),
           });
+
         }, 1000);
       });
 

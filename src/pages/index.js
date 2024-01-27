@@ -44,6 +44,7 @@ const PagePrueba = () => {
     });
 
     const data = await res.data;
+    console.log(data)
     setTablaPosicion(data.response[0].league.standings[0]);
     localStorage.setItem(
       "tablaPosicion",
