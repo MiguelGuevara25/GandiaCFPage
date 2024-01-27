@@ -1,4 +1,4 @@
-import bg from "@/images/background/image-6.jpg";
+// import bg from "@/images/background/image-6.jpg";
 import image from "@/images/update-26-02-2021/resources/testimonial-1-1.jpg";
 
 const testimonialsSection = {
@@ -52,7 +52,7 @@ const testimonialsSection = {
 export default testimonialsSection;
 
 export const testimonialsSectionTwo = {
-  bg,
+  // bg,
   testimonials: [
     {
       id: 1,

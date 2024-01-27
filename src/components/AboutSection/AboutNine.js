@@ -32,6 +32,7 @@ const AboutNine = () => {
                   <div className="about-nine__image">
                     <Image
                       src={`https://admin.clubdefutbolgandia.com${e.attributes.imagen.data.attributes.url}`}
+                      alt="Awesome Image"
                       width={650}
                     />
                   </div>

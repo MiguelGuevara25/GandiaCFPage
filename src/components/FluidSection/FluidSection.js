@@ -13,11 +13,11 @@ const FluidSection = () => {
               <div className="inner">
                 <div
                   className="image-layer"
-                  style={{
-                    backgroundImage: `url(${
-                      require(`@/images/background/${bg}`).default.src
-                    })`,
-                  }}
+                  // style={{
+                  //   backgroundImage: `url(${
+                  //     require(`@/images/background/${bg}`).default.src
+                  //   })`,
+                  // }}
                 ></div>
                 <div className="content-box">
                   <h3>{title}</h3>

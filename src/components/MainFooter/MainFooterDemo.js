@@ -7,7 +7,7 @@ const MainFooterDemo = () => {
   return (
     <footer
       className="main-footer main-footer__two main-footer__demo"
-      style={{ backgroundImage: `url(${demoBg.src})` }}
+      // style={{ backgroundImage: `url(${demoBg.src})` }}
     >
       <div className="auto-container">
         <div className="footer-widget text-center">

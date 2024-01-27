@@ -182,7 +182,7 @@ const HeaderOne = ({
                 <div className="link-box">
                   <div className="call-us">
                     <Link href="/login">
-                      <Image src={LogoPrueba.src} width={50} />
+                      <Image alt="Logo" src={LogoPrueba.src} width={50} />
                     </Link>
                   </div>
                 </div>

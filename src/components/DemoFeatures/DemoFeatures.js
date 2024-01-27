@@ -16,7 +16,7 @@ const DemoFeatures = () => {
           {features.map(({ id, icon, title }) => (
             <div key={id} className="demo-features__box">
               <Image
-                src={require(`@/images/demo-icons/${icon}`).default.src}
+                // src={require(`@/images/demo-icons/${icon}`).default.src}
                 alt=""
                 width={121}
                 height={121}
