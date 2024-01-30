@@ -2,8 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    appDir: false
+    appDir: false,
   },
-}
+  images: {
+    domains: ["media.api-sports.io"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

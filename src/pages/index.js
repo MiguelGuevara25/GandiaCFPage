@@ -25,6 +25,7 @@ const PagePrueba = () => {
     return equipo.team.name === "CF Gandia";
   });
 
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1200);
@@ -48,7 +49,7 @@ const PagePrueba = () => {
     });
 
     const data = await res.data;
-    console.log(data)
+    console.log(data);
     setTablaPosicion(data.response[0].league.standings[0]);
     localStorage.setItem(
       "tablaPosicion",
@@ -158,7 +159,8 @@ const PagePrueba = () => {
                           <Image
                             src={e.teams.home.logo}
                             alt="Logo Arsenal"
-                            style={{ width: "100%" }}
+                            width={"100%"}
+                            height={"100%"}
                           />
                         </div>
                         <span className="fs-2">
@@ -168,7 +170,8 @@ const PagePrueba = () => {
                           <Image
                             src={e.teams.away.logo}
                             alt="Logo Gandia"
-                            style={{ width: "100%" }}
+                            width={"100%"}
+                            height={"100%"}
                           />
                         </div>
                       </div>
@@ -205,7 +208,8 @@ const PagePrueba = () => {
                       <Image
                         src={segundoElementoConNSoTBD.teams.home.logo}
                         alt={`Logo ${segundoElementoConNSoTBD.teams.home.name}`}
-                        style={{ width: "100%" }}
+                        width={"100%"}
+                        height={"100%"}
                       />
                     </div>
                     <div className="d-flex flex-column align-items-center">
@@ -224,7 +228,8 @@ const PagePrueba = () => {
                       <Image
                         src={segundoElementoConNSoTBD.teams.away.logo}
                         alt={`Logo ${segundoElementoConNSoTBD.teams.away.name}`}
-                        style={{ width: "100%" }}
+                        width={"100%"}
+                        height={"100%"}
                       />
                     </div>
                   </div>
@@ -292,7 +297,7 @@ const PagePrueba = () => {
         </div>
       </div>
 
-      <SponsorsSection />
+      {/* <SponsorsSection /> */}
       <NewsSectionTwo />
       <MainFooterTwo />
     </Layout>

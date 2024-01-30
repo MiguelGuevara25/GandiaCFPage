@@ -33,14 +33,14 @@ const FunFactSeven = () => {
   const apiPosicion3 = async () => {
     const data = await getProximoPartido();
     // TODO: Fijarse que hacer si no hay datos
-    console.log('apiPosicion3', data.response)
+    console.log("apiPosicion3", data.response);
     localStorage.setItem("tablaProximoPartido", JSON.stringify(data.response));
   };
 
   useEffect(() => {
     const datosProximoPartido = localStorage.getItem("tablaProximoPartido");
 
-    console.log('getting datosProximoPartido', tiempoRestante)
+    console.log("getting datosProximoPartido", tiempoRestante);
 
     if (!datosProximoPartido) {
       apiPosicion3();
@@ -52,7 +52,7 @@ const FunFactSeven = () => {
 
     if (datosProximoPartido) {
       setProximoPartido(JSON.parse(datosProximoPartido));
-    } 
+    }
   }, []);
 
   useEffect(() => {
@@ -71,7 +71,6 @@ const FunFactSeven = () => {
             minutes: duration.minutes() < 0 ? 0 : duration.minutes(),
             seconds: duration.seconds() < 0 ? 0 : duration.seconds(),
           });
-
         }, 1000);
       });
 
@@ -79,6 +78,8 @@ const FunFactSeven = () => {
       intervalIds.forEach((intervalId) => clearInterval(intervalId));
     };
   }, [proximoPartido]);
+
+  const caca = "120%";
 
   return (
     <div>
@@ -103,7 +104,12 @@ const FunFactSeven = () => {
       }`}
                 >
                   <div>
-                    <Image alt="Gandia Logo" src={e.teams.home.logo} />
+                    <Image
+                      alt="Gandia Logo"
+                      src={e.teams.home.logo}
+                      width={"100%"}
+                      height={"100%"}
+                    />
                   </div>
                   <Row>
                     <Col xs={6} md={6} lg={3}>
@@ -139,8 +145,14 @@ const FunFactSeven = () => {
                       </div>
                     </Col>
                   </Row>
+
                   <div>
-                    <Image alt="Logo local" src={e.teams.away.logo} />
+                    <Image
+                      alt="Logo local"
+                      src={e.teams.away.logo}
+                      width={"100%"}
+                      height={"100%"}
+                    />
                   </div>
                 </div>
               </div>
