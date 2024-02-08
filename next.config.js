@@ -5,7 +5,7 @@ const nextConfig = {
     appDir: false,
   },
   images: {
-    domains: ["media.api-sports.io"],
+    domains: ["admin.clubdefutbolgandia.com", "media.api-sports.io"],
   },
 };
 

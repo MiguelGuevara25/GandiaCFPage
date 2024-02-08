@@ -25,7 +25,6 @@ const PagePrueba = () => {
     return equipo.team.name === "CF Gandia";
   });
 
-
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1200);
@@ -71,6 +70,8 @@ const PagePrueba = () => {
     setTablaProxPrev(data.response);
     localStorage.setItem("tablaProxPrev", JSON.stringify(data.response));
   };
+
+  
 
   useEffect(() => {
     const datosTablaPosicion = localStorage.getItem("tablaPosicion");
