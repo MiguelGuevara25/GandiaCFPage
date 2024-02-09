@@ -20,6 +20,10 @@ const PagePrueba = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [tablaProxPrev, setTablaProxPrev] = useState([]);
   const [tablaPosicion, setTablaPosicion] = useState([]);
+  const [logoLocalProx, setLogoLocalProx] = useState("");
+  const [logoVisitaProx, setLogoVisitaProx] = useState("");
+  const [horaProx, setHoraProx] = useState("");
+  const [partidosPrevios, setPartidosPrevios] = useState([]);
 
   const rankingGandia = tablaPosicion.filter((equipo) => {
     return equipo.team.name === "CF Gandia";
@@ -56,54 +60,33 @@ const PagePrueba = () => {
     );
   };
 
-  const apiPosicion2 = async () => {
+  const getSegundoPartidoProx = async () => {
     const url =
-      "https://v3.football.api-sports.io/fixtures?team=20265&season=2023";
-    const res = await axios.get(url, {
-      headers: {
-        "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": "07a555363c588371003efcd5428ab5ab",
-      },
-    });
-
-    const data = await res.data;
-    setTablaProxPrev(data.response);
-    localStorage.setItem("tablaProxPrev", JSON.stringify(data.response));
+      "https://admin.clubdefutbolgandia.com/api/segundo-proximo-partido?populate=*";
+    const { data } = await axios.get(url);
+    setHoraProx(data.data.attributes.hora);
+    setLogoLocalProx(data.data.attributes.logoLocal.data.attributes.url);
+    setLogoVisitaProx(data.data.attributes.logoVisita.data.attributes.url);
   };
 
-  
+  const getPartidosPrevios = async () => {
+    const url =
+      "https://admin.clubdefutbolgandia.com/api/previos-partidos?populate=*";
+    const { data } = await axios.get(url);
+    setPartidosPrevios(data.data);
+  };
 
   useEffect(() => {
+    getSegundoPartidoProx();
+    getPartidosPrevios();
     const datosTablaPosicion = localStorage.getItem("tablaPosicion");
-    const datosTablaProxPrev = localStorage.getItem("tablaProxPrev");
 
     if (datosTablaPosicion) {
       setTablaPosicion(JSON.parse(datosTablaPosicion));
     } else {
       apiPosicion();
     }
-
-    if (datosTablaProxPrev) {
-      setTablaProxPrev(JSON.parse(datosTablaProxPrev));
-    } else {
-      apiPosicion2();
-    }
-
-    const intervalo = setInterval(() => {
-      apiPosicion();
-      apiPosicion2();
-    }, 7200000);
-    return () => clearInterval(intervalo);
   }, []);
-
-  const elementosConNSoTBD = tablaProxPrev?.filter(
-    (e) => e.fixture.status.short === "NS" || e.fixture.status.short === "TBD"
-  );
-
-  const segundoElementoConNSoTBD =
-    elementosConNSoTBD && elementosConNSoTBD.length > 1
-      ? elementosConNSoTBD[1]
-      : null;
 
   return (
     <Layout pageTitle="CF Gandía">
@@ -140,45 +123,43 @@ const PagePrueba = () => {
               }}
               className="py-2"
             >
-              {tablaProxPrev
-                ?.filter((e) => e.fixture.status.short === "FT")
-                .slice(-2)
-                .map((e) => {
-                  return (
+              {partidosPrevios.map((e) => {
+                return (
+                  <div
+                    key={e.id}
+                    className="d-flex flex-column align-items-center mb-3"
+                  >
+                    <span style={{ fontSize: "25px", marginBottom: "10px" }}>
+                      Tercera División de España
+                    </span>
                     <div
-                      key={e.fixture.id}
-                      className="d-flex flex-column align-items-center mb-3"
+                      className="d-flex align-items-center"
+                      style={{ gap: "50px" }}
                     >
-                      <span style={{ fontSize: "25px", marginBottom: "10px" }}>
-                        {e.league.name}
+                      <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
+                        <Image
+                          src={`https://admin.clubdefutbolgandia.com${e.attributes.logoLocal.data.attributes.url}`}
+                          alt="Logo Arsenal"
+                          width={"100%"}
+                          height={"100%"}
+                        />
+                      </div>
+                      <span className="fs-2">
+                        {e.attributes.resultadoLocal} -{" "}
+                        {e.attributes.resultadoVisita}
                       </span>
-                      <div
-                        className="d-flex align-items-center"
-                        style={{ gap: "50px" }}
-                      >
-                        <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                          <Image
-                            src={e.teams.home.logo}
-                            alt="Logo Arsenal"
-                            width={"100%"}
-                            height={"100%"}
-                          />
-                        </div>
-                        <span className="fs-2">
-                          {e.goals.home} - {e.goals.away}
-                        </span>
-                        <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                          <Image
-                            src={e.teams.away.logo}
-                            alt="Logo Gandia"
-                            width={"100%"}
-                            height={"100%"}
-                          />
-                        </div>
+                      <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
+                        <Image
+                          src={`https://admin.clubdefutbolgandia.com${e.attributes.logoVisita.data.attributes.url}`}
+                          alt="Logo Gandia"
+                          width={"100%"}
+                          height={"100%"}
+                        />
                       </div>
                     </div>
-                  );
-                })}
+                  </div>
+                );
+              })}
             </div>
           </div>
 
@@ -193,49 +174,40 @@ const PagePrueba = () => {
                 paddingBottom: "10px",
               }}
             >
-              {segundoElementoConNSoTBD && (
+              <div className="d-flex flex-column align-items-center">
+                <span style={{ fontSize: "25px", margin: "10px" }}>
+                  Tercera División de España
+                </span>
                 <div
-                  key={segundoElementoConNSoTBD.fixture.id}
-                  className="d-flex flex-column align-items-center"
+                  className="d-flex align-items-center"
+                  style={{ gap: "38px" }}
                 >
-                  <span style={{ fontSize: "25px", margin: "10px" }}>
-                    {segundoElementoConNSoTBD.league.name}
-                  </span>
-                  <div
-                    className="d-flex align-items-center"
-                    style={{ gap: "38px" }}
-                  >
-                    <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                      <Image
-                        src={segundoElementoConNSoTBD.teams.home.logo}
-                        alt={`Logo ${segundoElementoConNSoTBD.teams.home.name}`}
-                        width={"100%"}
-                        height={"100%"}
-                      />
-                    </div>
-                    <div className="d-flex flex-column align-items-center">
-                      <span className="fs-5 text-capitalize">
-                        {moment(segundoElementoConNSoTBD.fixture.date).format(
-                          "MMM DD"
-                        )}
-                      </span>
-                      <span className="fs-5">
-                        {moment(segundoElementoConNSoTBD.fixture.date).format(
-                          "HH:mm"
-                        )}
-                      </span>
-                    </div>
-                    <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                      <Image
-                        src={segundoElementoConNSoTBD.teams.away.logo}
-                        alt={`Logo ${segundoElementoConNSoTBD.teams.away.name}`}
-                        width={"100%"}
-                        height={"100%"}
-                      />
-                    </div>
+                  <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
+                    <Image
+                      alt="Gandia Logo"
+                      src={`https://admin.clubdefutbolgandia.com${logoLocalProx}`}
+                      width={"100%"}
+                      height={"100%"}
+                    />
+                  </div>
+                  <div className="d-flex flex-column align-items-center">
+                    <span className="fs-5 text-capitalize">
+                      {moment(horaProx).format("MMM DD")}
+                    </span>
+                    <span className="fs-5">
+                      {moment(horaProx).format("HH:mm")}
+                    </span>
+                  </div>
+                  <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
+                    <Image
+                      alt="Gandia Logo"
+                      src={`https://admin.clubdefutbolgandia.com${logoVisitaProx}`}
+                      width={"100%"}
+                      height={"100%"}
+                    />
                   </div>
                 </div>
-              )}
+              </div>
             </div>
           </div>
         </div>
