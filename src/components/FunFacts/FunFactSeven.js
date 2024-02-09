@@ -9,6 +9,7 @@ const FunFactSeven = () => {
   const [estadio, setEstadio] = useState("");
   const [logoLocal, setLogoLocal] = useState("");
   const [logoVisita, setLogoVisita] = useState("");
+  const [horaPartido, setHoraPartido] = useState("");
   const [tiempoRestante, setTiempoRestante] = useState({
     days: 0,
     hours: 0,
@@ -23,11 +24,34 @@ const FunFactSeven = () => {
     setEstadio(data.data.attributes.estadio);
     setLogoLocal(data.data.attributes.logoLocal.data.attributes.url);
     setLogoVisita(data.data.attributes.logoVisita.data.attributes.url);
+    setHoraPartido(data.data.attributes.fechaPartido);
   };
 
   useEffect(() => {
     getProximoPartido();
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const ahora = moment();
+      const fechaPartido = moment(horaPartido);
+
+      if (fechaPartido.isAfter(ahora)) {
+        const diff = fechaPartido.diff(ahora);
+        const duration = moment.duration(diff);
+        const days = Math.floor(duration.asDays());
+        const hours = duration.hours();
+        const minutes = duration.minutes();
+        const seconds = duration.seconds();
+        setTiempoRestante({ days, hours, minutes, seconds });
+      } else {
+        setTiempoRestante({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        clearInterval(interval);
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [horaPartido]);
 
   return (
     <div>
