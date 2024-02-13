@@ -25,9 +25,11 @@ const PagePrueba = () => {
   const [horaProx, setHoraProx] = useState("");
   const [partidosPrevios, setPartidosPrevios] = useState([]);
 
-  const rankingGandia = tablaPosicion.filter((equipo) => {
-    return equipo.team.name === "CF Gandia";
+  const rankingGandia = tablaPosicion?.filter((equipo) => {
+    return equipo?.team?.name === "CF Gandía";
   });
+
+  const posRankingGandia = rankingGandia[0]?.rank;
 
   useEffect(() => {
     const handleResize = () => {
@@ -52,7 +54,7 @@ const PagePrueba = () => {
     });
 
     const data = await res.data;
-    setTablaPosicion(data.response[0].league.standings[0]);
+    setTablaPosicion(data.response[0]?.league.standings[0]);
     localStorage.setItem(
       "tablaPosicion",
       JSON.stringify(data.response[0].league.standings[0])
@@ -268,42 +270,48 @@ const PagePrueba = () => {
             <Image src={LogoGandia2} alt="Logo" style={{ opacity: "0.5" }} />
           </div>
 
-          <table
-            className="scrollable-table-container"
-            style={{
-              borderCollapse: "separate",
-              borderSpacing: `${isMobile ? "32px" : "40px"}`,
-              width: "100%",
-              fontSize: `${isMobile ? "14px" : "25px"}`,
-              position: "relative",
-              display: `${isMobile ? "block" : "table"}`,
-              overflowX: "scroll",
-            }}
-          >
-            <thead>
-              <tr style={{ fontWeight: "400", fontSize: "20px" }}>
-                <th>Pos</th>
-                <th>Equipo</th>
-                <th>J</th>
-                <th>G</th>
-                <th>Puntos</th>
-              </tr>
-            </thead>
+          {tablaPosicion ? (
+            <table
+              className="scrollable-table-container"
+              style={{
+                borderCollapse: "separate",
+                borderSpacing: `${isMobile ? "32px" : "40px"}`,
+                width: "100%",
+                fontSize: `${isMobile ? "14px" : "25px"}`,
+                position: "relative",
+                display: `${isMobile ? "block" : "table"}`,
+                overflowX: "scroll",
+              }}
+            >
+              <thead>
+                <tr style={{ fontWeight: "400", fontSize: "20px" }}>
+                  <th>Pos</th>
+                  <th>Equipo</th>
+                  <th>J</th>
+                  <th>G</th>
+                  <th>Puntos</th>
+                </tr>
+              </thead>
 
-            <tbody>
-              {tablaPosicion?.slice(5, 10).map((e, id) => {
-                return (
-                  <tr key={id}>
-                    <td>{e.rank}</td>
-                    <td>{e.team.name}</td>
-                    <td>{e.all.played}</td>
-                    <td>{e.all.win}</td>
-                    <td>{e.points}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+              <tbody>
+                {tablaPosicion.slice(posRankingGandia - 1, posRankingGandia + 4).map((e, id) => {
+                  return (
+                    <tr key={id}>
+                      <td>{e.rank}</td>
+                      <td>{e.team.name}</td>
+                      <td>{e.all.played}</td>
+                      <td>{e.all.win}</td>
+                      <td>{e.points}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          ) : (
+            <div className="h-75 d-flex justify-content-center align-items-center">
+              <h2 className="text-white">Cargando puntuaciones ...</h2>
+            </div>
+          )}
         </div>
       </div>
 
