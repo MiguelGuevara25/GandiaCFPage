@@ -26,10 +26,8 @@ const PagePrueba = () => {
   const [partidosPrevios, setPartidosPrevios] = useState([]);
 
   const rankingGandia = tablaPosicion?.filter((equipo) => {
-    return equipo?.team?.name === "CF Gandía";
+    return equipo.team.name === "CF Gandía";
   });
-
-  const posRankingGandia = rankingGandia[0]?.rank;
 
   useEffect(() => {
     const handleResize = () => {
@@ -88,6 +86,17 @@ const PagePrueba = () => {
       apiPosicion();
     }
   }, []);
+
+  const tablaRankingConditional = (rank) => {
+    switch (rank) {
+      case 18:
+        return tablaPosicion.slice(rank - 5);
+      case 1:
+        return tablaPosicion.slice(rank - 1, rank + 4);
+      default:
+        return tablaPosicion.slice(rank - 2, rank + 3);
+    }
+  };
 
   return (
     <Layout pageTitle="CF Gandía">
@@ -294,17 +303,19 @@ const PagePrueba = () => {
               </thead>
 
               <tbody>
-                {tablaPosicion.slice(posRankingGandia - 1, posRankingGandia + 4).map((e, id) => {
-                  return (
-                    <tr key={id}>
-                      <td>{e.rank}</td>
-                      <td>{e.team.name}</td>
-                      <td>{e.all.played}</td>
-                      <td>{e.all.win}</td>
-                      <td>{e.points}</td>
-                    </tr>
-                  );
-                })}
+                {tablaRankingConditional(rankingGandia[0]?.rank).map(
+                  (e, id) => {
+                    return (
+                      <tr key={id}>
+                        <td>{e.rank}</td>
+                        <td>{e.team.name}</td>
+                        <td>{e.all.played}</td>
+                        <td>{e.all.win}</td>
+                        <td>{e.points}</td>
+                      </tr>
+                    );
+                  }
+                )}
               </tbody>
             </table>
           ) : (
