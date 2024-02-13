@@ -6,6 +6,7 @@ import "moment/locale/es";
 import axios from "axios";
 
 const FunFactSeven = () => {
+  const [isMobile, setIsMobile] = useState(false);
   const [estadio, setEstadio] = useState("");
   const [logoLocal, setLogoLocal] = useState("");
   const [logoVisita, setLogoVisita] = useState("");
@@ -26,6 +27,18 @@ const FunFactSeven = () => {
     setLogoVisita(data.data.attributes.logoVisita.data.attributes.url);
     setHoraPartido(data.data.attributes.fechaPartido);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1200);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     getProximoPartido();
@@ -66,18 +79,16 @@ const FunFactSeven = () => {
           </div>
           <div
             className={`d-flex justify-content-between align-items-center
-        isMobile ? "flex-column" : "flex-row"
-      }`}
+      ${isMobile ? "flex-column" : "flex-row"}`}
           >
-            <div>
-              <Image
-                alt="Gandia Logo"
-                src={`https://admin.clubdefutbolgandia.com${logoLocal}`}
-                width={"100%"}
-                height={"100%"}
-              />
-            </div>
-            <Row>
+            <Image
+              alt="Gandia Logo"
+              src={`https://admin.clubdefutbolgandia.com${logoLocal}`}
+              width={"110px"}
+              height={"135px"}
+            />
+
+            <Row className="">
               <Col xs={6} md={6} lg={3}>
                 <div className="funfact-seven__item">
                   <h3 className="funfact-seven__title count-box">
@@ -112,14 +123,12 @@ const FunFactSeven = () => {
               </Col>
             </Row>
 
-            <div>
-              <Image
-                alt="Logo local"
-                src={`https://admin.clubdefutbolgandia.com${logoVisita}`}
-                width={"100%"}
-                height={"100%"}
-              />
-            </div>
+            <Image
+              alt="Logo local"
+              src={`https://admin.clubdefutbolgandia.com${logoVisita}`}
+              width={"110px"}
+              height={"135px"}
+            />
           </div>
         </div>
       </section>

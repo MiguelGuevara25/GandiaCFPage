@@ -52,7 +52,6 @@ const PagePrueba = () => {
     });
 
     const data = await res.data;
-    console.log(data);
     setTablaPosicion(data.response[0].league.standings[0]);
     localStorage.setItem(
       "tablaPosicion",
@@ -132,30 +131,52 @@ const PagePrueba = () => {
                     <span style={{ fontSize: "25px", marginBottom: "10px" }}>
                       Tercera División de España
                     </span>
+
                     <div
                       className="d-flex align-items-center"
                       style={{ gap: "50px" }}
                     >
-                      <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
+                      {/* <div
+                        style={{
+                          width: `${isMobile ? "40px" : "60px"}`,
+                        }}
+                      >
                         <Image
                           src={`https://admin.clubdefutbolgandia.com${e.attributes.logoLocal.data.attributes.url}`}
                           alt="Logo Arsenal"
-                          width={"100%"}
-                          height={"100%"}
+                          width={"100px"}
+                          height={"135px"}
                         />
-                      </div>
+                      </div> */}
+                      <Image
+                        style={{
+                          width: `${isMobile ? "40px" : "60px"}`,
+                        }}
+                        src={`https://admin.clubdefutbolgandia.com${e.attributes.logoLocal.data.attributes.url}`}
+                        alt="Logo Arsenal"
+                        width={"70px"}
+                        height={"90px"}
+                      />
+
                       <span className="fs-2">
                         {e.attributes.resultadoLocal} -{" "}
                         {e.attributes.resultadoVisita}
                       </span>
-                      <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
+
+                      {/* <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
                         <Image
                           src={`https://admin.clubdefutbolgandia.com${e.attributes.logoVisita.data.attributes.url}`}
                           alt="Logo Gandia"
-                          width={"100%"}
-                          height={"100%"}
+                          width={"70px"}
+                          height={"90px"}
                         />
-                      </div>
+                      </div> */}
+                      <Image
+                        src={`https://admin.clubdefutbolgandia.com${e.attributes.logoVisita.data.attributes.url}`}
+                        alt="Logo Gandia"
+                        width={"70px"}
+                        height={"90px"}
+                      />
                     </div>
                   </div>
                 );
@@ -182,14 +203,22 @@ const PagePrueba = () => {
                   className="d-flex align-items-center"
                   style={{ gap: "38px" }}
                 >
-                  <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                    <Image
+                  {/* <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
+                  <Image
                       alt="Gandia Logo"
                       src={`https://admin.clubdefutbolgandia.com${logoLocalProx}`}
-                      width={"100%"}
-                      height={"100%"}
+                      width={"100px"}
+                      height={"135px"}
                     />
-                  </div>
+                  </div> */}
+
+                  <Image
+                    alt="Gandia Logo"
+                    src={`https://admin.clubdefutbolgandia.com${logoLocalProx}`}
+                    width={"70px"}
+                    height={"90px"}
+                  />
+
                   <div className="d-flex flex-column align-items-center">
                     <span className="fs-5 text-capitalize">
                       {moment(horaProx).format("MMM DD")}
@@ -198,14 +227,22 @@ const PagePrueba = () => {
                       {moment(horaProx).format("HH:mm")}
                     </span>
                   </div>
-                  <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                    <Image
+
+                  {/* <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
+                  <Image
                       alt="Gandia Logo"
                       src={`https://admin.clubdefutbolgandia.com${logoVisitaProx}`}
-                      width={"100%"}
-                      height={"100%"}
+                      width={"100px"}
+                      height={"135px"}
                     />
-                  </div>
+                  </div> */}
+
+                  <Image
+                    alt="Gandia Logo"
+                    src={`https://admin.clubdefutbolgandia.com${logoVisitaProx}`}
+                    width={"70px"}
+                    height={"90px"}
+                  />
                 </div>
               </div>
             </div>
