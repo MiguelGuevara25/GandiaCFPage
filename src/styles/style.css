@@ -23551,6 +23551,7 @@ img.lazy-image.loaded {
   text-align: center;
   border: 1px solid #f4f5f8;
   margin-bottom: 20px;
+  height: 120px;
 }
 
 @media (min-width: 1200px) {

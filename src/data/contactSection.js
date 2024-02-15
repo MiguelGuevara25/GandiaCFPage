@@ -88,8 +88,8 @@ export const contactInfoTwo = [
   },
   {
     id: 3,
-    icon: "fa fa-phone",
-    text: "+92 666 888 0000",
+    icon: "fas fa-clock",
+    text: "Lunes - Jueves / 17:00 - 20:00 Oficina Guillermo Olagüe",
     phone: true,
   },
 ];
