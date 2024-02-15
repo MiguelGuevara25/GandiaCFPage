@@ -26,7 +26,7 @@ const MainFooterTwo = () => {
             <div className="footer-widget">
               <h3>CF Gandía</h3>
               <p>#ElClubDeLaCiutat</p>
-              <Link href="/contact">
+              <Link href="/socio">
                 <a className="theme-btn btn-style-three">Conviérte en socio</a>
               </Link>
             </div>
