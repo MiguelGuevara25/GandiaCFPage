@@ -4,19 +4,19 @@ export const bannerTwo = [
   {
     id: 1,
     bg: "pruebafotoGania.jpg",
-    subtitle: "CF Gandía",
+    subtitle: "CF Gandia",
     title: "El club de la ciutat",
   },
   {
     id: 2,
     bg: "thirdSlider.png",
-    subtitle: "CF Gandía",
+    subtitle: "CF Gandia",
     title: "El club de la ciutat",
   },
   {
     id: 3,
     bg: "secondPhotoSlider.jpg",
-    subtitle: "CF Gandía",
+    subtitle: "CF Gandia",
     title: "El club de la ciutat",
   },
 ];

@@ -7,7 +7,7 @@ const newsSection = {
       date: "Hace días",
       admin: "Admin",
       comments: 2,
-      title: "El CF Gandía remonta en Torrellano (1-2)",
+      title: "El CF Gandia remonta en Torrellano (1-2)",
       // text: "Lorem ipsum is simply free text used by copytyping refreshing.",
     },
     {

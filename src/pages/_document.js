@@ -33,7 +33,7 @@ class MyDocument extends Document {
           <link rel="icon" href="favicon.ico" />
           <meta
             name="description"
-            content="Página Oficial del Club de Fútbol Gandía de España"
+            content="Página Oficial del Club de Fútbol Gandia de España"
           />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 

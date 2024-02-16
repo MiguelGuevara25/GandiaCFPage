@@ -6,7 +6,7 @@ export const loginWrapper = {
   logo,
   logoTitle: "Login",
   year: new Date().getFullYear(),
-  author: "CF Gandía",
+  author: "CF Gandia",
   forgotText: "Please enter your email \n address to get password reset link.",
   inputs: [
     {
