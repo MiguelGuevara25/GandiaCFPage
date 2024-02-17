@@ -151,7 +151,7 @@ const PagePrueba = () => {
 
                     <div
                       className="d-flex align-items-center"
-                      style={{ gap: `${isMobile ? "30px" : "50px"}` }}
+                      style={{ gap: `${isMobile ? "35px" : "50px"}` }}
                     >
                       <Image
                         src={`https://admin.clubdefutbolgandia.com${e.attributes.logoLocal.data.attributes.url}`}
@@ -201,7 +201,7 @@ const PagePrueba = () => {
                 </span>
                 <div
                   className="d-flex align-items-center"
-                  style={{ gap: `${isMobile ? "30px" : "38px"}` }}
+                  style={{ gap: `${isMobile ? "25px" : "45px"}` }}
                 >
                   <Image
                     alt="Gandia Logo"
