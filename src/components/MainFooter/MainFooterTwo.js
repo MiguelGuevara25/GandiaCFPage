@@ -74,7 +74,7 @@ const MainFooterTwo = () => {
               <h3>Contacto</h3>
               <ul className="list-unstyled contact-list">
                 <li>
-                  <span className="icon flaticon-call"></span>
+                  <span className="fas fa-clock"></span>
                   <a href={`tel:${phone.split(" ").join("")}`}>{phone}</a>
                 </li>
 

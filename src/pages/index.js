@@ -139,34 +139,25 @@ const PagePrueba = () => {
                     key={e.id}
                     className="d-flex flex-column align-items-center mb-3"
                   >
-                    <span style={{ fontSize: "25px", marginBottom: "10px" }}>
+                    <span
+                      style={{
+                        fontSize: "25px",
+                        marginBottom: "10px",
+                        textAlign: "center",
+                      }}
+                    >
                       Tercera División de España
                     </span>
 
                     <div
                       className="d-flex align-items-center"
-                      style={{ gap: "50px" }}
+                      style={{ gap: `${isMobile ? "30px" : "50px"}` }}
                     >
-                      {/* <div
-                        style={{
-                          width: `${isMobile ? "40px" : "60px"}`,
-                        }}
-                      >
-                        <Image
-                          src={`https://admin.clubdefutbolgandia.com${e.attributes.logoLocal.data.attributes.url}`}
-                          alt="Logo Arsenal"
-                          width={"100px"}
-                          height={"135px"}
-                        />
-                      </div> */}
                       <Image
-                        style={{
-                          width: `${isMobile ? "40px" : "60px"}`,
-                        }}
                         src={`https://admin.clubdefutbolgandia.com${e.attributes.logoLocal.data.attributes.url}`}
                         alt="Logo Arsenal"
-                        width={"70px"}
-                        height={"90px"}
+                        width={`${isMobile ? "60px" : "70px"}`}
+                        height={`${isMobile ? "80px" : "90px"}`}
                       />
 
                       <span className="fs-2">
@@ -174,19 +165,11 @@ const PagePrueba = () => {
                         {e.attributes.resultadoVisita}
                       </span>
 
-                      {/* <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                        <Image
-                          src={`https://admin.clubdefutbolgandia.com${e.attributes.logoVisita.data.attributes.url}`}
-                          alt="Logo Gandia"
-                          width={"70px"}
-                          height={"90px"}
-                        />
-                      </div> */}
                       <Image
                         src={`https://admin.clubdefutbolgandia.com${e.attributes.logoVisita.data.attributes.url}`}
                         alt="Logo Gandia"
-                        width={"70px"}
-                        height={"90px"}
+                        width={`${isMobile ? "60px" : "70px"}`}
+                        height={`${isMobile ? "80px" : "90px"}`}
                       />
                     </div>
                   </div>
@@ -207,27 +190,24 @@ const PagePrueba = () => {
               }}
             >
               <div className="d-flex flex-column align-items-center">
-                <span style={{ fontSize: "25px", margin: "10px" }}>
+                <span
+                  style={{
+                    fontSize: "25px",
+                    margin: "10px",
+                    textAlign: "center",
+                  }}
+                >
                   Tercera División de España
                 </span>
                 <div
                   className="d-flex align-items-center"
-                  style={{ gap: "38px" }}
+                  style={{ gap: `${isMobile ? "30px" : "38px"}` }}
                 >
-                  {/* <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                  <Image
-                      alt="Gandia Logo"
-                      src={`https://admin.clubdefutbolgandia.com${logoLocalProx}`}
-                      width={"100px"}
-                      height={"135px"}
-                    />
-                  </div> */}
-
                   <Image
                     alt="Gandia Logo"
                     src={`https://admin.clubdefutbolgandia.com${logoLocalProx}`}
-                    width={"70px"}
-                    height={"90px"}
+                    width={`${isMobile ? "60px" : "70px"}`}
+                    height={`${isMobile ? "80px" : "90px"}`}
                   />
 
                   <div className="d-flex flex-column align-items-center">
@@ -239,20 +219,11 @@ const PagePrueba = () => {
                     </span>
                   </div>
 
-                  {/* <div style={{ width: `${isMobile ? "40px" : "60px"}` }}>
-                  <Image
-                      alt="Gandia Logo"
-                      src={`https://admin.clubdefutbolgandia.com${logoVisitaProx}`}
-                      width={"100px"}
-                      height={"135px"}
-                    />
-                  </div> */}
-
                   <Image
                     alt="Gandia Logo"
                     src={`https://admin.clubdefutbolgandia.com${logoVisitaProx}`}
-                    width={"70px"}
-                    height={"90px"}
+                    width={`${isMobile ? "60px" : "70px"}`}
+                    height={`${isMobile ? "80px" : "90px"}`}
                   />
                 </div>
               </div>

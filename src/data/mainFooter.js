@@ -35,7 +35,7 @@ export const mainFooter = {
   address3: "66 Mark Street, New Town DC 5752, Lo New York",
   address2:
     "214 Gold Street Round Road. 66 \n Code New York, United States \n of America",
-  phone: "666 888 000",
+  phone: "Lunes - Jueves / 17:00 - 20:00 \n Oficina Guillermo Olagüe",
   phone2: "+92 3333 222 000",
   email: "comunicacioncfgandia@gmail.com",
   textBottom:
