@@ -45,23 +45,18 @@ export const mainFooter = {
   socials: [
     {
       id: 1,
-      href: "#",
+      href: "https://www.facebook.com/cfgandia1",
       icon: "fab fa-facebook-square",
     },
     {
       id: 2,
-      href: "#",
+      href: "https://twitter.com/CF_Gandia",
       icon: "fab fa-twitter",
     },
     {
       id: 3,
-      href: "#",
+      href: "https://www.instagram.com/cf_gandia",
       icon: "fab fa-instagram",
-    },
-    {
-      id: 4,
-      href: "#",
-      icon: "fab fa-pinterest-p",
     },
   ],
   links: [

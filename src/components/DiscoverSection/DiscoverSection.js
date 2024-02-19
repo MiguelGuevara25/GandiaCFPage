@@ -13,16 +13,18 @@ const DiscoverSection = ({ ShowTitle = true }) => {
     let url;
 
     if (pathname === "/noticias/femenino") {
-      url = "https://admin.clubdefutbolgandia.com/api/noticias-femeninos?populate=*";
+      url =
+        "https://admin.clubdefutbolgandia.com/api/noticias-femeninos?populate=*";
     } else if (pathname === "/noticias/academia") {
-      url = "https://admin.clubdefutbolgandia.com/api/noticias-academias?populate=*";
+      url =
+        "https://admin.clubdefutbolgandia.com/api/noticias-academias?populate=*";
     } else {
       url = "https://admin.clubdefutbolgandia.com/api/noticias?populate=*";
     }
 
     const res = await axios.get(url);
     const data = await res.data;
-    setDatosNoticias(data.data);
+    setDatosNoticias(data.data.reverse());
   };
 
   useEffect(() => {

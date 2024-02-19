@@ -240,7 +240,7 @@ const PagePrueba = () => {
           }}
         >
           <p className="text-center fs-3" style={{ margin: "0" }}>
-            La Liga 2025-2026
+            La Liga 2023-2024
           </p>
 
           <div

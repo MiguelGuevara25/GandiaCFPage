@@ -146,7 +146,7 @@ const HeaderOne = ({
             {links && (
               <div className="other-links clearfix">
                 <div className="cart-btn">
-                  <Link href="/cart">
+                  <Link href="https://www.facebook.com/cfgandia1">
                     <a className="theme-btn cart-toggler">
                       <span className="fab fa-facebook-square"></span>
                     </a>
@@ -154,7 +154,7 @@ const HeaderOne = ({
                 </div>
 
                 <div className="cart-btn">
-                  <Link href="/cart">
+                  <Link href="https://www.instagram.com/cf_gandia">
                     <a className="theme-btn cart-toggler">
                       <span className="fab fa-instagram"></span>
                     </a>
@@ -170,18 +170,16 @@ const HeaderOne = ({
                 </div> */}
 
                 <div className="search-btn">
-                  <button
-                    // onClick={toggleSearch}
-                    type="button"
-                    className="theme-btn search-toggler"
-                  >
-                    <span className="fab fa-twitter"></span>
+                  <button type="button" className="theme-btn search-toggler">
+                    <Link href="https://twitter.com/CF_Gandia" passHref>
+                      <span className="fab fa-twitter"></span>
+                    </Link>
                   </button>
                 </div>
 
                 <div className="link-box">
                   <div className="call-us">
-                    <Link href="/login">
+                    <Link href="/login" passHref>
                       <Image alt="Logo" src={LogoPrueba.src} width={50} />
                     </Link>
                   </div>

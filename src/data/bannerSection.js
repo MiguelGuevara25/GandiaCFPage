@@ -23,8 +23,8 @@ export const bannerTwo = [
 
 export const bannerOne = {
   bg,
-  dayRange: "lun - vie",
-  timeRange: "17:30 - 20:30",
+  dayRange: "lun - jue",
+  timeRange: "17:00 - 20:00",
   socials: [
     {
       id: 1,
