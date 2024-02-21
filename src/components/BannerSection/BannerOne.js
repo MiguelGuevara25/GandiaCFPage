@@ -80,7 +80,7 @@ const BannerOne = () => {
           ))} */}
 
           {imagesSlider.map((e) => (
-            <SlideItemOne key={e.id} slide={e?.attributes} ref={listRef} />
+            <SlideItemOne key={e.id} slide={e.attributes} ref={listRef} />
           ))}
         </TinySlider>
         <div className="tns-controls">
