@@ -4,7 +4,6 @@ import TextSplit from "../Reuseable/TextSplit";
 
 const SlideItemOne = ({ slide = {} }, ref) => {
   const { url } = slide;
-  console.log(url)
   const urlIMG = `https://admin.clubdefutbolgandia.com${url}`;
 
   return (

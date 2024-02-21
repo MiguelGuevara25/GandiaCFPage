@@ -34,7 +34,7 @@ const BannerOne = () => {
   const getImagesSliderPrincipal = async () => {
     const url = `https://admin.clubdefutbolgandia.com/api/fotos-slider-principal?populate=*`;
     const res = await axios.get(url);
-    const { data } = res.data;
+    const { data } = await res.data;
     setImagesSlider(data.attributes.images.data);
   };
 
@@ -71,9 +71,9 @@ const BannerOne = () => {
       </div>
       <div className="banner-carousel">
         <TinySlider options={settings} ref={listRef}>
-          {banners.map((slide) => (
+          {/* {banners.map((slide) => (
             <SlideItemOne key={slide.id} slide={slide} ref={listRef} />
-          ))}
+          ))} */}
 
           {/* {imagesSlider.map((slide, index) => (
             <SlideItemOne key={index} slide={slide} ref={listRef} />
