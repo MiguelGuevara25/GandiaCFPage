@@ -3,21 +3,21 @@ import React, { forwardRef } from "react";
 import TextSplit from "../Reuseable/TextSplit";
 
 const SlideItemOne = ({ slide = {} }, ref) => {
-  const { url } = slide;
-  const urlIMG = `https://admin.clubdefutbolgandia.com${url}`;
+  const { bg } = slide;
+  // const urlIMG = `https://admin.clubdefutbolgandia.com${url}`;
 
   return (
     <div ref={ref} style={{ userSelect: "none" }} className="slide-item">
       <div
         className="image-layer"
-        // style={{
-        //   backgroundImage: `url(${
-        //     require(`@/images/main-slider/${bg}`).default.src
-        //   })`,
-        // }}
         style={{
-          backgroundImage: `url(${urlIMG})`,
+          backgroundImage: `url(${
+            require(`@/images/main-slider/${bg}`).default.src
+          })`,
         }}
+        // style={{
+        //   backgroundImage: `url(${urlIMG})`,
+        // }}
       ></div>
       {/* <div className="left-top-line"></div> */}
       {/* <div className="right-bottom-curve"></div> */}

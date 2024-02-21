@@ -71,17 +71,17 @@ const BannerOne = () => {
       </div>
       <div className="banner-carousel">
         <TinySlider options={settings} ref={listRef}>
-          {/* {banners.map((slide) => (
+          {banners.map((slide) => (
             <SlideItemOne key={slide.id} slide={slide} ref={listRef} />
-          ))} */}
+          ))}
 
           {/* {imagesSlider.map((slide, index) => (
             <SlideItemOne key={index} slide={slide} ref={listRef} />
           ))} */}
 
-          {imagesSlider.map((e) => (
+          {/* {imagesSlider.map((e) => (
             <SlideItemOne key={e.id} slide={e.attributes} ref={listRef} />
-          ))}
+          ))} */}
         </TinySlider>
         <div className="tns-controls">
           <button className="tns-prev">
