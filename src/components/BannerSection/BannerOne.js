@@ -71,9 +71,9 @@ const BannerOne = () => {
       </div>
       <div className="banner-carousel">
         <TinySlider options={settings} ref={listRef}>
-          {/* {banners.map((slide) => (
-            <SlideItemOne key={slide.id} slide={imagesSlider} ref={listRef} />
-          ))} */}
+          {banners.map((slide) => (
+            <SlideItemOne key={slide.id} slide={slide} ref={listRef} />
+          ))}
 
           {/* {imagesSlider.map((slide, index) => (
             <SlideItemOne key={index} slide={slide} ref={listRef} />
