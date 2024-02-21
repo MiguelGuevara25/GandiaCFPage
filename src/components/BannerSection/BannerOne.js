@@ -1,7 +1,8 @@
 import { bannerOne } from "@/data/bannerSection";
 import dynamic from "next/dynamic";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SlideItemOne from "./SlideItemOne";
+import axios from "axios";
 
 const TinySlider = dynamic(() => import("@/components/TinySlider/TinySlider"), {
   ssr: false,
@@ -27,6 +28,19 @@ const { dayRange, timeRange, socials, banners } = bannerOne;
 
 const BannerOne = () => {
   const listRef = useRef(null);
+
+  const [imagesSlider, setImagesSlider] = useState([]);
+
+  const getImagesSliderPrincipal = async () => {
+    const url = `https://admin.clubdefutbolgandia.com/api/fotos-slider-principal?populate=*`;
+    const res = await axios.get(url);
+    const { data } = res.data;
+    setImagesSlider(data.attributes.images.data);
+  };
+
+  useEffect(() => {
+    getImagesSliderPrincipal();
+  }, []);
 
   return (
     <section className="banner-section banner-one">
@@ -57,8 +71,16 @@ const BannerOne = () => {
       </div>
       <div className="banner-carousel">
         <TinySlider options={settings} ref={listRef}>
-          {banners.map((slide) => (
-            <SlideItemOne key={slide.id} slide={slide} ref={listRef} />
+          {/* {banners.map((slide) => (
+            <SlideItemOne key={slide.id} slide={imagesSlider} ref={listRef} />
+          ))} */}
+
+          {/* {imagesSlider.map((slide, index) => (
+            <SlideItemOne key={index} slide={slide} ref={listRef} />
+          ))} */}
+
+          {imagesSlider.map((e) => (
+            <SlideItemOne key={e.id} slide={e?.attributes} ref={listRef} />
           ))}
         </TinySlider>
         <div className="tns-controls">
