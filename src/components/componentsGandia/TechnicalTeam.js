@@ -38,7 +38,7 @@ const TechnicalTeam = ({ className = "", showTitle = true }) => {
                     <div className="team-card-three__image">
                       <Image
                         src={`https://admin.clubdefutbolgandia.com${attributes.foto.data.attributes.url}`}
-                        alt="HOLA"
+                        alt="team-1-1"
                       />
                     </div>
                     <div className="team-card-three__content">
@@ -57,16 +57,29 @@ const TechnicalTeam = ({ className = "", showTitle = true }) => {
                         {attributes.cargo}
                       </div>
                       <ul className="team-card-three__social clearfix m-0 list-unstyled">
-                        <li>
-                          <a href={attributes.instagram}>
-                            <span className="fab fa-instagram"></span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href={attributes.twitter}>
-                            <span className="fab fa-twitter"></span>
-                          </a>
-                        </li>
+                        {attributes.instagram !== null && (
+                          <li>
+                            <a
+                              href={`https://www.instagram.com/${attributes.instagram}/`}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              <span className="fab fa-instagram"></span>
+                            </a>
+                          </li>
+                        )}
+
+                        {attributes.twitter !== null && (
+                          <li>
+                            <a
+                              href={`https://twitter.com/${attributes.twitter}`}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              <span className="fab fa-twitter"></span>
+                            </a>
+                          </li>
+                        )}
                       </ul>
                     </div>
                   </div>

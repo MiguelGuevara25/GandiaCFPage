@@ -53,10 +53,10 @@ const PagePrueba = () => {
 
     const data = await res.data;
     setTablaPosicion(data.response[0]?.league.standings[0]);
-    localStorage.setItem(
-      "tablaPosicion",
-      JSON.stringify(data.response[0].league.standings[0])
-    );
+    // localStorage.setItem(
+    //   "tablaPosicion",
+    //   JSON.stringify(data.response[0].league.standings[0])
+    // );
   };
 
   const getSegundoPartidoProx = async () => {
@@ -78,13 +78,13 @@ const PagePrueba = () => {
   useEffect(() => {
     getSegundoPartidoProx();
     getPartidosPrevios();
-    const datosTablaPosicion = localStorage.getItem("tablaPosicion");
+    // const datosTablaPosicion = localStorage.getItem("tablaPosicion");
 
-    if (datosTablaPosicion) {
-      setTablaPosicion(JSON.parse(datosTablaPosicion));
-    } else {
-      apiPosicion();
-    }
+    // if (datosTablaPosicion) {
+    //   setTablaPosicion(JSON.parse(datosTablaPosicion));
+    // } else {
+    apiPosicion();
+    // }
   }, []);
 
   const tablaRankingConditional = (rank) => {
@@ -240,7 +240,7 @@ const PagePrueba = () => {
           }}
         >
           <p className="text-center fs-3" style={{ margin: "0" }}>
-            La Liga 2023-2024
+            La Liga 2025-2026
           </p>
 
           <div
