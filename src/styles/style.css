@@ -24130,17 +24130,17 @@ img.lazy-image.loaded {
 }
 /*# sourceMappingURL=style.css.map */
 .scrollable-table-container::-webkit-scrollbar {
-  height: 5px;
+  width: 10px;
 }
 
 .scrollable-table-container::-webkit-scrollbar-thumb {
-  background-color: white; /* Color del thumb del scrollbar */
-  border-radius: 10px; /* Borde redondeado del thumb */
+  background-color: gray; /* Color del thumb del scrollbar */
+  border-radius: 5px; /* Borde redondeado del thumb */
 }
 
-/* .scrollable-table-container::-webkit-scrollbar-track {
-  background-color: #f1f1f1; Color del track del scrollbar
-} */
+.scrollable-table-container::-webkit-scrollbar-track {
+  border-radius: 5px; /* Borde redondeado del track */
+}
 
 .descriptionEmergencies {
   display: -webkit-box;

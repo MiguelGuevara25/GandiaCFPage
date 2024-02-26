@@ -13,13 +13,11 @@ const DiscoverSection = ({ ShowTitle = true }) => {
     let url;
 
     if (pathname === "/noticias/femenino") {
-      url =
-        "https://admin.clubdefutbolgandia.com/api/noticias-femeninos?populate=*";
+      url = "http://localhost:1337/api/noticias-femeninos?populate=*";
     } else if (pathname === "/noticias/academia") {
-      url =
-        "https://admin.clubdefutbolgandia.com/api/noticias-academias?populate=*";
+      url = "http://localhost:1337/api/noticias-academias?populate=*";
     } else {
-      url = "https://admin.clubdefutbolgandia.com/api/noticias?populate=*";
+      url = "http://localhost:1337/api/noticias?populate=*";
     }
 
     const res = await axios.get(url);
@@ -47,7 +45,7 @@ const DiscoverSection = ({ ShowTitle = true }) => {
         <Row className="clearfix">
           {datosNoticias?.map((datos) => {
             const { titulo, imagen, url } = datos.attributes;
-            const urlIMG = `https://admin.clubdefutbolgandia.com${imagen.data?.attributes.url}`;
+            const urlIMG = `http://localhost:1337${imagen.data?.attributes.url}`;
 
             return (
               <Col
@@ -58,7 +56,14 @@ const DiscoverSection = ({ ShowTitle = true }) => {
                 className="discover-block"
               >
                 <div className="inner-box">
-                  <div className="image-box">
+                  <div
+                    className="image-box"
+                    style={{
+                      height: "360px",
+                      width: "540px",
+                      borderRadius: "10px",
+                    }}
+                  >
                     <Image
                       src={urlIMG}
                       alt={`Imagen de la noticias ${titulo}`}

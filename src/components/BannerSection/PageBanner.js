@@ -9,7 +9,7 @@ const PageBanner = ({ title = "" }) => {
   const url = useRouter();
 
   const getPhotoSection = async () => {
-    const url = `https://admin.clubdefutbolgandia.com/api/fotos-secciones?populate=*`;
+    const url = `http://localhost:1337/api/fotos-secciones?populate=*`;
     const res = await axios.get(url);
     const { data } = await res.data;
     setPhotos(data);
@@ -24,7 +24,7 @@ const PageBanner = ({ title = "" }) => {
       {photos
         .filter((e) => e.attributes.selectedPage === url.pathname)
         .map((e) => {
-          const urlIMG = `https://admin.clubdefutbolgandia.com${e.attributes.image.data.attributes.url}`;
+          const urlIMG = `http://localhost:1337${e.attributes.image.data.attributes.url}`;
           return (
             <div
               key={e.id}

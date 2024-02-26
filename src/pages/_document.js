@@ -35,6 +35,12 @@ class MyDocument extends Document {
             name="description"
             content="Página Oficial del Club de Fútbol Gandia de España"
           />
+          <meta name="robots" content="index, follow" />
+          <link rel="canonical" href="https://clubdefutbolgandia.com/" />
+          <meta
+            name="description"
+            content="Página Oficial del Club de Fútbol Gandia de España"
+          />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
           <link rel="preconnect" href="https://fonts.googleapis.com" />

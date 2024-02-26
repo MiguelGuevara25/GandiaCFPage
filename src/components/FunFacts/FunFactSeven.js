@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { Col, Row } from "react-bootstrap";
-import Image from "next/image";
+import { Col, Row, Image } from "react-bootstrap";
 import moment from "moment";
 import "moment/locale/es";
 import axios from "axios";
@@ -20,7 +19,7 @@ const FunFactSeven = () => {
 
   const getProximoPartido = async () => {
     const url =
-      "https://admin.clubdefutbolgandia.com/api/proximo-partido?populate=*";
+      "http://localhost:1337/api/proximo-partido?populate=*";
     const { data } = await axios.get(url);
     setEstadio(data.data.attributes.estadio);
     setLogoLocal(data.data.attributes.logoLocal.data.attributes.url);
@@ -83,7 +82,7 @@ const FunFactSeven = () => {
           >
             <Image
               alt="Gandia Logo"
-              src={`https://admin.clubdefutbolgandia.com${logoLocal}`}
+              src={`http://localhost:1337${logoLocal}`}
               width={"110px"}
               height={"135px"}
             />
@@ -125,7 +124,7 @@ const FunFactSeven = () => {
 
             <Image
               alt="Logo local"
-              src={`https://admin.clubdefutbolgandia.com${logoVisita}`}
+              src={`http://localhost:1337${logoVisita}`}
               width={"110px"}
               height={"135px"}
             />

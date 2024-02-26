@@ -29,18 +29,18 @@ const { dayRange, timeRange, socials, banners } = bannerOne;
 const BannerOne = () => {
   const listRef = useRef(null);
 
-  const [imagesSlider, setImagesSlider] = useState([]);
+  // const [imagesSlider, setImagesSlider] = useState([]);
 
-  const getImagesSliderPrincipal = async () => {
-    const url = `https://admin.clubdefutbolgandia.com/api/fotos-slider-principal?populate=*`;
-    const res = await axios.get(url);
-    const { data } = await res.data;
-    setImagesSlider(data.attributes.images.data);
-  };
+  // const getImagesSliderPrincipal = async () => {
+  //   const url = `http://localhost:1337/api/fotos-slider-principal?populate=*`;
+  //   const res = await axios.get(url);
+  //   const { data } = await res.data;
+  //   setImagesSlider(data.attributes.images.data);
+  // };
 
-  useEffect(() => {
-    getImagesSliderPrincipal();
-  }, []);
+  // useEffect(() => {
+  //   getImagesSliderPrincipal();
+  // }, []);
 
   return (
     <section className="banner-section banner-one">
@@ -74,10 +74,6 @@ const BannerOne = () => {
           {banners.map((slide) => (
             <SlideItemOne key={slide.id} slide={slide} ref={listRef} />
           ))}
-
-          {/* {imagesSlider.map((slide, index) => (
-            <SlideItemOne key={index} slide={slide} ref={listRef} />
-          ))} */}
 
           {/* {imagesSlider.map((e) => (
             <SlideItemOne key={e.id} slide={e.attributes} ref={listRef} />

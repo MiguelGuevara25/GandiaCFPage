@@ -9,7 +9,7 @@ const SingleNewsTwo = ({ video }) => {
         <div className="auto-container">
           <div className="portfolio-details-video__thumbnail">
             <Image
-              src={`https://admin.clubdefutbolgandia.com${imagen.data[0].attributes.url}`}
+              src={`http://localhost:1337${imagen.data[0].attributes.url}`}
               alt="video"
             />
             <div className="vid-link">

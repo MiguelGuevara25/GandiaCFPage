@@ -9,7 +9,7 @@ const TechnicalTeam = ({ className = "", showTitle = true }) => {
 
   const getTechnicalTeam = async () => {
     const url =
-      "https://admin.clubdefutbolgandia.com/api/cuerpo-tecnicos?populate=*";
+      "http://localhost:1337/api/cuerpo-tecnicos?populate=*";
     const res = await axios.get(url);
     const { data } = res.data;
 
@@ -30,14 +30,13 @@ const TechnicalTeam = ({ className = "", showTitle = true }) => {
         )}
         <Row>
           {technicalTeam.map(({ attributes }) => {
-            console.log();
             return (
               <Col md={6} lg={6} key={attributes.id}>
                 <div className="team-card-three">
                   <div className="team-card-three__inner">
                     <div className="team-card-three__image">
                       <Image
-                        src={`https://admin.clubdefutbolgandia.com${attributes.foto.data.attributes.url}`}
+                        src={`http://localhost:1337${attributes.foto.data.attributes.url}`}
                         alt="team-1-1"
                       />
                     </div>
@@ -54,7 +53,7 @@ const TechnicalTeam = ({ className = "", showTitle = true }) => {
                         {attributes.nombre}
                       </h5>
                       <div className="team-card-three__designation">
-                        {attributes.cargo}
+                        {attributes.puesto}
                       </div>
                       <ul className="team-card-three__social clearfix m-0 list-unstyled">
                         {attributes.instagram !== null && (

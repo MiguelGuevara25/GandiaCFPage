@@ -9,12 +9,13 @@ import MainFooterTwo from "@/components/MainFooter/MainFooterTwo";
 import SearchPopup from "@/components/SearchPopup/SearchPopup";
 import SponsorsSection from "@/components/SponsorsSection/SponsorsSection";
 import LogoGandia2 from "@/images/logoGandia2.png";
-import Image from "next/image";
+import { Image } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import NewsSectionTwo from "@/components/NewsSection/NewsSectionTwo";
 import moment from "moment";
 import "moment/locale/es";
+import { get } from "react-scroll/modules/mixins/scroller";
 
 const PagePrueba = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -24,10 +25,7 @@ const PagePrueba = () => {
   const [logoVisitaProx, setLogoVisitaProx] = useState("");
   const [horaProx, setHoraProx] = useState("");
   const [partidosPrevios, setPartidosPrevios] = useState([]);
-
-  const rankingGandia = tablaPosicion?.filter((equipo) => {
-    return equipo.team.name === "CF Gandía";
-  });
+  const [tituloLiga, setTituloLiga] = useState("");
 
   useEffect(() => {
     const handleResize = () => {
@@ -41,27 +39,17 @@ const PagePrueba = () => {
     };
   }, []);
 
-  const apiPosicion = async () => {
+  const getTablaPosicion = async () => {
     const url =
-      "https://v3.football.api-sports.io/standings?league=444&season=2023";
-    const res = await axios.get(url, {
-      headers: {
-        "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": "07a555363c588371003efcd5428ab5ab",
-      },
-    });
+      "http://localhost:1337/api/tabla-posiciones?sort[0]=puntos:desc&sort[1]=diferenciaGol:desc";
+    const res = await axios.get(url);
+    const { data } = await res.data;
 
-    const data = await res.data;
-    setTablaPosicion(data.response[0]?.league.standings[0]);
-    // localStorage.setItem(
-    //   "tablaPosicion",
-    //   JSON.stringify(data.response[0].league.standings[0])
-    // );
+    setTablaPosicion(data);
   };
 
   const getSegundoPartidoProx = async () => {
-    const url =
-      "https://admin.clubdefutbolgandia.com/api/segundo-proximo-partido?populate=*";
+    const url = "http://localhost:1337/api/segundo-proximo-partido?populate=*";
     const { data } = await axios.get(url);
     setHoraProx(data.data.attributes.hora);
     setLogoLocalProx(data.data.attributes.logoLocal.data.attributes.url);
@@ -69,34 +57,24 @@ const PagePrueba = () => {
   };
 
   const getPartidosPrevios = async () => {
-    const url =
-      "https://admin.clubdefutbolgandia.com/api/previos-partidos?populate=*";
+    const url = "http://localhost:1337/api/previos-partidos?populate=*";
     const { data } = await axios.get(url);
     setPartidosPrevios(data.data);
+  };
+
+  const getTituloTabla = async () => {
+    const url = "http://localhost:1337/api/titulo-tabla-liga";
+    const res = await axios.get(url);
+    const { data } = res.data;
+    setTituloLiga(data.attributes.titulo);
   };
 
   useEffect(() => {
     getSegundoPartidoProx();
     getPartidosPrevios();
-    // const datosTablaPosicion = localStorage.getItem("tablaPosicion");
-
-    // if (datosTablaPosicion) {
-    //   setTablaPosicion(JSON.parse(datosTablaPosicion));
-    // } else {
-    apiPosicion();
-    // }
+    getTablaPosicion();
+    getTituloTabla();
   }, []);
-
-  const tablaRankingConditional = (rank) => {
-    switch (rank) {
-      case 18:
-        return tablaPosicion.slice(rank - 5);
-      case 1:
-        return tablaPosicion.slice(rank - 1, rank + 4);
-      default:
-        return tablaPosicion.slice(rank - 2, rank + 3);
-    }
-  };
 
   return (
     <Layout pageTitle="CF Gandía">
@@ -133,7 +111,9 @@ const PagePrueba = () => {
               }}
               className="py-2"
             >
-              {partidosPrevios.map((e) => {
+              {partidosPrevios?.map((e) => {
+                const urlIMG1 = `http://localhost:1337${e.attributes.logoLocal.data.attributes.url}`;
+
                 return (
                   <div
                     key={e.id}
@@ -154,7 +134,7 @@ const PagePrueba = () => {
                       style={{ gap: `${isMobile ? "36.15px" : "50px"}` }}
                     >
                       <Image
-                        src={`https://admin.clubdefutbolgandia.com${e.attributes.logoLocal.data.attributes.url}`}
+                        src={urlIMG1}
                         alt="Logo Arsenal"
                         width={`${isMobile ? "60px" : "70px"}`}
                         height={`${isMobile ? "80px" : "90px"}`}
@@ -166,7 +146,7 @@ const PagePrueba = () => {
                       </span>
 
                       <Image
-                        src={`https://admin.clubdefutbolgandia.com${e.attributes.logoVisita.data.attributes.url}`}
+                        src={`http://localhost:1337${e.attributes.logoVisita.data.attributes.url}`}
                         alt="Logo Gandia"
                         width={`${isMobile ? "60px" : "70px"}`}
                         height={`${isMobile ? "80px" : "90px"}`}
@@ -205,7 +185,7 @@ const PagePrueba = () => {
                 >
                   <Image
                     alt="Gandia Logo"
-                    src={`https://admin.clubdefutbolgandia.com${logoLocalProx}`}
+                    src={`http://localhost:1337${logoLocalProx}`}
                     width={`${isMobile ? "60px" : "70px"}`}
                     height={`${isMobile ? "80px" : "90px"}`}
                   />
@@ -221,7 +201,7 @@ const PagePrueba = () => {
 
                   <Image
                     alt="Gandia Logo"
-                    src={`https://admin.clubdefutbolgandia.com${logoVisitaProx}`}
+                    src={`http://localhost:1337${logoVisitaProx}`}
                     width={`${isMobile ? "60px" : "70px"}`}
                     height={`${isMobile ? "80px" : "90px"}`}
                   />
@@ -232,23 +212,31 @@ const PagePrueba = () => {
         </div>
 
         <div
-          className={`text-white px-4 py-4 position-relative`}
+          className={`text-white px-4 py-4 position-relative scrollable-table-container`}
           style={{
             backgroundColor: "#0F3B7C",
             borderRadius: "15px",
             width: `${isMobile ? "100%" : "50%"}`,
+            height: "637px",
+            overflowY: "scroll",
           }}
         >
           <p className="text-center fs-3" style={{ margin: "0" }}>
-            La Liga 2025-2026
+            {tituloLiga}
           </p>
 
-          <div
+          {/* <div
             className="w-25 position-absolute"
             style={{ right: "20px", bottom: "10px" }}
           >
-            <Image src={LogoGandia2} alt="Logo" style={{ opacity: "0.5" }} />
-          </div>
+            <Image
+              src={LogoGandia2}
+              alt="Logo"
+              width={`${isMobile ? "100%" : "50%"}`}
+              height="637px"
+              style={{ opacity: "0.5" }}
+            />
+          </div> */}
 
           {tablaPosicion ? (
             <table
@@ -260,33 +248,31 @@ const PagePrueba = () => {
                 fontSize: `${isMobile ? "14px" : "25px"}`,
                 position: "relative",
                 display: `${isMobile ? "block" : "table"}`,
-                overflowX: "scroll",
+                overflow: "scroll",
               }}
             >
               <thead>
-                <tr style={{ fontWeight: "400", fontSize: "20px" }}>
-                  <th>Pos</th>
-                  <th>Equipo</th>
+                <tr style={{ fontWeight: "400", fontSize: "25px" }}>
+                  <th>POS</th>
+                  <th>EQUIPO</th>
                   <th>J</th>
-                  <th>G</th>
-                  <th>Puntos</th>
+                  <th>DG</th>
+                  <th>PUNTOS</th>
                 </tr>
               </thead>
 
               <tbody>
-                {tablaRankingConditional(rankingGandia[0]?.rank).map(
-                  (e, id) => {
-                    return (
-                      <tr key={id}>
-                        <td>{e.rank}</td>
-                        <td>{e.team.name}</td>
-                        <td>{e.all.played}</td>
-                        <td>{e.all.win}</td>
-                        <td>{e.points}</td>
-                      </tr>
-                    );
-                  }
-                )}
+                {tablaPosicion.map((e, pos) => {
+                  return (
+                    <tr key={e.id}>
+                      <td>{pos + 1}</td>
+                      <td>{e.attributes.equipo}</td>
+                      <td>{e.attributes.partidosJugados}</td>
+                      <td>{e.attributes.diferenciaGol}</td>
+                      <td>{e.attributes.puntos}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           ) : (
