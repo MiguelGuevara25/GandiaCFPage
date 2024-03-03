@@ -4,7 +4,7 @@ import TextSplit from "../Reuseable/TextSplit";
 
 const SlideItemOne = ({ slide = {} }, ref) => {
   const { bg } = slide;
-  // const urlIMG = `http://localhost:1337${url}`;
+  // const urlIMG = `https://admin.clubdefutbolgandia.com${url}`;
 
   return (
     <div ref={ref} style={{ userSelect: "none" }} className="slide-item">

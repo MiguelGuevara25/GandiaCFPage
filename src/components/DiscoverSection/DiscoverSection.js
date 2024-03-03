@@ -13,11 +13,14 @@ const DiscoverSection = ({ ShowTitle = true }) => {
     let url;
 
     if (pathname === "/noticias/femenino") {
-      url = "http://localhost:1337/api/noticias-femeninos?populate=*";
+      url =
+        "https://admin.clubdefutbolgandia.com/api/noticias-femeninos?populate=*";
     } else if (pathname === "/noticias/academia") {
-      url = "http://localhost:1337/api/noticias-academias?populate=*";
+      url =
+        "https://admin.clubdefutbolgandia.com/api/noticias-academias?populate=*";
     } else {
-      url = "http://localhost:1337/api/noticias?populate=*";
+      url =
+        "https://admin.clubdefutbolgandia.com/api/noticias?populate=*";
     }
 
     const res = await axios.get(url);
@@ -45,7 +48,7 @@ const DiscoverSection = ({ ShowTitle = true }) => {
         <Row className="clearfix">
           {datosNoticias?.map((datos) => {
             const { titulo, imagen, url } = datos.attributes;
-            const urlIMG = `http://localhost:1337${imagen.data?.attributes.url}`;
+            const urlIMG = `https://admin.clubdefutbolgandia.com${imagen.data?.attributes.url}`;
 
             return (
               <Col

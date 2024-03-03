@@ -19,7 +19,7 @@ const FunFactSeven = () => {
 
   const getProximoPartido = async () => {
     const url =
-      "http://localhost:1337/api/proximo-partido?populate=*";
+      "https://admin.clubdefutbolgandia.com/api/proximo-partido?populate=*";
     const { data } = await axios.get(url);
     setEstadio(data.data.attributes.estadio);
     setLogoLocal(data.data.attributes.logoLocal.data.attributes.url);
@@ -82,7 +82,7 @@ const FunFactSeven = () => {
           >
             <Image
               alt="Gandia Logo"
-              src={`http://localhost:1337${logoLocal}`}
+              src={`https://admin.clubdefutbolgandia.com${logoLocal}`}
               width={"110px"}
               height={"135px"}
             />
@@ -124,7 +124,7 @@ const FunFactSeven = () => {
 
             <Image
               alt="Logo local"
-              src={`http://localhost:1337${logoVisita}`}
+              src={`https://admin.clubdefutbolgandia.com${logoVisita}`}
               width={"110px"}
               height={"135px"}
             />

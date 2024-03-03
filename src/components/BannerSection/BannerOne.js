@@ -32,7 +32,7 @@ const BannerOne = () => {
   // const [imagesSlider, setImagesSlider] = useState([]);
 
   // const getImagesSliderPrincipal = async () => {
-  //   const url = `http://localhost:1337/api/fotos-slider-principal?populate=*`;
+  //   const url = `https://admin.clubdefutbolgandia.com/api/fotos-slider-principal?populate=*`;
   //   const res = await axios.get(url);
   //   const { data } = await res.data;
   //   setImagesSlider(data.attributes.images.data);

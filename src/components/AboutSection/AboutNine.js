@@ -11,7 +11,7 @@ const AboutNine = () => {
   const [datosNoticias, setDatosNoticias] = useState([]);
 
   const getNoticias = async () => {
-    const url = "http://localhost:1337/api/noticias?populate=*";
+    const url = "https://admin.clubdefutbolgandia.com/api/noticias?populate=*";
     const res = await axios.get(url);
     const data = await res.data;
     setDatosNoticias(data.data);
@@ -31,7 +31,7 @@ const AboutNine = () => {
                 <Col lg={6} className="animated fadeInLeft">
                   <div className="about-nine__image">
                     <Image
-                      src={`http://localhost:1337${e.attributes.imagen.data.attributes.url}`}
+                      src={`https://admin.clubdefutbolgandia.com${e.attributes?.imagen.data?.attributes?.url}`}
                       alt="Awesome Image"
                       width={650}
                     />

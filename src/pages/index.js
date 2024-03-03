@@ -41,7 +41,7 @@ const PagePrueba = () => {
 
   const getTablaPosicion = async () => {
     const url =
-      "http://localhost:1337/api/tabla-posiciones?sort[0]=puntos:desc&sort[1]=diferenciaGol:desc";
+      "https://admin.clubdefutbolgandia.com/api/tabla-posiciones?sort[0]=puntos:desc&sort[1]=diferenciaGol:desc";
     const res = await axios.get(url);
     const { data } = await res.data;
 
@@ -49,21 +49,21 @@ const PagePrueba = () => {
   };
 
   const getSegundoPartidoProx = async () => {
-    const url = "http://localhost:1337/api/segundo-proximo-partido?populate=*";
+    const url = "https://admin.clubdefutbolgandia.com/api/segundo-proximo-partido?populate=*";
     const { data } = await axios.get(url);
     setHoraProx(data.data.attributes.hora);
-    setLogoLocalProx(data.data.attributes.logoLocal.data.attributes.url);
-    setLogoVisitaProx(data.data.attributes.logoVisita.data.attributes.url);
+    setLogoLocalProx(data.data.attributes.logoLocal.data?.attributes.url);
+    setLogoVisitaProx(data.data.attributes.logoVisita.data?.attributes.url);
   };
 
   const getPartidosPrevios = async () => {
-    const url = "http://localhost:1337/api/previos-partidos?populate=*";
+    const url = "https://admin.clubdefutbolgandia.com/api/previos-partidos?populate=*";
     const { data } = await axios.get(url);
     setPartidosPrevios(data.data);
   };
 
   const getTituloTabla = async () => {
-    const url = "http://localhost:1337/api/titulo-tabla-liga";
+    const url = "https://admin.clubdefutbolgandia.com/api/titulo-tabla-liga";
     const res = await axios.get(url);
     const { data } = res.data;
     setTituloLiga(data.attributes.titulo);
@@ -112,7 +112,7 @@ const PagePrueba = () => {
               className="py-2"
             >
               {partidosPrevios?.map((e) => {
-                const urlIMG1 = `http://localhost:1337${e.attributes.logoLocal.data.attributes.url}`;
+                const urlIMG1 = `https://admin.clubdefutbolgandia.com${e.attributes?.logoLocal.data?.attributes.url}`;
 
                 return (
                   <div
@@ -146,7 +146,7 @@ const PagePrueba = () => {
                       </span>
 
                       <Image
-                        src={`http://localhost:1337${e.attributes.logoVisita.data.attributes.url}`}
+                        src={`https://admin.clubdefutbolgandia.com${e.attributes?.logoVisita.data?.attributes.url}`}
                         alt="Logo Gandia"
                         width={`${isMobile ? "60px" : "70px"}`}
                         height={`${isMobile ? "80px" : "90px"}`}
@@ -185,7 +185,7 @@ const PagePrueba = () => {
                 >
                   <Image
                     alt="Gandia Logo"
-                    src={`http://localhost:1337${logoLocalProx}`}
+                    src={`https://admin.clubdefutbolgandia.com${logoLocalProx}`}
                     width={`${isMobile ? "60px" : "70px"}`}
                     height={`${isMobile ? "80px" : "90px"}`}
                   />
@@ -201,7 +201,7 @@ const PagePrueba = () => {
 
                   <Image
                     alt="Gandia Logo"
-                    src={`http://localhost:1337${logoVisitaProx}`}
+                    src={`https://admin.clubdefutbolgandia.com${logoVisitaProx}`}
                     width={`${isMobile ? "60px" : "70px"}`}
                     height={`${isMobile ? "80px" : "90px"}`}
                   />

@@ -7,8 +7,8 @@ const SingleTeamThree = ({ jugador }) => {
         <div className="team-card-three__inner">
           <div className="team-card-three__image">
             <Image
-              src={`http://localhost:1337${jugador.attributes.imagen.data?.attributes.url}`}
-              alt="Imagen"
+              src={`https://admin.clubdefutbolgandia.com${jugador.attributes.imagen.data?.attributes.url}`}
+              alt={`Imagen de ${jugador.attributes.nombre}`}
             />
           </div>
           <div className="team-card-three__content">

@@ -9,7 +9,7 @@ const TechnicalTeam = ({ className = "", showTitle = true }) => {
 
   const getTechnicalTeam = async () => {
     const url =
-      "http://localhost:1337/api/cuerpo-tecnicos?populate=*";
+      "https://admin.clubdefutbolgandia.com/api/cuerpo-tecnicos?populate=*";
     const res = await axios.get(url);
     const { data } = res.data;
 
@@ -36,8 +36,8 @@ const TechnicalTeam = ({ className = "", showTitle = true }) => {
                   <div className="team-card-three__inner">
                     <div className="team-card-three__image">
                       <Image
-                        src={`http://localhost:1337${attributes.foto.data.attributes.url}`}
-                        alt="team-1-1"
+                        src={`https://admin.clubdefutbolgandia.com${attributes.foto.data?.attributes.url}`}
+                        alt={`Imagen de ${attributes.nombre}`}
                       />
                     </div>
                     <div className="team-card-three__content">

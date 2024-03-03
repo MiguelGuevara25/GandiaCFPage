@@ -15,7 +15,7 @@ const BlogDetails = ({ datosBlog }) => {
   };
 
   const { titulo, descripcion, createdAt, imagen } = datosBlog[0].attributes;
-  const urlIMG = `http://localhost:1337${imagen.data?.attributes.url}`;
+  const urlIMG = `https://admin.clubdefutbolgandia.com${imagen.data?.attributes.url}`;
 
   return (
     <div className="blog-details">
