@@ -49,7 +49,8 @@ const PagePrueba = () => {
   };
 
   const getSegundoPartidoProx = async () => {
-    const url = "https://admin.clubdefutbolgandia.com/api/segundo-proximo-partido?populate=*";
+    const url =
+      "https://admin.clubdefutbolgandia.com/api/segundo-proximo-partido?populate=*";
     const { data } = await axios.get(url);
     setHoraProx(data.data.attributes.hora);
     setLogoLocalProx(data.data.attributes.logoLocal.data?.attributes.url);
@@ -57,7 +58,8 @@ const PagePrueba = () => {
   };
 
   const getPartidosPrevios = async () => {
-    const url = "https://admin.clubdefutbolgandia.com/api/previos-partidos?populate=*";
+    const url =
+      "https://admin.clubdefutbolgandia.com/api/previos-partidos?populate=*";
     const { data } = await axios.get(url);
     setPartidosPrevios(data.data);
   };
