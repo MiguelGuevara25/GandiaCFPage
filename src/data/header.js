@@ -135,7 +135,7 @@ const headerData = {
   address: "Suite 20 Golden Street USA",
   phone: "666 888 0000",
   phone2: "+ 92 666 888 0000",
-  email: "cfgandia@cfgandia.es",
+  email: "comunicacioncfgandia@gmail.com",
   icon,
   socials,
   text: "Linoor is a premium Template for Digital Agencies, Start Ups, Small Business and a wide range of other agencies.",
