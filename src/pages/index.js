@@ -92,6 +92,7 @@ const PagePrueba = () => {
         className={`d-flex justify-content-center gap-5 ${
           isMobile ? "flex-column" : ""
         }`}
+        style={{ width: "95%", margin: "0 auto" }}
       >
         <div
           className={`text-black px-5 pb-5`}
@@ -227,19 +228,6 @@ const PagePrueba = () => {
             {tituloLiga}
           </p>
 
-          {/* <div
-            className="w-25 position-absolute"
-            style={{ right: "20px", bottom: "10px" }}
-          >
-            <Image
-              src={LogoGandia2}
-              alt="Logo"
-              width={`${isMobile ? "100%" : "50%"}`}
-              height="637px"
-              style={{ opacity: "0.5" }}
-            />
-          </div> */}
-
           {tablaPosicion ? (
             <table
               className="scrollable-table-container"
@@ -254,7 +242,12 @@ const PagePrueba = () => {
               }}
             >
               <thead>
-                <tr style={{ fontWeight: "400", fontSize: "25px" }}>
+                <tr
+                  style={{
+                    fontWeight: "400",
+                    fontSize: `${isMobile ? "14px" : "25px"}`,
+                  }}
+                >
                   <th>POS</th>
                   <th>EQUIPO</th>
                   <th>J</th>

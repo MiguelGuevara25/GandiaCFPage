@@ -95,7 +95,7 @@ const MainFooterTwo = () => {
       <div className="bottom-footer">
         <div className="auto-container">
           <div className="left-content">
-            <Link href="/index-main">
+            <Link href="/">
               <a>
                 <Image src={logo.src} width={70} height={34} alt="" />
               </a>
@@ -107,7 +107,7 @@ const MainFooterTwo = () => {
           <ul className="list-unstyled social-links">
             {socials.map(({ id, icon, href }) => (
               <li key={id}>
-                <a href={href}>
+                <a target="_blank" rel="noreferrer" href={href}>
                   <span className={icon}></span>
                 </a>
               </li>

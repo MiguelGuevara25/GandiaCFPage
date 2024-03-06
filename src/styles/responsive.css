@@ -93,7 +93,7 @@
   }
 
   .main-header.fixed-header .nav-outer .mobile-nav-toggler {
-    /* margin-top: 20px; */
+    margin-top: 52px;
   }
 
   .header-style-two.fixed-header .nav-outer .mobile-nav-toggler {
@@ -125,9 +125,14 @@
     padding: 0;
   }
 
+  .main-header.fixed-header .other-links {
+    margin-top: 35px;
+  }
+
   .main-header.fixed-header .other-links .search-btn {
     padding-top: 21.5px;
     padding-bottom: 21.5px;
+    /* background-color: red; */
   }
 
   .nav-outer .mobile-nav-toggler {

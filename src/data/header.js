@@ -97,23 +97,23 @@ export const socials = [
   {
     id: 1,
     icon: "fab fa-facebook-square",
-    href: "#",
+    href: "https://www.facebook.com/cfgandia1",
   },
   {
     id: 2,
     icon: "fab fa-twitter",
-    href: "#",
+    href: "https://twitter.com/CF_Gandia",
   },
   {
     id: 3,
     icon: "fab fa-instagram",
-    href: "#",
+    href: "https://www.instagram.com/cf_gandia",
   },
-  {
-    id: 4,
-    icon: "fab fa-pinterest-p",
-    href: "#",
-  },
+  // {
+  //   id: 4,
+  //   icon: "fab fa-pinterest-p",
+  //   href: "#",
+  // },
 ];
 
 const headerData = {
