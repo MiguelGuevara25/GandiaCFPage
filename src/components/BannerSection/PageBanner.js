@@ -1,5 +1,3 @@
-import bg from "@/images/main-slider/pruebafotoGania.jpg";
-import bg1 from "@/images/main-slider/secondPhotoSlider.jpg";
 import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -29,7 +27,6 @@ const PageBanner = ({ title = "" }) => {
             <div
               key={e.id}
               className="image-layer"
-              // style={{ backgroundImage: `url(${bg.src})` }}
               style={{ backgroundImage: `url(${urlIMG})` }}
             ></div>
           );
